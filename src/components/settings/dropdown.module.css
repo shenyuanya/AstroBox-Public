@@ -1,0 +1,3 @@
+.tab:hover{
+    background: color-mix(in srgb, var(--colorNeutralBackground2Hover), transparent 10%)!important;
+}

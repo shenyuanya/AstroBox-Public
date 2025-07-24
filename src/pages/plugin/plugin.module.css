@@ -1,0 +1,97 @@
+.tabbar {
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(10px);
+    background: var(--cardbackground);
+    border: 1px solid #00000013;
+    padding: 4px;
+    border-radius: 10px;
+}
+
+.pluginInfo {
+    grid-auto-columns: min-content 1fr;
+    row-gap: 8px;
+    column-gap: 20px;
+    padding: 16px;
+    display: grid;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    box-sizing: border-box;
+}
+
+.pluginInfoContent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    grid-column-start: 2;
+    grid-row-start: 1;
+    width: 100%;
+    grid-row-start: var(--grid-row-start-mobile);
+}
+
+.pluginInfoAction {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    grid-column-start: 2;
+    grid-row-start: 2;
+    width: 100%;
+}
+
+@media (min-width: 1200px) {
+    .pluginInfoContent {
+        grid-row-start: span 2;
+    }
+
+    .pluginInfoAction {
+        grid-column-start: 3;
+        grid-row-start: span 2;
+    }
+
+    .pluginInfo {
+        grid-auto-columns: min-content 1fr min-content;
+    }
+}
+
+.infoLine {
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    overflow: hidden;
+    background-color: var(--colorNeutralBackground2);
+    border-radius: var(--borderRadiusMedium); */
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+    overflow: hidden;
+    margin: 0px 6px;
+}
+
+.infoLineLabel {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--colorNeutralForeground2);
+}
+
+.permissionsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 2px 2px;
+}
+
+.permissionTag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    background-color: var(--colorNeutralBackground2);
+    border-radius: var(--borderRadiusMedium);
+    border: 1px solid var(--colorNeutralStroke2);
+    font-size: var(--fontSizeBase300);
+}

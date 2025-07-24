@@ -1,0 +1,2 @@
+export const NAV_EVENT = '__ANIMATED_LAYOUT_NAV_EVENT__';
+

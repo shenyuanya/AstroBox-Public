@@ -1,0 +1,371 @@
+{
+  "nav": {
+    "home": "Home",
+    "device": "Device",
+    "plugin": "Plugin",
+    "settings": "Settings"
+  },
+  "disclaimer": {
+    "title": "Disclaimer",
+    "content": "AstroBox Application Disclaimer\n\nBefore using this software (hereinafter referred to as “AstroBox”), please carefully read and fully understand the terms of this disclaimer. Continuing to download, install, or use AstroBox indicates that you have read, understood, and accepted all contents of this statement and agree to bear all risks and responsibilities arising from the use of this software.\n\nI. Software Property Statement\n\nAstroBox is a third-party tool application independently developed and released by its developer. It aims to provide users with a convenient tool to install third-party resources (including watch faces, quick apps, firmware, etc.) on Xiaomi-brand smart wearable devices.\n\nThis software is not developed, authorized, released, or supported by Xiaomi Corporation or any of its affiliates. There is no affiliation, cooperation, agency, or any other legal relationship with Xiaomi. Xiaomi is not responsible for the functionality, performance, or security of AstroBox or any consequences resulting from its use.\n\nII. User Behavior and Responsibility\n\nAstroBox's functions may involve customization of the device system, including but not limited to resource replacement, configuration changes, and installation of unofficial content. These operations may unpredictably affect the normal functioning, security, and data integrity of the device, including but not limited to: • System instability, malfunction, or failure to boot; • Loss, damage, or leakage of user data; • Invalidated official service agreements or voided warranty rights; • Incompatibility with the pre-installed system or services; • Triggered manufacturer account management mechanisms leading to login restrictions.\n\nThese actions are entirely based on the user's independent decisions. Users should make choices with full understanding of the related risks and independently bear all resulting consequences. The AstroBox developer assumes no responsibility for any direct or indirect damages caused by users’ use of this software.\n\nIII. Account Login and Data Transmission Notice\n\nCertain AstroBox functions involve calling Xiaomi account service interfaces to access resources or enable specific device operations. During this process, user-provided account credentials (including username, password, or authorization tokens) will be directly submitted to Xiaomi’s official servers for identity verification.\n\nThis software does not store, record, or tamper with user credentials without the user's consent. However: • The security of such transmissions fully relies on Xiaomi’s servers and their implementation mechanisms, and is beyond the control or guarantee of this software; • If changes in interfaces, service policies, or triggered security mechanisms cause account restrictions, login failures, or data issues, this software and its developer bear no responsibility; • Users should carefully decide whether to use such functions and assume all risks related to credential usage.\n\nWe strongly recommend users operate only in trusted network environments and evaluate their account security requirements before authorizing login.\n\nIV. Third-Party Resource Sources and Content Legality\n\nSome resources provided by AstroBox originate from public networks or third-party community platforms, including but not limited to open-source communities (e.g., GitHub), forum platforms (e.g., Mi Community), and content distribution networks (e.g., jsDelivr).\n\nThese resources are offered by their original publishers. AstroBox functions only as a tool to access and install them and does not make any promises or guarantees regarding: • The legality, completeness, or accuracy of the content; • The absence of malicious code or harmful behavior; • Non-infringement of third-party intellectual property or legal rights; • Compatibility and safety with user devices or systems.\n\nUsers must ensure compliance with relevant laws and regulations and protect their own legal rights before deciding to access or use third-party resources. All legal, technical, or financial consequences arising from such use are to be independently borne by the user.\n\nV. Security Responsibility and Liability Disclaimer\n\nAstroBox is provided \"as is\" and does not offer any express or implied guarantees on its continued availability, system compatibility, performance, or suitability for specific purposes. Users clearly agree that AstroBox’s developer and associated parties shall not be held liable for any form of loss resulting from use or inability to use this software (including but not limited to direct loss, indirect loss, loss of profits, data loss, device damage, or legal liability).\n\nAdditionally, this software does not offer official technical support and is not obligated to respond to issues, failures, or risk feedback during usage.\n\nVI. Terms Modification and Final Interpretation Rights\n\nAstroBox reserves the right to modify the content of this disclaimer at any time based on changes in laws, software updates, or operational strategy adjustments. Any updates will be published through distribution channels without separate notice.\n\nContinued use of this software following updates to the disclaimer shall be deemed as acceptance of all modified terms. The AstroBox developer reserves the final interpretation rights of this disclaimer.",
+    "confirm": "I agree",
+    "cancel": "I don't agree"
+  },
+  "home": {
+    "title": "Home",
+    "search": "Search",
+    "appList": "Applications",
+    "loadingMore": "Loading more...",
+    "none": "Looks like there's nothing here...",
+    "bottom": "That's all...❤",
+    "retry": "Retry",
+    "loading": "Retrying..."
+  },
+  "about": {
+    "title": "About",
+    "appVersion": "App Version",
+    "foundNew": "New version found",
+    "checking": "Checking for updates",
+    "download": "Download update",
+    "latest": "Already up to date",
+    "checkUpdate": "Check for update",
+    "buildDate": "Build Date",
+    "team": "Development Team",
+    "changelog": "Changelog",
+    "roles": {
+      "nativeFrontend": "Native/Frontend Dev",
+      "native": "Native Dev",
+      "designerFrontend": "Designer/Frontend Dev"
+    },
+    "releaseName": "Release Codename",
+    "releaseSlogan": "From dawn's first light, igniting all things.",
+    "copyright": "Copyright © 2025 AstralSightStudios. All rights reserved"
+  },
+  "product": {
+    "detail": "Resource Details",
+    "notFound": "Resource not found"
+  },
+  "common": {
+    "modify": "Modify",
+    "cancel": "Cancel",
+    "go": "Go",
+    "loading": "Loading...",
+    "refreshAll": "Refresh All",
+    "uninstall": "Uninstall",
+    "disable": "Disable",
+    "enable": "Enable",
+    "install": "Install",
+    "download": "Download",
+    "share": "Share",
+    "ok": "OK",
+    "open": "Open"
+  },
+  "updateDialog": {
+    "title": "New Version Available: {version}",
+    "body": "Release Notes:",
+    "updateNow": "Update Now",
+    "later": "Remind Me Later",
+    "ignore": "Don't remind me again for this version"
+  },
+  "resourceType": {
+    "quickapp": "Quick App",
+    "watchface": "Watch Face",
+    "firmware": "Firmware"
+  },
+  "installTask": {
+    "watchface": {
+      "description": "Local watch face file"
+    },
+    "thirdPartyApp": {
+      "description": "Local third-party app"
+    },
+    "firmware": {
+      "description": "Local firmware file"
+    }
+  },
+  "banner": {
+    "loadFailed": {
+      "title": "Failed to load banners!"
+    },
+    "noBanners": {
+      "title": "No Banners...",
+      "description": "Network issue?"
+    },
+    "loading": "Loading..."
+  },
+  "modifyWatchfaceDialog": {
+    "title": "Modify Watch Face ID",
+    "placeholder": "9 to 12 digit number"
+  },
+  "plugin": {
+    "noPluginsInstalled": "No plugins installed",
+    "noFeatures": "This plugin has no features",
+    "storeEnd": "That's all...❤",
+    "loading": "Loading...",
+    "detailTitle": "Plugin Details",
+    "searchPlaceholder": "Search for plugins",
+    "import": "Import Plugin",
+    "tabs": {
+      "installed": "Installed",
+      "market": "Marketplace",
+      "features": "Features",
+      "details": "Details"
+    },
+    "details": {
+      "author": "Author:",
+      "website": "Website:",
+      "version": "Version:",
+      "apiLevel": "API Level:",
+      "permissions": "Permissions:"
+    },
+    "uninstallPrompt": {
+      "title": "Uninstall Plugin",
+      "body": "Are you sure you want to uninstall {pluginName}?",
+      "primary": "Uninstall",
+      "secondary": "Close"
+    },
+    "restartPrompt": {
+      "title": "Restart Required",
+      "body": "All plugin changes require an application restart to take effect. When you click 'Restart Now', the application will close. Please reopen it manually.",
+      "primary": "Restart Now",
+      "secondary": "Dismiss"
+    }
+  },
+  "device": {
+    "authkeyPrompt": "Please enter Authkey",
+    "connectFailed": "Connection failed",
+    "authkeyPlaceholder": "Enter device AuthKey here",
+    "actions": {
+      "delete": "Delete Device",
+      "disconnect": "Disconnect",
+      "shareQR": "Share via QR Code",
+      "qrResizeHint": "Click to resize",
+      "qrTitle": "Device QR Code: "
+    },
+    "disconnected": "Disconnected",
+    "connected": "Connected",
+    "charging": "(Charging)",
+    "lastChargePrefix": " Last charged ",
+    "lastChargeSuffix": " ago",
+    "reconnect": "Reconnect",
+    "reconnectFailed": "Last connection failed, please go to the switch device page to reconnect",
+    "switch": "Switch Device",
+    "notConnected": "Device not connected",
+    "connect": "Connect Device",
+    "networkProxyInfo": "AstroBox has proxied network requests for your device",
+    "features": {
+      "installApp": "Install Quick App",
+      "installAppDesc": "Select a quick app package to install on your device",
+      "installWatchface": "Install Watch Face",
+      "installWatchfaceDesc": "Select a watch face file to install on your device",
+      "installFirmware": "Install Firmware",
+      "installFirmwareDesc": "Select a system firmware to install on your device",
+      "manageApps": "Quick App Management",
+      "manageAppsDesc": "Manage quick apps on your device",
+      "manageWatchfaces": "Watch Face Management",
+      "manageWatchfacesDesc": "Manage watch faces on your device",
+      "deviceInfo": "Device Information",
+      "deviceInfoDesc": "View detailed information about this device"
+    }
+  },
+  "openToPageDialog": {
+    "title": "Go to Page",
+    "placeholder": "Enter page name"
+  },
+  "providerDialog": {
+    "title": "Community Source Status"
+  },
+  "queue": {
+    "title": "Queue",
+    "downloadQueue": "Download Queue",
+    "installQueue": "Install Queue",
+    "noTasks": "No tasks in the queue",
+    "titleShort": "Queue",
+    "viewTasks": "View Tasks",
+    "taskQueue": "Task Queue"
+  },
+  "loginDialog": {
+    "title": "Login to Mi Account",
+    "description": "Log in with your Mi Account to sync your paired devices",
+    "usernamePlaceholder": "Username/Phone/Mi Account ID",
+    "passwordPlaceholder": "Password",
+    "saveCredentials": "Save username and password",
+    "loggingIn": "Logging in",
+    "login": "Login",
+    "emptyError": "Username or password cannot be empty!",
+    "2fa": {
+      "title": "Two-Factor Authentication Required",
+      "body": "Your account requires two-factor authentication. Please click 'OK' to proceed in your browser. This will involve two redirects. After the page shows 'ok', please return to AstroBox and try logging in again."
+    }
+  },
+  "permission": {
+    "ble": {
+      "required": "You must grant AstroBox Bluetooth permissions to use all features. Please allow AstroBox to use the \"Nearby devices\" permission and restart the app."
+    }
+  },
+  "connect": {
+    "failed": "Connection failed",
+    "handshakeFailed": "Handshake failed",
+    "authFailed": "AuthKey error or backend issue. Please try restarting the app and then try again."
+  },
+  "settings": {
+    "title": "Settings",
+    "general": {
+      "title": "General",
+      "reduceAnimation": "Reduce Motion",
+      "reduceAnimationDesc": "Recommended for WebKit users to prevent screen shaking.",
+      "language": "Language",
+      "languageDesc": "Select the language for AstroBox to display."
+    },
+    "tools": {
+      "title": "Mysterious Tools",
+      "unlockCode": "Calculate Unlock Code",
+      "unlockCodeDesc": "Calculate the unlock code to reset your device if you forget the password",
+      "dialogTitle": "Unlock Your Xiaomi Wearable",
+      "dialogUsage": "How to use",
+      "dialogUsageInfo": "On the forgotten password screen, press up-down-up-down-up-up-down-down to enter",
+      "result": "Result",
+      "mac": "MAC Address",
+      "sn": "SN Code",
+      "noticeTitle": "Disclaimer",
+      "noticeBody": "This tool is intended only for the original owner of the device to regain access under legitimate circumstances. Do not use it to crack, bypass, or illegally access any Xiaomi device you do not own. AstroBox and its developers are not responsible for any legal or ethical consequences arising from the misuse of this tool.",
+      "agree": "Yes, I have read and agree to the disclaimer.",
+      "calculate": "Calculate"
+    },
+    "account": {
+      "title": "Account",
+      "loginBBS": "Login to BandBBS",
+      "loginBBSDesc": "Log in to access resources from BandBBS",
+      "syncDevices": "Sync Devices",
+      "syncDevicesDesc": "Sync paired devices from Mi Fitness",
+      "bbsAccount": "BandBBS Account"
+    },
+    "install": {
+      "title": "Installation",
+      "sendInterval": "Packet Interval",
+      "sendIntervalDesc": "Interval for sending chunks during installation. Adjusting this may resolve some installation failures."
+    },
+    "source": {
+      "title": "Software Repos (Restart required)",
+      "officialCdn": "Official Repo CDN",
+      "officialCdnDesc": "Select the CDN address for the official repo"
+    },
+    "queue": {
+      "title": "Queue",
+      "autoInstall": "Auto Install",
+      "autoInstallDesc": "Automatically install after download is complete",
+      "dontClear": "Don't Clear Install Queue",
+      "dontClearDesc": "Do not clear the queue after installation for debugging purposes"
+    },
+    "about": {
+      "title": "About",
+      "aboutAstrobox": "About",
+      "aboutAstroboxDesc": "Detailed information about AstroBox",
+      "website": "Official Website",
+      "qq": "QQ Group",
+      "qqDesc": "Join the official AstroBox QQ group(920456907)",
+      "websiteDesc": "Visit the official AstroBox website",
+      "licences": "Open Source Licenses",
+      "licencesDesc": "View the open source licenses for AstroBox",
+      "disclaimer": "Disclaimer",
+      "disclaimerDesc": "View the disclaimer for AstroBox"
+    }
+  },
+  "licences": {
+    "title": "Open Source Licenses",
+    "intro": "The licenses for all software packages used in this project are listed below.",
+    "node": "Node.js Packages",
+    "crates": "Crates.io Packages",
+    "filter": "Filter",
+    "author": "Author:",
+    "license": "License:",
+    "description": "Description:",
+    "url": "URL:"
+  },
+  "bandbbs": {
+    "title": "BandBBS Account",
+    "uid": "UID:",
+    "purchased": "Purchased Resources",
+    "logout": "Logout",
+    "purchasedDescription": "Paid resources from BandBBS"
+  },
+  "iframe": {
+    "title": "Open Webpage"
+  },
+  "addDeviceFromQr": {
+    "title": "Device recognized"
+  },
+  "dragToPush": {
+    "title": "Release to install file",
+    "supportedFiles": "Supported files: Watchface, Quick App, AstroBox Plugin"
+  },
+  "onlineImage": {
+    "loadFailed": "Image failed to load"
+  },
+  "pluginStoreTest": {
+    "waiting": "Waiting for execution",
+    "success": "Operation successful",
+    "refreshAll": "Refresh All",
+    "pullPage": "Pull page",
+    "pullItem": "Pull item=test-plugin",
+    "downloadAndPackage": "Download and package item=test-plugin"
+  },
+  "productInfo": {
+    "about": "About this resource",
+    "update": "Update",
+    "updateDescription": "Optimize the stability and fluency of the watch face.",
+    "deviceRequirements": "Device Requirements",
+    "compatible": "This product is compatible with your",
+    "incompatible": "This product is not compatible with your",
+    "incompatibleSuffix": "",
+    "otherVersions": "Other device versions are also available.",
+    "inQueue": "In queue",
+    "copyLink": "Copy link",
+    "resizeQr": "Click to resize",
+    "viewOnBandBBS": "View on BandBBS"
+  },
+  "appManagement": {
+    "title": "Quick App Management",
+    "none": "No quick apps"
+  },
+  "deviceInfo": {
+    "title": "Device Information",
+    "notRealtime": "This page does not update in real-time",
+    "groups": {
+      "device": "Device Information",
+      "system": "System Information",
+      "status": "Device Status"
+    },
+    "fields": {
+      "name": "Name",
+      "address": "Address",
+      "authkey": "AuthKey",
+      "connectionType": "Connection Type",
+      "codename": "Codename",
+      "model": "Model",
+      "imei": "IMEI",
+      "firmware": "Firmware Version",
+      "serial": "Serial Number",
+      "battery": "Battery",
+      "chargeStatus": "Charging Status",
+      "lastCharge": "Last Charge"
+    }
+  },
+  "watchfaceManagement": {
+    "title": "Watch Face Management",
+    "none": "No watch faces"
+  },
+  "switchDevice": {
+    "title": "Select Device",
+    "getSavedFailed": "Failed to get saved devices!",
+    "scanAndAdd": "Scan and Add Device",
+    "scanFailed": "Device scan failed",
+    "scanNotFound": "No devices found nearby",
+    "savedDevices": "Connected Devices",
+    "noSavedDevices": "No connected devices yet"
+  },
+  "providerName": {
+    "official": "Official",
+    "bandbbs": "BandBBS"
+  }
+}

@@ -1,0 +1,72 @@
+.context {
+    display: flex;
+    flex: 1 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: stretch;
+    min-height: calc(100% - (16px * 2));
+}
+
+.listWarpper {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-self: stretch;
+    margin: 10px 0;
+}
+
+.listWarpper:first-of-type {
+    padding-right: 20px;
+    border-right: 1px solid color-mix(in srgb, var(--colorBrandBackgroundInverted) 15%, transparent);
+}
+
+.listWarpper:last-of-type {
+    padding-left: 20px;
+}
+
+.emptyInformation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 32px 0px;
+    justify-content: center;
+    height: fit-content;
+}
+
+.load {
+    height: 10%;
+}
+
+.linkedListTitle {
+    margin-left: 8px;
+}
+
+@media (min-width: 768px) {
+    .context {
+        flex-direction: row;
+    }
+
+    .emptyInformation {
+        padding: 32px 0px 72px 0px;
+        height: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .linkedListTitle {
+        display: none;
+    }
+
+    .listWarpper:last-of-type {
+        padding-left: 0;
+    }
+
+    .listWarpper:first-of-type {
+        height: fit-content;
+        flex: none;
+        border-right: none;
+        padding-right: 0px;
+        /* border-bottom: 1px solid color-mix(in srgb, var(--colorBrandBackgroundInverted) 15%, transparent); */
+    }
+}

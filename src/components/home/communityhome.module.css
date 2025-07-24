@@ -1,0 +1,189 @@
+.searchBar {
+    width: 80%;
+}
+.titlearea {
+    display: flex;
+    flex-direction: row;
+}
+
+.repoBtn {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.productTags {
+    background-color: var(--colorNeutralShadowKeyDarker);
+    backdrop-filter: blur(10px);
+    border-radius: var(--borderRadiusXLarge);
+    padding: 2px 7px;
+    font-size: 12px;
+    color: var(--colorBrandBackgroundInverted) !important;
+    font-weight: 500;
+}
+
+.productTagsSecondary {
+    font-weight: 500;
+    padding-right: 6px;
+}
+
+.productTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 6px 2px 12px 2px;
+    gap: 6px;
+}
+
+.cardButtons {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--borderRadiusXLarge) !important;
+    border: none !important;
+    background-color: var(--colorNeutralShadowKeyDarker) !important;
+    backdrop-filter: blur(10px);
+    font-weight: 500 !important;
+    font-size: var(--fontSizeBase300) !important;
+    padding: 6px var(--spacingHorizontalM) !important;
+    color: var(--colorBrandBackgroundInverted) !important;
+    box-shadow: 0 1px 8px var(--colorNeutralShadowKeyDarker) !important;
+}
+
+.cardButtons:hover {
+    box-shadow: 0 2px 8px var(--colorNeutralShadowKeyDarker) !important;
+}
+
+.cardButtons::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 75%;
+    height: 100%;
+    background: linear-gradient(to right,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.2) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    transform: skewX(-20deg);
+}
+
+.cardButtons:hover::before {
+    animation: shimmer 1s ease-in-out;
+}
+
+/* 流光动画 */
+@keyframes shimmer {
+    0% {
+        left: -75%;
+    }
+
+    100% {
+        left: 125%;
+    }
+}
+
+.cardForeImage {
+    position: absolute;
+    right: var(--fui-Card--size);
+}
+
+.CarouselNavButton {
+    opacity: 0.25;
+}
+
+.CarouselNavButton:hover {
+    background: transparent !important;
+    opacity: 1;
+    filter: grayscale(100%);
+}
+
+.CarouselNavButton:disabled {
+    display: none;
+}
+
+.watchfaceCardContainer {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: start;
+}
+
+@media (max-width: 860px) {
+    .CarouselBanner {
+        max-width: calc(100vw - 32px);
+        width: 100%;
+    }
+
+    .card {
+        max-width: calc(100vw - 32px);
+        min-width: unset;
+        width: 100%;
+    }
+
+    .cardForeImage {
+        width: 200px;
+        right: 10px;
+    }
+
+    .cardContent {
+        padding-left: 24px;
+        max-width: calc(100% - 210px);
+    }
+}
+
+@media (max-width: 640px) {
+    .cardForeImage {
+        width: 196px;
+    }
+}
+
+@media (max-width: 480px) {
+    .CarouselBanner {
+        width: calc(100vw - 32px);
+        min-width: calc(100vw - 32px);
+        max-width: calc(100vw - 32px);
+    }
+
+    .card {
+        aspect-ratio: 2 / 2;
+        width: calc(100vw - 32px);
+        min-width: unset;
+    }
+
+    .cardContent {
+        width: 100%;
+        max-width: unset;
+        box-sizing: border-box;
+    }
+
+    .cardMain {
+        display: flex;
+        align-items: center;
+        flex-direction: column-reverse;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        padding: 0;
+    }
+
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    max-width: 748px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.carouselContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

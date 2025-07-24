@@ -1,0 +1,39 @@
+.cardButton {
+    box-shadow: none !important;
+    background-color: var(--cardbackground) !important;
+    transition: background-color 0.1s ease-in-out, transform 0.1s ease-in-out;
+    border-radius: var(--borderRadiusXLarge) !important;
+}
+
+.cardButton:hover {
+    background-color: var(--cardbackgroundHover) !important;
+    transform: scale3d(1.01, 1.01, 1.01)
+}
+
+.cardButton[aria-disabled="true"] {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed !important;
+}
+
+.actionSlot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.caption {
+    opacity: 0.7;
+}
+
+@media (max-width: 512px) {
+    .body {
+        font-size: 15px !important;
+        line-height: 1.4 !important;
+    }
+
+    .caption {
+        font-size: 13px !important;
+        line-height: 1.4 !important;
+    }
+}

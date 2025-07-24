@@ -1,0 +1,53 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 14px;
+    align-self: stretch;
+    z-index: 2;
+    margin: 10px 0;
+    margin-bottom: 0px;
+    border-radius: 4px;
+    background:color-mix(in oklch,var(--colorNeutralBackground2), transparent 20%);
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.08);
+}
+.header{
+    font-size: 20px;
+    font-weight: 520;
+}
+.description{
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    overflow-wrap: break-word;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    font-size: 14px;
+    font-weight: 520;
+    color: rgba(255, 255, 255, 0.75);
+}
+.description::-webkit-scrollbar {
+    display: none;
+}
+.progressLabel{
+    display: flex;
+    width: max;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+}
+.progressDescription{
+    font-size: 16px;
+    font-weight: 520;
+    color: #FFFFFF;
+}
+.progress{
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+}
+.progressContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}

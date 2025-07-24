@@ -1,0 +1,26 @@
+.LinkedSubtitle {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    color: var(--colorNeutralForeground1);
+    padding: 4px 0px 6px 0px;
+    transition: all 0.2s var(--curveDecelerateMid);
+    font-weight: var(--fontWeightMedium) !important;
+    border-radius: var(--borderRadiusLarge);
+}
+
+.LinkedSubtitle:hover {
+    color: var(--colorBrandForeground2);
+    padding: 4px 6px 6px 10px;
+    background-color: var(--cardbackground);
+}
+
+.icon {
+    color: var(--colorBrandForeground2);
+    transition: all 0.2s var(--curveDecelerateMid);
+    margin-bottom: -2px;
+}
+
+.LinkedSubtitle:hover .icon {
+    color: var(--colorBrandForeground2Hover);
+}

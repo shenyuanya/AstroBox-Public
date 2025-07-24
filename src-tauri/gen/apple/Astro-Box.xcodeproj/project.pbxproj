@@ -1,0 +1,707 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 63;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0897D22CFADB5754FFB73B0A /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0902A2F1585B1D638E8A1C6E /* WebKit.framework */; };
+		0DA11057C2B623BA818844D5 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = E3F2E08994156CC24E9FB240 /* main.mm */; };
+		1AD8A4786D92D0CE7B355783 /* libapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A5D26014753D02168C65EBF /* libapp.a */; };
+		2139D8A44816D9AE639C5B48 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA1E33C0C36A287EA79FE27 /* Metal.framework */; };
+		420452CD2DFDA49F00390454 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 420452CC2DFDA49F00390454 /* CoreBluetooth.framework */; };
+		49AC0B7372E584CE3A334EAE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 017495C016AE3735556E6EF6 /* UIKit.framework */; };
+		6A39F2D238FF67AAD95635C6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5575023B7E2BFCA615EC869 /* CoreGraphics.framework */; };
+		8D7EB3E6F9F2D60AF28E12B7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F120BB7754A5C43CD55EC9 /* Security.framework */; };
+		9437723389B5A4D44CA90986 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1218A10B32C7F9BD88986E84 /* MetalKit.framework */; };
+		A332E04736D2E29B3DD8001C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98A4C595C55EFFF6CE3335C6 /* QuartzCore.framework */; };
+		AE269EC0212C44A804EB4F86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BB76B2D7D7C5DC2592A24A6 /* Assets.xcassets */; };
+		B95B8CC2923618FA0C75539F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 581D0A27ACFAAC787D054892 /* LaunchScreen.storyboard */; };
+		ED365AF861E7E564081297B4 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = D1E392041523F6D005B06795 /* assets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		000E1738E81300EE8B6633A3 /* packet.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = packet.rs; sourceTree = "<group>"; };
+		017495C016AE3735556E6EF6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		018E289DE72E52335D814809 /* mass.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = mass.rs; sourceTree = "<group>"; };
+		040CB71631D12F3E5E8CF697 /* Astro-Box_iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Astro-Box_iOS.entitlements"; sourceTree = "<group>"; };
+		0522FE098FEB08842C7FC3AE /* AstroBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AstroBox.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		07BAF441A4DAC2283293C78C /* wear_nfc.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = wear_nfc.rs; sourceTree = "<group>"; };
+		0902A2F1585B1D638E8A1C6E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		0DDD334892D83C208695B0AC /* wear_lpa.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = wear_lpa.rs; sourceTree = "<group>"; };
+		0F05434293AFCAAAD06ED543 /* hello.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = hello.rs; sourceTree = "<group>"; };
+		1218A10B32C7F9BD88986E84 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
+		161B5903FA1B8D8D6A1D25D5 /* wear_factory.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = wear_factory.rs; sourceTree = "<group>"; };
+		16BE655489E3888A406D2348 /* device.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = device.rs; sourceTree = "<group>"; };
+		1882C2A7140ABEB6EDBFB216 /* mod.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = mod.rs; sourceTree = "<group>"; };
+		19519B1D17F3DAAFDD2C151A /* bt.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = bt.rs; sourceTree = "<group>"; };
+		1AA1E33C0C36A287EA79FE27 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		1D3EE458F0C076B712AD7703 /* packet.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = packet.rs; sourceTree = "<group>"; };
+		1EB634725EE4B00C412B75D1 /* models.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = models.rs; sourceTree = "<group>"; };
+		21888F9DE53429F1DBFD35A8 /* device.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = device.rs; sourceTree = "<group>"; };
+		21E69AD7543CE6DFE2E239B7 /* protocol.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = protocol.rs; sourceTree = "<group>"; };
+		23C0FB5A0A3511B6A66EA324 /* lib.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = lib.rs; sourceTree = "<group>"; };
+		25D263586B27BA8A8B655AF9 /* aesctr.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = aesctr.rs; sourceTree = "<group>"; };
+		27CCC51E76D54B92F1947535 /* utils.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = utils.rs; sourceTree = "<group>"; };
+		2BB76B2D7D7C5DC2592A24A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2C0960B9AB0199409CF347E3 /* descriptor.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = descriptor.rs; sourceTree = "<group>"; };
+		2D545F67183C23F6904FD6C1 /* buildinfo.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = buildinfo.rs; sourceTree = "<group>"; };
+		2EA599B8AA07415F52A642B4 /* bleuuids.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = bleuuids.rs; sourceTree = "<group>"; };
+		326E3DDE932CEA693C077183 /* frontapi.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = frontapi.rs; sourceTree = "<group>"; };
+		3395DDB36734C1A45E8DFCCE /* wear_account.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = wear_account.rs; sourceTree = "<group>"; };
+		346EE03EBC2AF4DA15231C6E /* wear_thirdparty_app.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = wear_thirdparty_app.rs; sourceTree = "<group>"; };
+		36822CCE4EB5A6AE439515EB /* frontmodels.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = frontmodels.rs; sourceTree = "<group>"; };
+		3E3658AB4468F82C02FFD374 /* wear_watch_face.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = wear_watch_face.rs; sourceTree = "<group>"; };
+		3F9BF88C6364E965F851AD40 /* wear_stock.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = wear_stock.rs; sourceTree = "<group>"; };
+		4184FB4C8C2A9DDD9F0613F3 /* bindings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bindings.h; sourceTree = "<group>"; };
+		420452CC2DFDA49F00390454 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		476CE2A7B377B2B1CB5F9397 /* config.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = config.rs; sourceTree = "<group>"; };
+		483AD26BF2A1049DF300D61B /* fs.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = fs.rs; sourceTree = "<group>"; };
+		4C3ACD11B1E9E3EE9148F91E /* network.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = network.rs; sourceTree = "<group>"; };
+		4C4E49E9E976F9A9633C35DD /* watchface.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = watchface.rs; sourceTree = "<group>"; };
+		5247554A3C4924857FAC333B /* firmware.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = firmware.rs; sourceTree = "<group>"; };
+		565C420687D3BA0C636C86DD /* wear_gnss.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = wear_gnss.rs; sourceTree = "<group>"; };
+		581D0A27ACFAAC787D054892 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5B27E0DD9D51B8A34F1D466F /* aesccm.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = aesccm.rs; sourceTree = "<group>"; };
+		5CD4B2520C5B88426D17C0DB /* wear_media.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = wear_media.rs; sourceTree = "<group>"; };
+		640E972AEAD82506A7A8CADD /* btrecv.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = btrecv.rs; sourceTree = "<group>"; };
+		66E53AF653E70A62007653E3 /* wear_clock.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = wear_clock.rs; sourceTree = "<group>"; };
+		67BDFB3C9A0B6EB1AB1AA98D /* device.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = device.rs; sourceTree = "<group>"; };
+		712AA61D05886D775FA3C42D /* plugin.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = plugin.rs; sourceTree = "<group>"; };
+		71A39FCC916768AC263C0776 /* manifest.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = manifest.rs; sourceTree = "<group>"; };
+		756F76F193596D1DA39E77C5 /* lifecycle.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = lifecycle.rs; sourceTree = "<group>"; };
+		7793A5CF9CF0C88148DE508E /* wear_interconnection.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = wear_interconnection.rs; sourceTree = "<group>"; };
+		7850F74FE9392E40C9E6A47F /* wear_common.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = wear_common.rs; sourceTree = "<group>"; };
+		78FE2702705153285BDBA7D7 /* wear_calendar.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = wear_calendar.rs; sourceTree = "<group>"; };
+		7A5D26014753D02168C65EBF /* libapp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libapp.a; sourceTree = "<group>"; };
+		85E05A35E6A2ED69082A9521 /* manager.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = manager.rs; sourceTree = "<group>"; };
+		8E241676AEAE5D37D7403597 /* miwear.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = miwear.rs; sourceTree = "<group>"; };
+		95F120BB7754A5C43CD55EC9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		967B0A79A22CAF56A69E7E71 /* timers.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = timers.rs; sourceTree = "<group>"; };
+		98A4C595C55EFFF6CE3335C6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9A8FBFFC36256EB73D3EC1E5 /* wear_market.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = wear_market.rs; sourceTree = "<group>"; };
+		9B44C1DCDDE41B63DF7C0CA8 /* protocol.serde.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = protocol.serde.rs; sourceTree = "<group>"; };
+		9F4D335E8826EACE3CB07C95 /* wear_notification.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = wear_notification.rs; sourceTree = "<group>"; };
+		A6E075FCBB9EBE5CB5ACD178 /* wear.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = wear.rs; sourceTree = "<group>"; };
+		A896ABA8922E131316E88889 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B00181375BC52A4F720702AB /* nanopb.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = nanopb.rs; sourceTree = "<group>"; };
+		B207B6804CCF5592C9B17209 /* logger.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = logger.rs; sourceTree = "<group>"; };
+		B3F47B58378968C3EDAB967A /* mod.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = mod.rs; sourceTree = "<group>"; };
+		B4021B7A14CA51469546ACF6 /* wear_contact.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = wear_contact.rs; sourceTree = "<group>"; };
+		B48B5BECDDCF0AF4382340AB /* main.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.rs; sourceTree = "<group>"; };
+		B5575023B7E2BFCA615EC869 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C1BBF39FC9A90B5F37CC9329 /* globals.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = globals.rs; sourceTree = "<group>"; };
+		C2EE655C282B7E0B2CF62E25 /* thirdpartyapp.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = thirdpartyapp.rs; sourceTree = "<group>"; };
+		C894615BAF2DE2110A86B3F6 /* wear_aivs.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = wear_aivs.rs; sourceTree = "<group>"; };
+		CC115DEB4C1B02E7E7CF3628 /* wear_alexa.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = wear_alexa.rs; sourceTree = "<group>"; };
+		CC38F92B5F7D21478E98CB3F /* auth.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = auth.rs; sourceTree = "<group>"; };
+		D1E392041523F6D005B06795 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = SOURCE_ROOT; };
+		D52706B0235E205F3763FBAC /* wear_fitness.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = wear_fitness.rs; sourceTree = "<group>"; };
+		D8C3BCF3450AED609E543608 /* apis.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = apis.rs; sourceTree = "<group>"; };
+		DE5DCDD1C597AA0665FC54D8 /* mod.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = mod.rs; sourceTree = "<group>"; };
+		E3F2E08994156CC24E9FB240 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		E42E090466B2728DF524E7D3 /* wear_system.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = wear_system.rs; sourceTree = "<group>"; };
+		E773F89C6C0DDF5FF4ED3FD8 /* console.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = console.rs; sourceTree = "<group>"; };
+		E950894ED2C85C9E91B444AA /* plugcfg.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = plugcfg.rs; sourceTree = "<group>"; };
+		EA7D416FAF4CA71A5BF52E15 /* wear_mass.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = wear_mass.rs; sourceTree = "<group>"; };
+		F0545DAAA2803FA350FECBDA /* wear_weather.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = wear_weather.rs; sourceTree = "<group>"; };
+		F138B2D0F61716701E2588B4 /* pluginsystem.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = pluginsystem.rs; sourceTree = "<group>"; };
+		F1DF27B750244E2ED6E00B92 /* network_stack.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = network_stack.rs; sourceTree = "<group>"; };
+		F4EBDF3E9E68C6D38DD922F2 /* resutils.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = resutils.rs; sourceTree = "<group>"; };
+		F64D470D47B3D539FF0A6444 /* event.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = event.rs; sourceTree = "<group>"; };
+		F869145D439940E0BF49C6E7 /* tools.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = tools.rs; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3C1BF88CC259D807674781FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AD8A4786D92D0CE7B355783 /* libapp.a in Frameworks */,
+				420452CD2DFDA49F00390454 /* CoreBluetooth.framework in Frameworks */,
+				6A39F2D238FF67AAD95635C6 /* CoreGraphics.framework in Frameworks */,
+				2139D8A44816D9AE639C5B48 /* Metal.framework in Frameworks */,
+				9437723389B5A4D44CA90986 /* MetalKit.framework in Frameworks */,
+				A332E04736D2E29B3DD8001C /* QuartzCore.framework in Frameworks */,
+				8D7EB3E6F9F2D60AF28E12B7 /* Security.framework in Frameworks */,
+				49AC0B7372E584CE3A334EAE /* UIKit.framework in Frameworks */,
+				0897D22CFADB5754FFB73B0A /* WebKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		28701C4FAE4B6C3C467E8C96 /* bt */ = {
+			isa = PBXGroup;
+			children = (
+				21888F9DE53429F1DBFD35A8 /* device.rs */,
+			);
+			path = bt;
+			sourceTree = "<group>";
+		};
+		2C8CE2C65908A03693DA5FF3 = {
+			isa = PBXGroup;
+			children = (
+				D1E392041523F6D005B06795 /* assets */,
+				2BB76B2D7D7C5DC2592A24A6 /* Assets.xcassets */,
+				581D0A27ACFAAC787D054892 /* LaunchScreen.storyboard */,
+				2FB289715CE1DEB4403E7E6E /* Astro-Box_iOS */,
+				5461A29CB92C21AB72A5E590 /* Externals */,
+				7CD46AC2A2037A86DC1F6B12 /* Sources */,
+				8537D521D2DCF2429DA4D832 /* src */,
+				C66F466852A903C503F8E83C /* Frameworks */,
+				58E7C510317B1FFEAD5AB8F8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2FB289715CE1DEB4403E7E6E /* Astro-Box_iOS */ = {
+			isa = PBXGroup;
+			children = (
+				040CB71631D12F3E5E8CF697 /* Astro-Box_iOS.entitlements */,
+				A896ABA8922E131316E88889 /* Info.plist */,
+			);
+			path = "Astro-Box_iOS";
+			sourceTree = "<group>";
+		};
+		3F94CB174856CDF2D2D992EE /* pluginsystem */ = {
+			isa = PBXGroup;
+			children = (
+				D8C3BCF3450AED609E543608 /* apis.rs */,
+				E773F89C6C0DDF5FF4ED3FD8 /* console.rs */,
+				C1BBF39FC9A90B5F37CC9329 /* globals.rs */,
+				85E05A35E6A2ED69082A9521 /* manager.rs */,
+				71A39FCC916768AC263C0776 /* manifest.rs */,
+				712AA61D05886D775FA3C42D /* plugin.rs */,
+				967B0A79A22CAF56A69E7E71 /* timers.rs */,
+				27CCC51E76D54B92F1947535 /* utils.rs */,
+				CCBB84D13AB0ACEA3D76F8EF /* apis */,
+			);
+			path = pluginsystem;
+			sourceTree = "<group>";
+		};
+		460409A7E40A2B2F6C924099 /* mass */ = {
+			isa = PBXGroup;
+			children = (
+				1D3EE458F0C076B712AD7703 /* packet.rs */,
+			);
+			path = mass;
+			sourceTree = "<group>";
+		};
+		5461A29CB92C21AB72A5E590 /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Externals;
+			sourceTree = "<group>";
+		};
+		58E7C510317B1FFEAD5AB8F8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0522FE098FEB08842C7FC3AE /* AstroBox.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5EAADA47BB5ECD2CB727482A /* Astro-Box */ = {
+			isa = PBXGroup;
+			children = (
+				E3F2E08994156CC24E9FB240 /* main.mm */,
+				F0B00969ECA043AC90DF902D /* bindings */,
+			);
+			path = "Astro-Box";
+			sourceTree = "<group>";
+		};
+		70C55CE012236FB2A1A6D987 /* device */ = {
+			isa = PBXGroup;
+			children = (
+				CC38F92B5F7D21478E98CB3F /* auth.rs */,
+				5247554A3C4924857FAC333B /* firmware.rs */,
+				0F05434293AFCAAAD06ED543 /* hello.rs */,
+				018E289DE72E52335D814809 /* mass.rs */,
+				F4EBDF3E9E68C6D38DD922F2 /* resutils.rs */,
+				C2EE655C282B7E0B2CF62E25 /* thirdpartyapp.rs */,
+				4C4E49E9E976F9A9633C35DD /* watchface.rs */,
+				460409A7E40A2B2F6C924099 /* mass */,
+			);
+			path = device;
+			sourceTree = "<group>";
+		};
+		7CD46AC2A2037A86DC1F6B12 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				5EAADA47BB5ECD2CB727482A /* Astro-Box */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		8537D521D2DCF2429DA4D832 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				19519B1D17F3DAAFDD2C151A /* bt.rs */,
+				2D545F67183C23F6904FD6C1 /* buildinfo.rs */,
+				476CE2A7B377B2B1CB5F9397 /* config.rs */,
+				326E3DDE932CEA693C077183 /* frontapi.rs */,
+				36822CCE4EB5A6AE439515EB /* frontmodels.rs */,
+				483AD26BF2A1049DF300D61B /* fs.rs */,
+				23C0FB5A0A3511B6A66EA324 /* lib.rs */,
+				B207B6804CCF5592C9B17209 /* logger.rs */,
+				B48B5BECDDCF0AF4382340AB /* main.rs */,
+				8E241676AEAE5D37D7403597 /* miwear.rs */,
+				F138B2D0F61716701E2588B4 /* pluginsystem.rs */,
+				F869145D439940E0BF49C6E7 /* tools.rs */,
+				28701C4FAE4B6C3C467E8C96 /* bt */,
+				EBF81A01CE1D260669174606 /* cli */,
+				DA308112FD088111774C27F3 /* crypto */,
+				C459D95F6BC49761D9829CDD /* miwear */,
+				DE78197D503C0E82712173AC /* pb */,
+				3F94CB174856CDF2D2D992EE /* pluginsystem */,
+			);
+			name = src;
+			path = ../../src;
+			sourceTree = "<group>";
+		};
+		C459D95F6BC49761D9829CDD /* miwear */ = {
+			isa = PBXGroup;
+			children = (
+				2EA599B8AA07415F52A642B4 /* bleuuids.rs */,
+				640E972AEAD82506A7A8CADD /* btrecv.rs */,
+				16BE655489E3888A406D2348 /* device.rs */,
+				F1DF27B750244E2ED6E00B92 /* network_stack.rs */,
+				000E1738E81300EE8B6633A3 /* packet.rs */,
+				70C55CE012236FB2A1A6D987 /* device */,
+			);
+			path = miwear;
+			sourceTree = "<group>";
+		};
+		C66F466852A903C503F8E83C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				420452CC2DFDA49F00390454 /* CoreBluetooth.framework */,
+				B5575023B7E2BFCA615EC869 /* CoreGraphics.framework */,
+				7A5D26014753D02168C65EBF /* libapp.a */,
+				1AA1E33C0C36A287EA79FE27 /* Metal.framework */,
+				1218A10B32C7F9BD88986E84 /* MetalKit.framework */,
+				98A4C595C55EFFF6CE3335C6 /* QuartzCore.framework */,
+				95F120BB7754A5C43CD55EC9 /* Security.framework */,
+				017495C016AE3735556E6EF6 /* UIKit.framework */,
+				0902A2F1585B1D638E8A1C6E /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CCBB84D13AB0ACEA3D76F8EF /* apis */ = {
+			isa = PBXGroup;
+			children = (
+				67BDFB3C9A0B6EB1AB1AA98D /* device.rs */,
+				F64D470D47B3D539FF0A6444 /* event.rs */,
+				756F76F193596D1DA39E77C5 /* lifecycle.rs */,
+				1EB634725EE4B00C412B75D1 /* models.rs */,
+				4C3ACD11B1E9E3EE9148F91E /* network.rs */,
+				E950894ED2C85C9E91B444AA /* plugcfg.rs */,
+			);
+			path = apis;
+			sourceTree = "<group>";
+		};
+		DA308112FD088111774C27F3 /* crypto */ = {
+			isa = PBXGroup;
+			children = (
+				5B27E0DD9D51B8A34F1D466F /* aesccm.rs */,
+				25D263586B27BA8A8B655AF9 /* aesctr.rs */,
+				1882C2A7140ABEB6EDBFB216 /* mod.rs */,
+			);
+			path = crypto;
+			sourceTree = "<group>";
+		};
+		DE78197D503C0E82712173AC /* pb */ = {
+			isa = PBXGroup;
+			children = (
+				2C0960B9AB0199409CF347E3 /* descriptor.rs */,
+				DE5DCDD1C597AA0665FC54D8 /* mod.rs */,
+				B00181375BC52A4F720702AB /* nanopb.rs */,
+				21E69AD7543CE6DFE2E239B7 /* protocol.rs */,
+				9B44C1DCDDE41B63DF7C0CA8 /* protocol.serde.rs */,
+				3395DDB36734C1A45E8DFCCE /* wear_account.rs */,
+				C894615BAF2DE2110A86B3F6 /* wear_aivs.rs */,
+				CC115DEB4C1B02E7E7CF3628 /* wear_alexa.rs */,
+				78FE2702705153285BDBA7D7 /* wear_calendar.rs */,
+				66E53AF653E70A62007653E3 /* wear_clock.rs */,
+				7850F74FE9392E40C9E6A47F /* wear_common.rs */,
+				B4021B7A14CA51469546ACF6 /* wear_contact.rs */,
+				161B5903FA1B8D8D6A1D25D5 /* wear_factory.rs */,
+				D52706B0235E205F3763FBAC /* wear_fitness.rs */,
+				565C420687D3BA0C636C86DD /* wear_gnss.rs */,
+				7793A5CF9CF0C88148DE508E /* wear_interconnection.rs */,
+				0DDD334892D83C208695B0AC /* wear_lpa.rs */,
+				9A8FBFFC36256EB73D3EC1E5 /* wear_market.rs */,
+				EA7D416FAF4CA71A5BF52E15 /* wear_mass.rs */,
+				5CD4B2520C5B88426D17C0DB /* wear_media.rs */,
+				07BAF441A4DAC2283293C78C /* wear_nfc.rs */,
+				9F4D335E8826EACE3CB07C95 /* wear_notification.rs */,
+				3F9BF88C6364E965F851AD40 /* wear_stock.rs */,
+				E42E090466B2728DF524E7D3 /* wear_system.rs */,
+				346EE03EBC2AF4DA15231C6E /* wear_thirdparty_app.rs */,
+				3E3658AB4468F82C02FFD374 /* wear_watch_face.rs */,
+				F0545DAAA2803FA350FECBDA /* wear_weather.rs */,
+				A6E075FCBB9EBE5CB5ACD178 /* wear.rs */,
+			);
+			path = pb;
+			sourceTree = "<group>";
+		};
+		EBF81A01CE1D260669174606 /* cli */ = {
+			isa = PBXGroup;
+			children = (
+				B3F47B58378968C3EDAB967A /* mod.rs */,
+			);
+			path = cli;
+			sourceTree = "<group>";
+		};
+		F0B00969ECA043AC90DF902D /* bindings */ = {
+			isa = PBXGroup;
+			children = (
+				4184FB4C8C2A9DDD9F0613F3 /* bindings.h */,
+			);
+			path = bindings;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8C4186049D36EE23B79644CD /* Astro-Box_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0C7B41EAC833875396BD3C5 /* Build configuration list for PBXNativeTarget "Astro-Box_iOS" */;
+			buildPhases = (
+				F6EFFA43BE30AB3DA136C2CD /* Build Rust Code */,
+				CD577ACF6B0859AC87D54BF6 /* Sources */,
+				9120F39128FEA7D9FB938FCC /* Resources */,
+				3C1BF88CC259D807674781FE /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Astro-Box_iOS";
+			packageProductDependencies = (
+			);
+			productName = "Astro-Box_iOS";
+			productReference = 0522FE098FEB08842C7FC3AE /* AstroBox.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C0661B18D4D1C0BE93800744 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+			};
+			buildConfigurationList = EE0BCBB9036F72D8062D4CEC /* Build configuration list for PBXProject "Astro-Box" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 2C8CE2C65908A03693DA5FF3;
+			minimizedProjectReferenceProxies = 1;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8C4186049D36EE23B79644CD /* Astro-Box_iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9120F39128FEA7D9FB938FCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE269EC0212C44A804EB4F86 /* Assets.xcassets in Resources */,
+				B95B8CC2923618FA0C75539F /* LaunchScreen.storyboard in Resources */,
+				ED365AF861E7E564081297B4 /* assets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F6EFFA43BE30AB3DA136C2CD /* Build Rust Code */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Build Rust Code";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/Externals/x86_64/${CONFIGURATION}/libapp.a",
+				"$(SRCROOT)/Externals/arm64/${CONFIGURATION}/libapp.a",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"/opt/homebrew/bin:$PATH\"\nnpm run -- tauri ios xcode-script -v --platform ${PLATFORM_DISPLAY_NAME:?} --sdk-root ${SDKROOT:?} --framework-search-paths \"${FRAMEWORK_SEARCH_PATHS:?}\" --header-search-paths \"${HEADER_SEARCH_PATHS:?}\" --gcc-preprocessor-definitions \"${GCC_PREPROCESSOR_DEFINITIONS:-}\" --configuration ${CONFIGURATION:?} ${FORCE_COLOR} ${ARCHS:?}\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CD577ACF6B0859AC87D54BF6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DA11057C2B623BA818844D5 /* main.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		364A4B37B2CAD68B59A72031 /* debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = debug;
+		};
+		802F4D2A95923B88D44F0AC0 /* debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ARCHS = (
+					arm64,
+					x86_64,
+				);
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Astro-Box_iOS/Astro-Box_iOS.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = G72GN8XJKH;
+				ENABLE_BITCODE = NO;
+				"EXCLUDED_ARCHS[sdk=iphoneos*]" = x86_64;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\".\"",
+				);
+				INFOPLIST_FILE = "Astro-Box_iOS/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "AstroBox";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=arm64]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Externals/arm64/$(CONFIGURATION)",
+					"$(SDKROOT)/usr/lib/swift",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=x86_64]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Externals/x86_64/$(CONFIGURATION)",
+					"$(SDKROOT)/usr/lib/swift",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = moe.astralsight.astrobox;
+				PRODUCT_NAME = "AstroBox";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64  x86_64";
+			};
+			name = debug;
+		};
+		93411AF4066D69414523A2B7 /* release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = release;
+		};
+		CA6B005170D3A30D01F83A30 /* release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ARCHS = (
+					arm64,
+					x86_64,
+				);
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Astro-Box_iOS/Astro-Box_iOS.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = G72GN8XJKH;
+				ENABLE_BITCODE = NO;
+				"EXCLUDED_ARCHS[sdk=iphoneos*]" = x86_64;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\".\"",
+				);
+				INFOPLIST_FILE = "Astro-Box_iOS/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "AstroBox";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=arm64]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Externals/arm64/$(CONFIGURATION)",
+					"$(SDKROOT)/usr/lib/swift",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=x86_64]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Externals/x86_64/$(CONFIGURATION)",
+					"$(SDKROOT)/usr/lib/swift",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = moe.astralsight.astrobox;
+				PRODUCT_NAME = "AstroBox";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64  x86_64";
+			};
+			name = release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EE0BCBB9036F72D8062D4CEC /* Build configuration list for PBXProject "Astro-Box" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				364A4B37B2CAD68B59A72031 /* debug */,
+				93411AF4066D69414523A2B7 /* release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = debug;
+		};
+		F0C7B41EAC833875396BD3C5 /* Build configuration list for PBXNativeTarget "Astro-Box_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				802F4D2A95923B88D44F0AC0 /* debug */,
+				CA6B005170D3A30D01F83A30 /* release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C0661B18D4D1C0BE93800744 /* Project object */;
+}

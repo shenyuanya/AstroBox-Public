@@ -1,0 +1,14 @@
+.device-connect-card{
+    margin-bottom: 5px!important;
+    box-shadow: none !important;
+    background: var(--cardbackground) !important;
+    transition: all 0.2s ease-in-out;
+    border-radius: var(--borderRadiusXLarge) !important;
+}
+.device-connect-card:hover {
+    background: var(--cardbackgroundHover);
+    transform: scale3d(1.02, 1.02, 1.02);
+}
+.active {
+    background: var(--colorBrandBackground2Hover) !important;
+}

@@ -1,0 +1,8 @@
+.accountInfo {
+    padding: 20px;
+}
+
+.headerSlot {
+    display: flex;
+    flex-direction: column;
+}

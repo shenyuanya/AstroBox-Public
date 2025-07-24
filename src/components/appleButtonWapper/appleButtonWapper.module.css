@@ -1,0 +1,9 @@
+.wrapper {
+    display: inline-block;
+    position: relative;
+}
+.overlay {
+    position: absolute;
+    display: flex;
+    z-index: 1;
+}

@@ -1,0 +1,182 @@
+.homeComp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: unset;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin: 0 auto;
+}
+
+/* @keyframes logoFade {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+} */
+
+.logoContainer {
+    position: relative;
+    height: 164px;
+    width: 268px;
+    overflow: visible;
+    margin-top: 24px;
+    margin-bottom: 48px;
+    /* position: sticky;
+    top: 70px;
+    z-index: -1;
+    animation: logoFade ease forwards;
+    animation-range-start: 30px;
+    animation-range-end: 110px;
+    animation-timeline: scroll(); */
+}
+
+.aboutContent {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.aboutContainer {
+    margin: 0 auto;
+    display: grid;
+    grid-auto-flow: row;
+    grid-auto-columns: 320px;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+}
+
+.version {
+    color: var(--colorScrollbarOverlay);
+    margin: 0;
+    font-size: 15px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.versionSection {
+    padding: var(--spacingVerticalL) var(--spacingHorizontalL);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: unset;
+    min-width: 10px;
+    gap: 4px;
+    border-radius: var(--borderRadiusXLarge);
+    background: var(--cardbackground);
+    justify-content: space-between;
+}
+
+.versionContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+.teamTitle {
+    font-size: 20px;
+}
+
+.teamSection {
+    padding: var(--spacingVerticalM) var(--spacingHorizontalM);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: unset;
+    min-width: 10px;
+    gap: 12px;
+    border-radius: var(--borderRadiusXLarge);
+    background: var(--cardbackground);
+}
+
+.teamContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px
+}
+
+.cardButton {
+    padding: var(--spacingVerticalL) var(--spacingHorizontalL);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: unset;
+    min-width: 10px;
+    border-radius: var(--borderRadiusXLarge);
+    background: var(--cardbackground);
+    justify-content: flex-start;
+    gap: 12px;
+    transition: background 0.1s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.cardButton:hover {
+    background: var(--cardbackgroundHover);
+    transform: scale3d(1.02, 1.02, 1.02)
+}
+
+.cardTitle {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+.caption {
+    font-size: var(--fontSizeBase200);
+    color: var(--colorScrollbarOverlay);
+    margin: 0;
+}
+
+.subtitle {
+    margin: 4px 0 0 4px;
+}
+
+.buildinfo {
+    margin: 0;
+    margin-top: auto;
+    width: 100%;
+    word-wrap: break-word;
+    word-break: break-all;
+    font-size: var(--fontSizeBase200);
+    color: var(--colorScrollbarOverlay);
+}
+
+.cardContainer {
+    width: 100%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    width: 100%;
+    padding: 4px;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 800px) {
+    .aboutContainer {
+        padding: 0 0 12px 0;
+    }
+
+    .aboutContainer {
+        grid-template-columns: 1fr;
+    }
+}

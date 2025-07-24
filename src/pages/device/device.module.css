@@ -1,0 +1,118 @@
+.homeComp {
+    max-height: calc(100% - (16px * 2));
+    margin: auto;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .homeComp {
+        flex-direction: row;
+    }
+}
+
+.deviceInfo {
+    display: flex;
+    min-height: 30%;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 12px;
+    padding: 32px 0 32px 0;
+    flex-direction: row;
+}
+
+.deviceFeatures {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 14px 0 20px 0;
+}
+
+.deviceIllustration {
+    max-width: 200px;
+    color: transparent;
+    height: 120px;
+    width: auto;
+}
+
+.featureBtn {
+    margin-top: 5px;
+    width: calc(100% - 10px);
+}
+
+/* .featureBtn[disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+} */
+
+.deviceStateContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 4px 8px;
+    padding: 0 14px;
+    flex-wrap: wrap;
+}
+
+.dividerLine {
+    height: 10px;
+    width: 2px;
+    background: var(--colorNeutralForeground1);
+    border-radius: 2px;
+    opacity: 0.5;
+}
+
+.batteryIcon {
+    height: 8px;
+    width: 16px;
+    /* border: 2px solid var(--colorNeutralForeground1); */
+    box-shadow: 0 0 0 1.5px var(--colorNeutralForeground1);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    padding: 1px;
+    margin-left: 1px;
+}
+
+.batteryIcon::after {
+    content: "";
+    border-radius: 0px 1px 1px 0;
+    ;
+    background: var(--colorNeutralForeground1);
+    height: 6px;
+    width: 3px;
+    position: absolute;
+    margin-left: 18px;
+}
+
+.batteryIconInner {
+    height: 100%;
+    width: 100%;
+    border-radius: 1px;
+    background: var(--colorNeutralForeground1);
+}
+
+@media (min-width: 768px) {
+    .deviceInfo {
+        width: 50%;
+        height: 100%;
+        padding: 32px 0 72px 0;
+    }
+
+    .deviceFeatures {
+        width: 50%;
+        height: 100%;
+        padding: 32px 0 72px 0;
+        justify-content: center;
+    }
+
+    .deviceIllustration {
+        width: 150px;
+        color: transparent;
+        height: 150px;
+    }
+}

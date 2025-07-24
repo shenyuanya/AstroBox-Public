@@ -1,0 +1,116 @@
+.dialogSurface {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+}
+
+.dialogTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.dialogCloseButton {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+.unlockResult {
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    padding: 8px;
+    background-color: var(--colorNeutralBackground1Pressed);
+    min-height: 96px;
+}
+
+.unlockDigits {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.digitBox {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--colorNeutralStroke2);
+    border-radius: 4px;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.fieldContainer {
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 16px;
+    width: 100%;
+}
+
+.actionsContainer {
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 16px;
+}
+
+.bottomRow {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.checkbox {
+    margin-left: -8px;
+    margin-bottom: -10px;
+}
+
+.warningContainer {
+    display: flex;
+    width: 100%;
+    gap: 4px;
+    font-size: 16px;
+    margin-bottom: 4px;
+    color: var(--colorStatusDangerForeground3);
+}
+
+@media(max-width: 500px) {
+    .unlockResult {
+        min-height: 138px;
+    }
+
+    .unlockDigits {
+        max-width: calc(5 * 38px + 4 * 4px);
+        margin: 0 auto;
+    }
+
+    .actionsContainer {
+        gap: 6px;
+    }
+
+    .button {
+        width: calc(100% + 8px);
+        margin: 0 -4px;
+    }
+
+    .checkbox {
+        margin-bottom: 0;
+    }
+}
