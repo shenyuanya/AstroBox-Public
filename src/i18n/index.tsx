@@ -2,9 +2,10 @@
 import { createContext, ReactNode, useContext, useState } from 'react';
 import en_US from './en.json';
 import zh_CN from './zh.json';
+import zh_HK from './zh_HK.json';
 import zh_HX from './zh_HX.json';
 
-const resources = { zh_CN, en_US, zh_HX } as const;
+const resources = { zh_CN, en_US, zh_HK, zh_HX } as const;
 type Lang = keyof typeof resources;
 
 const STORAGE_KEY = "language";
@@ -22,6 +23,7 @@ const I18nContext = createContext<I18nContextProps>({
   setLang: () => {},
   t: (key) => (key ?? ''),
 });
+
 function getDefaultLang() {
   try {
     if (typeof localStorage !== 'undefined') {
@@ -39,6 +41,7 @@ function getDefaultLang() {
   }
   return 'en_US';
 }
+
 export function I18nProvider({ children }: { children: ReactNode }) {
   const [lang, _setLang] = useState<Lang>(getDefaultLang());
 
