@@ -58,7 +58,8 @@
     "ok": "诺",
     "open": "启牖",
     "download": "纳",
-    "share": "共飨"
+    "share": "共飨",
+    "fail": "功隳"
   },
   "updateDialog": {
     "title": "见新章 {version}",
@@ -261,6 +262,8 @@
       "title": "本末",
       "aboutAstrobox": "本末",
       "aboutAstroboxDesc": "AstroBox细目",
+      "openlog": "启录匮",
+      "openlogDesc": "启匮览簿，以察程式行迹",
       "website": "云庐",
       "websiteDesc": "访AstroBox云庐",
       "qq": "QQ阁",
