@@ -2,8 +2,9 @@
 import { createContext, ReactNode, useContext, useState } from 'react';
 import en_US from './en.json';
 import zh_CN from './zh.json';
+import zh_HK from './zh_HK.json';
 
-const resources = { zh_CN, en_US } as const;
+const resources = { zh_CN, en_US, zh_HK } as const;
 type Lang = keyof typeof resources;
 
 const STORAGE_KEY = "language";
