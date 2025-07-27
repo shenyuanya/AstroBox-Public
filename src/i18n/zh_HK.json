@@ -74,8 +74,12 @@
     "firmware": "韌體"
   },
    "resourcePaidType": {
-    "paid": "應用程式內購買",
+    "paid": "需購買",
     "force_paid": "強制性收費"
+  },
+  "resourceCategory": {
+    "hidden_paid": "隱藏需購買嘅項目",
+    "hidden_force_paid": "隱藏強制性收費嘅項目"
   },
   "installTask": {
     "watchface": {
@@ -220,7 +224,10 @@
       "reduceAnimation": "減少動畫",
       "reduceAnimationDesc": "建議WebKit用戶開啟以防止畫面嘅震動。",
       "language": "語言",
-      "languageDesc": "揀AstroBox顯示嘅語言"
+      "languageDesc": "揀AstroBox顯示嘅語言",
+      "translateTeam": "翻譯貢獻者",
+      "debugWindow": "除錯視窗",
+      "debugWindowDesc": "顯示除錯視窗"
     },
     "tools": {
       "title": "奇妙嘅工具",
