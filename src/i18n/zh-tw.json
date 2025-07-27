@@ -72,6 +72,14 @@
     "watchface": "錶盤",
     "firmware": "韌體"
   },
+    "resourcePaidType": {
+    "paid": "需購買",
+    "force_paid": "強制性收費"
+  },
+  "resourceCategory": {
+    "hidden_paid": "隱藏需購買的項目",
+    "hidden_force_paid": "隱藏強制性收費的項目"
+  },
   "installTask": {
     "watchface": {
       "description": "本機錶盤檔案"
