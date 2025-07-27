@@ -75,12 +75,12 @@
   },
   "resourcePaidType": {
     "paid": "需购买",
-    "force_paid": "强制收费"
+    "force_paid": "强制性收费"
   },
   "resourceCategory": {
     "hidden_paid": "隐藏需购买的项目",
-    "force_paid": "隐藏强制收费的项目"
-  },
+    "hidden_force_paid": "隐藏强制性收费的项目"
+  }
   "installTask": {
     "watchface": {
       "description": "本地表盘文件"
