@@ -73,6 +73,14 @@
     "watchface": "晷仪",
     "firmware": "枢候"
   },
+  "resourcePaidType": {
+    "paid": "赋",
+    "force_paid": "强贡"
+  },
+  "resourceCategory": {
+    "hidden_paid": "隐赋",
+    "hidden_force_paid": "隐贡"
+  },
   "installTask": {
     "watchface": {
       "description": "本埠晷仪卷宗"
@@ -216,7 +224,10 @@
       "reduceAnimation": "敛动效",
       "reduceAnimationDesc": "荐webkit者启，以定帧",
       "language": "语言",
-      "languageDesc": "择AstroBox示文"
+      "languageDesc": "择AstroBox示文",
+      "translateTeam": "译林郎",
+      "debugWindow": "校牖",
+      "debugWindowDesc": "可昭校牖否？"
     },
     "tools": {
       "title": "玄工",
@@ -288,9 +299,11 @@
   "bandbbs": {
     "title": "米坛符",
     "uid": "UID：",
-    "purchased": "市得物",
     "logout": "退符",
-    "purchasedDescription": "米坛市廛之贵物"
+    "purchased": "市得物",
+    "enter_resource_id": "请书贵物符",
+    "resource_id_placeholder": "物符",
+    "query": "稽"
   },
   "iframe": {
     "title": "启云庐"
