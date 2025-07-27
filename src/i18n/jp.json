@@ -1,0 +1,371 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "device": "デバイス",
+    "plugin": "プラグイン",
+    "settings": "設定"
+  },
+  "disclaimer": {
+    "title": "免責事項",
+    "content": "AstroBox アプリケーション免責事項\n\n本ソフトウェア（以下「AstroBox」）を使用する前に、以下の免責事項をよくお読みいただき、内容を十分にご理解ください。AstroBoxのダウンロード、インストール、または使用を続けることは、本声明に記載されたすべての内容を読み、理解し、同意したことを意味し、本ソフトウェアの使用に伴うすべてのリスクと責任を自ら負うことに同意するものです。\n\n⸻\n\n一、ソフトウェアの属性について\n\nAstroBoxは、独立した開発者によって開発および公開されたサードパーティ製ツールアプリケーションであり、Xiaomiブランドのスマートウェアラブルデバイスにサードパーティリソース（文字盤、クイックアプリ、ファームウェアなど）をインストールするための便利なツールを提供することを目的としています。\n\n本ソフトウェアは、Xiaomi社およびその関連会社によって開発、承認、公開、またはサポートされたものではなく、Xiaomi社との間にいかなる従属関係、協力関係、代理関係、またはその他の法的関係も存在しません。Xiaomi社は、AstroBoxの機能、性能、安全性、または本ソフトウェアの使用に起因するいかなる結果についても責任を負いません。\n\n⸻\n\n二、ユーザー行動と責任\n\nAstroBoxが提供する機能には、デバイスシステムのカスタマイズ変更（リソースの置き換え、設定の調整、非公式コンテンツのインストールなど）が含まれる場合があります。これらの操作は、デバイスの正常な動作、安全性、データの完全性に予測不可能な影響を与える可能性があり、以下に限定されません：\n    •    システムの不安定、機能異常、またはデバイスの起動不能；\n    •    ユーザーデータの紛失、破損、または漏洩；\n    •    公式サービス契約の無効化または保証の喪失；\n    •    デバイスにプリインストールされたシステムまたはサービスとの非互換性；\n    •    デバイス製造元のアカウント管理メカニズムのトリガーによるログイン制限。\n\n上記の操作はユーザーの自主的な選択に基づくものであり、ユーザーは関連するリスクを十分に理解した上で意思決定を行い、それによって生じるすべての結果を独自に負うものとします。AstroBoxの開発者は、ユーザーが本ソフトウェアを使用したことによる直接的または間接的な損害について一切の責任を負いません。\n\n⸻\n\n三、アカウントログインとデータ送信について\n\nAstroBoxの一部の機能は、Xiaomiアカウントサービスインターフェースを呼び出してリソースにアクセスしたり、特定のデバイス操作を有効化したりするものです。このプロセスでは、ユーザーが提供するアカウント認証情報（ユーザー名、パスワード、または認証トークンなど）が直接Xiaomiの公式サーバーに送信され、認証が行われます。\n\n本ソフトウェアは、ユーザーの同意なしに認証情報を保存、記録、または改変することはありません。ただし：\n    •    この送信の安全性は、Xiaomiサーバーおよびそのインターフェースの実装メカニズムに完全に依存し、本ソフトウェアが制御または保証できるものではありません；\n    •    インターフェースの変更、サービスポリシーの調整、またはセキュリティメカニズムのトリガーにより、ユーザーのアカウントが制限されたり、ログインに失敗したり、データに問題が生じた場合、本ソフトウェアおよびその開発者は責任を負いません；\n    •    ユーザーは、このような機能を使用するかどうかを慎重に判断し、アカウント認証情報に関連する使用リスクをすべて負うものとします。\n\n信頼できるネットワーク環境でのみ操作を行い、認証ログイン前にアカウントのセキュリティ要件を評価することを強くお勧めします。\n\n⸻\n\n四、サードパーティリソースの出所とコンテンツの合法性\n\nAstroBoxが提供する一部のリソースコンテンツは、オープンネットワークまたはサードパーティコミュニティプラットフォーム（GitHubなどのオープンソースコミュニティ、フォーラムプラットフォーム（例：米壇コミュニティ）、コンテンツ配信ネットワーク（例：jsDelivr）など）から取得されます。\n\nこれらのリソースは元の公開者によって提供され、AstroBoxはアクセスおよびインストールを支援するツールに過ぎません。以下の点について、AstroBoxはいかなる約束や保証も行いません：\n    •    コンテンツの合法性、完全性、または正確性；\n    •    悪意のあるコードまたは破壊的行為が含まれていないこと；\n    •    第三者の知的財産権またはその他の合法的権利を侵害しないこと；\n    •    ユーザーのデバイスまたはシステムとの互換性および安全性。\n\nユーザーは、自身の合法的権利を確保し、関連する法令を遵守することを前提に、サードパーティリソースにアクセスまたは使用するかどうかを独自に決定し、それによって生じる可能性のある法的、技術的、または経済的責任を独自に負うものとします。\n\n⸻\n\n五、安全性責任と免責条項\n\nAstroBoxは「現状のまま」提供され、機能の継続的な可用性、システム互換性、性能、または特定の用途への適合性について、明示的または暗示的な保証を行いません。ユーザーは、本ソフトウェアの使用または使用不能により生じるいかなる形態の損失（直接的損失、間接的損失、利益の損失、データの紛失、デバイス損傷、または法的責任を含むがこれに限定されない）について、AstroBoxの開発者および関連者が一切の補償責任を負わないことに明確に同意します。\n\nさらに、本ソフトウェアは公式な技術サポートを提供せず、使用中に発生する問題、障害、またはリスクに関するフィードバックに対応する義務もありません。\n\n⸻\n\n六、条項の変更と最終解釈権\n\nAstroBoxは、法令の変更、ソフトウェア機能の更新、または運営方針の調整の必要に応じて、本免責事項の内容を随時改訂する権利を留保します。関連する変更は公開チャネルを通じて速やかに通知されますが、個別の通知は行いません。\n\nユーザーが免責事項の更新後に本ソフトウェアの使用を続けた場合、改訂されたすべての条項に同意したものとみなされます。AstroBoxの開発者は、本免責事項の最終解釈権を留保します。\n\n⸻\n\n本ソフトウェアのインストールおよび使用前に、ユーザーは自身の技術的能力、デバイスが耐えうるリスク、および法令遵守の責任を必ず評価してください。本免責事項に記載された条項に同意できない場合、AstroBoxのダウンロード、インストール、または使用を行わないでください。",
+    "confirm": "同意する",
+    "cancel": "同意しない"
+  },
+  "home": {
+    "title": "ホーム",
+    "search": "検索",
+    "appList": "アプリリスト",
+    "loadingMore": "さらに読み込み中...",
+    "none": "現在何もありません...",
+    "bottom": "もう...すべて調べ尽くしました...❤",
+    "retry": "再試行",
+    "loading": "再試行中..."
+  },
+  "about": {
+    "title": "について",
+    "appVersion": "アプリバージョン",
+    "foundNew": "新しいバージョンが見つかりました",
+    "checking": "更新を確認中",
+    "download": "更新をダウンロード",
+    "latest": "現在最新バージョンです",
+    "checkUpdate": "更新を確認",
+    "buildDate": "ビルド日",
+    "team": "開発チーム",
+    "changelog": "更新履歴",
+    "roles": {
+      "nativeFrontend": "ネイティブ/フロントエンド開発",
+      "native": "ネイティブ開発",
+      "designerFrontend": "デザイナー/フロントエンド開発"
+    },
+    "releaseName": "リリースコード",
+    "releaseSlogan": "夜明けを始まりとして、万物の光を灯す",
+    "copyright": "© 2025 AstralSightStudios。全権利を留保。"
+  },
+  "product": {
+    "detail": "リソース詳細",
+    "notFound": "リソースが見つかりません"
+  },
+  "common": {
+    "modify": "変更",
+    "cancel": "キャンセル",
+    "go": "移動",
+    "loading": "読み込み中...",
+    "refreshAll": "すべて更新",
+    "uninstall": "アンインストール",
+    "disable": "無効化",
+    "enable": "有効化",
+    "install": "インストール",
+    "ok": "確定",
+    "open": "開く",
+    "download": "ダウンロード",
+    "share": "共有"
+  },
+  "updateDialog": {
+    "title": "新しいバージョン {version} が見つかりました",
+    "body": "更新ログ：",
+    "updateNow": "今すぐ更新",
+    "later": "後で通知",
+    "ignore": "このバージョンを再度通知しない"
+  },
+  "resourceType": {
+    "quickapp": "クイックアプリ",
+    "watchface": "文字盤",
+    "firmware": "ファームウェア"
+  },
+  "installTask": {
+    "watchface": {
+      "description": "ローカル文字盤ファイル"
+    },
+    "thirdPartyApp": {
+      "description": "ローカルサードパーティアプリ"
+    },
+    "firmware": {
+      "description": "ローカルファームウェアファイル"
+    }
+  },
+  "banner": {
+    "loadFailed": {
+      "title": "バナーの読み込みに失敗しました！"
+    },
+    "noBanners": {
+      "title": "バナーがありません...",
+      "description": "ネットワークの問題？"
+    },
+    "loading": "読み込み中..."
+  },
+  "modifyWatchfaceDialog": {
+    "title": "文字盤IDの変更",
+    "placeholder": "9桁または12桁の数字を入力"
+  },
+  "plugin": {
+    "noPluginsInstalled": "プラグインがインストールされていません",
+    "noFeatures": "このプラグインには機能がありません",
+    "storeEnd": "もう...すべて調べ尽くしました...❤",
+    "loading": "読み込み中...",
+    "detailTitle": "プラグイン詳細",
+    "searchPlaceholder": "プラグインを検索",
+    "import": "プラグインをインポート",
+    "tabs": {
+      "installed": "インストール済み",
+      "market": "プラグインマーケット",
+      "features": "機能",
+      "details": "詳細"
+    },
+    "details": {
+      "author": "作者",
+      "website": "ウェブサイト",
+      "version": "バージョン",
+      "apiLevel": "APIレベル",
+      "permissions": "権限"
+    },
+    "uninstallPrompt": {
+      "title": "プラグインのアンインストール",
+      "body": "{pluginName} をアンインストールしますか？",
+      "primary": "アンインストール",
+      "secondary": "閉じる"
+    },
+    "restartPrompt": {
+      "title": "再起動が必要です",
+      "body": "すべてのプラグインの変更は、アプリを再起動しないと有効になりません。「今すぐ再起動」をクリックするとアプリが終了します。手動でアプリを再度開いてください。",
+      "primary": "今すぐ再起動",
+      "secondary": "キャンセル"
+    }
+  },
+  "device": {
+    "authkeyPrompt": "Authkeyを入力してください",
+    "connectFailed": "接続に失敗しました",
+    "authkeyPlaceholder": "デバイスのAuthKeyをここに入力",
+    "actions": {
+      "delete": "デバイスを削除",
+      "disconnect": "接続を解除",
+      "shareQR": "QRコードで共有",
+      "qrResizeHint": "クリックしてサイズを変更",
+      "qrTitle": "デバイスQRコード："
+    },
+    "disconnected": "接続解除",
+    "connected": "接続済み",
+    "charging": "(充電中)",
+    "lastChargePrefix": "最後の充電",
+    "lastChargeSuffix": "前",
+    "reconnect": "再接続",
+    "reconnectFailed": "前回の接続に失敗しました。デバイス切り替えページで再接続してください",
+    "switch": "デバイスを切り替え",
+    "notConnected": "デバイスが接続されていません",
+    "connect": "デバイスを接続",
+    "networkProxyInfo": "AstroBoxはデバイス上のネットワークリクエストをプロキシしています",
+    "features": {
+      "installApp": "クイックアプリのインストール",
+      "installAppDesc": "クイックアプリのパッケージを選択してデバイスにインストール",
+      "installWatchface": "文字盤のインストール",
+      "installWatchfaceDesc": "文字盤ファイルを選択してデバイスにインストール",
+      "installFirmware": "ファームウェアのインストール",
+      "installFirmwareDesc": "システムファームウェアを選択してデバイスにインストール",
+      "manageApps": "クイックアプリ管理",
+      "manageAppsDesc": "デバイス上のクイックアプリを管理",
+      "manageWatchfaces": "文字盤管理",
+      "manageWatchfacesDesc": "デバイス上の文字盤を管理",
+      "deviceInfo": "デバイス情報",
+      "deviceInfoDesc": "このデバイスの詳細情報を確認"
+    }
+  },
+  "openToPageDialog": {
+    "title": "ページに移動",
+    "placeholder": "ページ名を入力してください"
+  },
+  "providerDialog": {
+    "title": "コミュニティソースの状態"
+  },
+  "queue": {
+    "title": "キュー",
+    "downloadQueue": "ダウンロードキュー",
+    "installQueue": "インストールキュー",
+    "noTasks": "キューにタスクがありません",
+    "titleShort": "キュー",
+    "viewTasks": "タスクを表示",
+    "taskQueue": "タスクキュー"
+  },
+  "loginDialog": {
+    "title": "Xiaomiアカウントでログイン",
+    "description": "Xiaomiアカウントを使用してログインし、バインドされたデバイスを同期",
+    "usernamePlaceholder": "ユーザー名/電話番号/XiaomiアカウントIDを入力",
+    "passwordPlaceholder": "パスワードを入力",
+    "saveCredentials": "ユーザー名とパスワードを保存",
+    "loggingIn": "ログイン中",
+    "login": "ログイン",
+    "emptyError": "パスワードまたはアカウントを空にすることはできません！",
+    "2fa": {
+      "title": "二段階認証が必要です",
+      "body": "アカウントで二段階認証が必要であることが検出されました。「確定」をクリックしてブラウザで操作を進めてください。このプロセスには2回のブラウザリダイレクトが含まれます。ページに「OK」が表示された後、AstroBoxに戻って再度ログインを試みてください。"
+    }
+  },
+  "permission": {
+    "ble": {
+      "required": "すべての機能を正常に使用するには、AstroBoxにBluetooth権限を付与する必要があります。「近くのデバイス」権限を許可し、アプリを再起動してください。"
+    }
+  },
+  "connect": {
+    "failed": "接続に失敗しました",
+    "handshakeFailed": "ハンドシェイクに失敗しました",
+    "authFailed": "キーエラーまたはバックエンド異常です。アプリを再起動して再度お試しください"
+  },
+  "settings": {
+    "title": "設定",
+    "general": {
+      "title": "一般",
+      "reduceAnimation": "アニメーションを減らす",
+      "reduceAnimationDesc": "Webkitユーザーは画面の揺れを防ぐためにこれを有効にすることをお勧めします",
+      "language": "言語",
+      "languageDesc": "AstroBoxの表示言語を選択"
+    },
+    "tools": {
+      "title": "ツール",
+      "unlockCode": "アンロックコードの計算",
+      "unlockCodeDesc": "デバイスパスワードを忘れた場合にアンロックコードを計算してデバイスをリセット",
+      "dialogTitle": "Xiaomiウェアラブルデバイスのアンロック",
+      "dialogUsage": "使用方法",
+      "dialogUsageInfo": "パスワードを忘れた説明ページで上下上下上上下下をクリックして進入",
+      "result": "計算結果",
+      "mac": "MACアドレス",
+      "sn": "シリアル番号",
+      "noticeTitle": "ご注意",
+      "noticeBody": "このツールは、デバイスの本来の所有者が合法的にアクセスを回復するために使用することを目的としています。Xiaomiデバイスをクラック、回避、または不正にアクセスするために使用しないでください。このツールの不適切な使用による法的または倫理的結果について、AstroBoxおよびその開発者は一切の責任を負いません。",
+      "agree": "はい、免責事項を読み、同意します。",
+      "calculate": "計算"
+    },
+    "account": {
+      "title": "アカウント",
+      "loginBBS": "米壇アカウントでログイン",
+      "loginBBSDesc": "米壇アカウントでログインして米壇リソースを取得",
+      "syncDevices": "デバイスの同期",
+      "syncDevicesDesc": "Xiaomiスポーツヘルスからバインドされたデバイスを同期",
+      "bbsAccount": "米壇アカウント"
+    },
+    "install": {
+      "title": "インストール",
+      "sendInterval": "送信間隔",
+      "sendIntervalDesc": "インストール時のチャンク送信間隔。このオプションを調整することで一部のインストール失敗を解決できる場合があります"
+    },
+    "source": {
+      "title": "ソフトウェアソース（再起動後に有効）",
+      "officialCdn": "公式ソースCDN",
+      "officialCdnDesc": "公式ソースのCDNアドレスを選択"
+    },
+    "queue": {
+      "title": "キュー",
+      "autoInstall": "自動インストール",
+      "autoInstallDesc": "ダウンロード完了後に自動的にインストール",
+      "dontClear": "インストールキューをクリアしない",
+      "dontClearDesc": "デバッグを容易にするためにインストール後にキューをクリアしない"
+    },
+    "about": {
+      "title": "について",
+      "aboutAstrobox": "AstroBoxについて",
+      "aboutAstroboxDesc": "AstroBoxの詳細情報",
+      "website": "公式サイト",
+      "websiteDesc": "AstroBoxの公式サイトにアクセス",
+      "qq": "QQグループ",
+      "qqDesc": "AstroBox公式QQグループ（920456907）に参加",
+      "licences": "オープンソースライセンス",
+      "licencesDesc": "AstroBoxのオープンソースライセンスを確認",
+      "disclaimer": "免責事項",
+      "disclaimerDesc": "AstroBoxの免責事項を確認"
+    }
+  },
+  "licences": {
+    "title": "オープンソースライセンス",
+    "intro": "本プロジェクトで使用されているすべてのソフトウェアパッケージのライセンスは以下に記載されています。",
+    "node": "Node.js依存関係",
+    "crates": "Creates.ioパッケージ",
+    "filter": "フィルター",
+    "author": "作者：",
+    "license": "ライセンス：",
+    "description": "説明：",
+    "url": "URL："
+  },
+  "bandbbs": {
+    "title": "米壇アカウント",
+    "uid": "UID：",
+    "purchased": "購入済みリソース",
+    "logout": "ログアウト",
+    "purchasedDescription": "米壇コミュニティからの有料リソース"
+  },
+  "iframe": {
+    "title": "ウェブページを開く"
+  },
+  "addDeviceFromQr": {
+    "title": "以下のデバイスを認識しました"
+  },
+  "dragToPush": {
+    "title": "ファイルをインストールするには離してください",
+    "supportedFiles": "サポートされているファイル：文字盤、クイックアプリ、AstroBoxプラグイン"
+  },
+  "onlineImage": {
+    "loadFailed": "画像の読み込みに失敗しました"
+  },
+  "pluginStoreTest": {
+    "waiting": "実行待ち",
+    "success": "操作が成功しました",
+    "refreshAll": "すべて更新",
+    "pullPage": "ページを取得",
+    "pullItem": "アイテムを取得=テストプラグイン",
+    "downloadAndPackage": "アイテムをダウンロードしてパッケージ化=テストプラグイン"
+  },
+  "productInfo": {
+    "about": "このリソースについて",
+    "update": "更新",
+    "updateDescription": "文字盤の安定性を最適化し、文字盤のスムーズさを向上。",
+    "deviceRequirements": "デバイス要件",
+    "compatible": "この製品はあなたの",
+    "incompatible": "この製品はあなたの",
+    "incompatibleSuffix": "と互換性がありません",
+    "otherVersions": "他のデバイスバージョンも提供されています。",
+    "inQueue": "キューに追加済み",
+    "copyLink": "リンクをコピー",
+    "resizeQr": "クリックしてサイズを変更",
+    "viewOnBandBBS": "米壇コミュニティで確認"
+  },
+  "appManagement": {
+    "title": "クイックアプリ管理",
+    "none": "現在クイックアプリはありません"
+  },
+  "deviceInfo": {
+    "title": "デバイス情報",
+    "notRealtime": "このページはリアルタイムで更新されません",
+    "groups": {
+      "device": "デバイス情報",
+      "system": "システム情報",
+      "status": "デバイス状態"
+    },
+    "fields": {
+      "name": "名前",
+      "address": "アドレス",
+      "authkey": "AuthKey",
+      "connectionType": "接続タイプ",
+      "codename": "製品コード",
+      "model": "モデル",
+      "imei": "IMEI",
+      "firmware": "システムバージョン",
+      "serial": "シリアル番号",
+      "battery": "バッテリー",
+      "chargeStatus": "充電状態",
+      "lastCharge": "最後の充電"
+    }
+  },
+  "watchfaceManagement": {
+    "title": "文字盤管理",
+    "none": "現在文字盤はありません"
+  },
+  "switchDevice": {
+    "title": "デバイスを選択",
+    "getSavedFailed": "保存されたデバイスの取得に失敗しました！",
+    "scanAndAdd": "デバイスをスキャンして追加",
+    "scanFailed": "デバイスのスキャンに失敗しました",
+    "scanNotFound": "現在デバイスが見つかりません",
+    "savedDevices": "接続済みのデバイス",
+    "noSavedDevices": "まだデバイスに接続していません"
+  },
+  "providerName": {
+    "official": "公式ソース",
+    "bandbbs": "米壇コミュニティ"
+  }
+}
