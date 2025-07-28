@@ -1,0 +1,385 @@
+{
+  "nav": {
+    "home": "主页",
+    "device": "设备",
+    "plugin": "插件",
+    "settings": "设定"
+  },
+  "disclaimer": {
+    "title": "免责声明",
+    "content": "AstroBox 应用免责声明\n\n在使用这款软件（以下简称“AstroBox”）之前，请仔细读完并完全理解这份免责声明的内容。继续下载、安装或使用 AstroBox，代表你已经阅读、理解并接受这份声明的所有内容，并同意承担使用这款软件所带来的所有风险和责任。\n\n⸻\n\n一、软件性质声明\n\nAstroBox 是一个由独立开发者开发和发布的第三方工具应用，旨在为用户提供方便的工具，在小米品牌的智能穿戴设备上安装第三方资源（包括但不限于表盘、快捷应用、固件等）。\n\n这款软件不是由小米公司或其任何关联公司开发、授权、发布或支持的。它与小米没有任何关联、合作、代理或其他法律关系。小米不对 AstroBox 的功能、性能或安全性，以及使用它所导致的任何后果负责。\n\n⸻\n\n二、用户行为与责任\n\nAstroBox 的功能可能涉及设备系统的个性化修改，包括但不限于资源替换、配置调整、安装非官方内容等。这些操作可能会对设备的正常运行、安全性和数据完整性产生不可预测甚至不可逆的影响，包括但不限于：\n    • 系统不稳定、功能故障或设备无法启动；\n    • 用户数据丢失、损坏或泄露；\n    • 导致官方服务协议失效或保修权益作废；\n    • 与预装系统或服务不兼容；\n    • 触发厂商账户管理机制，导致登录受限。\n\n这些操作完全基于用户的自主选择。用户应在充分了解相关风险的基础上做出决定，并独立承担由此产生的所有后果。AstroBox 开发者对用户使用此软件造成的任何直接或间接损害不承担责任。\n\n⸻\n\n三、账户登录与数据传输须知\n\nAstroBox 的部分功能会调用小米账户服务接口来访问资源或启用特定设备操作。在此过程中，用户提供的账户凭证（包括但不限于用户名、密码或授权令牌）将直接提交到小米的官方服务器进行身份验证。\n\n此软件不会在未经用户同意的情况下存储、记录或篡改用户凭证。但请注意：\n    • 数据传输的安全性完全依赖小米服务器及其实现机制，超出本软件的控制或保证范围；\n    • 如果因接口变更、服务政策调整或安全机制触发导致账户限制、登录失败或数据问题，本软件及其开发者不承担任何责任；\n    • 用户应谨慎决定是否使用此类功能，并承担与凭证使用相关的所有风险。\n\n我们强烈建议用户仅在可信的网络环境中操作，并在授权登录前仔细评估账户安全需求。\n\n⸻\n\n四、第三方资源来源与内容合法性\n\nAstroBox 提供的部分资源来自公共网络或第三方社区平台，包括但不限于开源社区（如 GitHub）、论坛平台（如小米社区）和内容分发网络（如 jsDelivr）。\n\n这些资源由其原始发布者提供。AstroBox 仅作为工具实现访问和安装，不对以下内容作出任何承诺或保证：\n    • 内容的合法性、完整性或准确性；\n    • 不含恶意代码或有害行为；\n    • 不侵犯第三方知识产权或其他合法权益；\n    • 与用户设备或系统的兼容性和安全性。\n\n用户必须在确保遵守相关法律法规及保护自身合法权益的前提下，自行决定是否访问或使用第三方资源，并独立承担由此可能引发的法律、技术或经济责任。\n\n⸻\n\n五、安全责任与免责条款\n\nAstroBox 按“现状”提供，不对其持续可用性、系统兼容性、性能或特定用途适用性提供任何明示或暗示的保证。用户明确同意，AstroBox 的开发者及相关方对因使用或无法使用此软件导致的任何形式的损失（包括但不限于直接损失、设备损坏或法律责任）不承担任何责任。\n\n此外，此软件不提供官方技术支持，且无义务回应使用过程中出现的问题、故障或风险反馈。\n\n⸻\n\n六、条款修改与最终解释权\n\nAstroBox 保留根据法律法规变动、软件更新或运营策略调整随时修改本免责声明内容的权利。任何更新将通过分发渠道发布，不另行通知。\n\n在免责声明更新后继续使用此软件，视为接受所有修改后的条款。AstroBox 开发者保留本免责声明的最终解释权。\n\n⸻\n\n请用户在安装和使用本软件前，务必认真评估自身技术能力、设备风险承受能力及法律合规责任。若无法接受本免责声明的任何条款，请勿下载、安装或使用 AstroBox，并应立即从设备中移除 AstroBox。\n\n⸻\n\n请注意：此免责声明为简体中文（新加坡）翻译之范本，囿于译者水平，仍存在一定疏漏之处。若果有争议之处，请以简体中文（中国）范本为准。",
+    "confirm": "我同意",
+    "cancel": "我不同意"
+  },
+  "home": {
+    "title": "主页",
+    "search": "搜索",
+    "appList": "应用列表",
+    "loadingMore": "加载更多...",
+    "none": "这里好像啥也没有...",
+    "bottom": "没了...❤",
+    "retry": "重试",
+    "loading": "正在重试..."
+  },
+  "about": {
+    "title": "关于",
+    "appVersion": "应用版本",
+    "foundNew": "发现新版本",
+    "checking": "检查更新中",
+    "download": "下载更新",
+    "latest": "已经是最新版本",
+    "checkUpdate": "检查更新",
+    "buildDate": "构建日期",
+    "team": "开发团队",
+    "changelog": "更新日志",
+    "roles": {
+      "nativeFrontend": "原生/前端开发",
+      "native": "原生开发",
+      "designerFrontend": "设计师/前端开发"
+    },
+    "releaseName": "发布代号",
+    "releaseSlogan": "从晨曦的第一道光，点燃万物。",
+    "copyright": "版权 © 2025 AstralSightStudios。保留所有权利"
+  },
+  "product": {
+    "detail": "资源详情",
+    "notFound": "没找到资源"
+  },
+  "common": {
+    "modify": "修改",
+    "cancel": "取消",
+    "go": "前往",
+    "loading": "加载中...",
+    "refreshAll": "全部刷新",
+    "uninstall": "卸载",
+    "disable": "禁用",
+    "enable": "启用",
+    "install": "安装",
+    "ok": "确定",
+    "open": "打开",
+    "download": "下载",
+    "share": "分享",
+    "fail": "操作失败"
+  },
+  "updateDialog": {
+    "title": "发现新版本：{version}",
+    "body": "更新日志：",
+    "updateNow": "立即更新",
+    "later": "稍后提醒",
+    "ignore": "这个版本别再提醒"
+  },
+  "resourceType": {
+    "quickapp": "快捷应用",
+    "watchface": "表盘",
+    "firmware": "固件"
+  },
+  "resourcePaidType": {
+    "paid": "需购买",
+    "force_paid": "强制性收费"
+  },
+  "resourceCategory": {
+    "hidden_paid": "隐藏需购买的项目",
+    "hidden_force_paid": "隐藏强制性收费的项目"
+  }
+  "installTask": {
+    "watchface": {
+      "description": "本地表盘文件"
+    },
+    "thirdPartyApp": {
+      "description": "本地第三方应用"
+    },
+    "firmware": {
+      "description": "本地固件文件"
+    }
+  },
+  "banner": {
+    "loadFailed": {
+      "title": "横幅加载失败！"
+    },
+    "noBanners": {
+      "title": "没有横幅...",
+      "description": "网络问题？"
+    },
+    "loading": "加载中..."
+  },
+  "modifyWatchfaceDialog": {
+    "title": "修改表盘 ID",
+    "placeholder": "请输入 9 到 12 位的数字"
+  },
+  "plugin": {
+    "noPluginsInstalled": "没有安装插件",
+    "noFeatures": "这个插件没有功能",
+    "storeEnd": "没了...❤",
+    "loading": "加载中...",
+    "detailTitle": "插件详情",
+    "searchPlaceholder": "搜索插件",
+    "import": "导入插件",
+    "tabs": {
+      "installed": "已安装",
+      "market": "插件市场",
+      "features": "功能",
+      "details": "详情"
+    },
+    "details": {
+      "author": "作者",
+      "website": "网站",
+      "version": "版本",
+      "apiLevel": "API 等级",
+      "permissions": "权限"
+    },
+    "uninstallPrompt": {
+      "title": "卸载插件",
+      "body": "确定要卸载 {pluginName} 吗？",
+      "primary": "卸载",
+      "secondary": "关闭"
+    },
+    "restartPrompt": {
+      "title": "需要重启",
+      "body": "所有插件变更都需要重启应用才能生效。点击“立即重启”后，应用会关闭，请手动重新打开。",
+      "primary": "立即重启",
+      "secondary": "取消"
+    }
+  },
+  "device": {
+    "authkeyPrompt": "请输入 Authkey",
+    "connectFailed": "连接失败",
+    "authkeyPlaceholder": "在这里输入设备的 AuthKey",
+    "actions": {
+      "delete": "删除设备",
+      "disconnect": "断开连接",
+      "shareQR": "通过二维码分享",
+      "qrResizeHint": "点击调整大小",
+      "qrTitle": "设备二维码："
+    },
+    "disconnected": "已断开",
+    "connected": "已连接",
+    "charging": "（充电中）",
+    "lastChargePrefix": "上次充电于",
+    "lastChargeSuffix": "前",
+    "reconnect": "重新连接",
+    "reconnectFailed": "上次连接失败，请到切换设备页面重新连接",
+    "switch": "切换设备",
+    "notConnected": "设备未连接",
+    "connect": "连接设备",
+    "networkProxyInfo": "AstroBox 已为你的设备代理网络请求",
+    "features": {
+      "installApp": "安装快捷应用",
+      "installAppDesc": "选择一个快捷应用包安装到你的设备",
+      "installWatchface": "安装表盘",
+      "installWatchfaceDesc": "选择一个表盘文件安装到你的设备",
+      "installFirmware": "安装固件",
+      "installFirmwareDesc": "选择一个系统固件安装到你的设备",
+      "manageApps": "快捷应用管理",
+      "manageAppsDesc": "管理设备上的快捷应用",
+      "manageWatchfaces": "表盘管理",
+      "manageWatchfacesDesc": "管理设备上的表盘",
+      "deviceInfo": "设备信息",
+      "deviceInfoDesc": "查看设备的详细信息"
+    }
+  },
+  "openToPageDialog": {
+    "title": "跳转页面",
+    "placeholder": "请输入页面名称"
+  },
+  "providerDialog": {
+    "title": "社区来源状态"
+  },
+  "queue": {
+    "title": "队列",
+    "downloadQueue": "下载队列",
+    "installQueue": "安装队列",
+    "noTasks": "队列里没有任务",
+    "titleShort": "队列",
+    "viewTasks": "查看任务",
+    "taskQueue": "任务队列"
+  },
+  "loginDialog": {
+    "title": "登录小米账户",
+    "description": "用你的小米账户登录以同步已绑定的设备",
+    "usernamePlaceholder": "请输入用户名/手机号/小米账户 ID",
+    "passwordPlaceholder": "请输入密码",
+    "saveCredentials": "保存用户名和密码",
+    "loggingIn": "登录中",
+    "login": "登录",
+    "emptyError": "用户名或密码不能为空！",
+    "2fa": {
+      "title": "需要两步验证",
+      "body": "你的账户需要两步验证。请点击“确定”在浏览器中继续。过程会涉及两次重定向。页面显示“ok”后，请返回 AstroBox 并重新尝试登录。"
+    }
+  },
+  "permission": {
+    "ble": {
+      "required": "你必须授予 AstroBox 蓝牙权限才能使用所有功能。请允许 AstroBox 使用“附近设备”权限并重启应用。"
+    }
+  },
+  "connect": {
+    "failed": "连接失败",
+    "handshakeFailed": "握手失败",
+    "authFailed": "AuthKey 错误或后端问题。请尝试重启应用后重试。"
+  },
+  "settings": {
+    "title": "设定",
+    "general": {
+      "title": "通用",
+      "reduceAnimation": "减少动画",
+      "reduceAnimationDesc": "建议 WebKit 用户开启以防止屏幕抖动。",
+      "language": "语言",
+      "languageDesc": "选择 AstroBox 显示的语言",
+      "translateTeam": "翻译贡献者",
+      "debugWindow": "调试窗口",
+      "debugWindowDesc": "显示调试窗口"
+    },
+    "tools": {
+      "title": "神秘工具",
+      "unlockCode": "计算解锁码",
+      "unlockCodeDesc": "在忘记设备密码时计算解锁码以重置设备",
+      "dialogTitle": "解锁你的小米穿戴设备",
+      "dialogUsage": "使用方法",
+      "dialogUsageInfo": "在忘记密码（输入错误密码多次后会进入）的说明页面按上-下-上-下-上-上-下-下进入",
+      "result": "计算结果",
+      "mac": "MAC 地址",
+      "sn": "SN 码",
+      "noticeTitle": "免责声明（请注意）",
+      "noticeBody": "此工具仅限设备原主人在合法情况下使用，以恢复访问权限。不得用于破解、绕过或非法访问非你所有的小米设备。AstroBox 及其开发者对滥用此工具导致的任何法律或道德后果不承担责任。",
+      "agree": "是的，我已阅读并同意免责声明。",
+      "calculate": "计算"
+    },
+    "account": {
+      "title": "账户",
+      "loginBBS": "登录米坛社区（BandBBS）账户",
+      "loginBBSDesc": "登录米坛社区（BandBBS）账户以访问米坛资源",
+      "syncDevices": "同步设备",
+      "syncDevicesDesc": "从小米运动健康同步已绑定的设备",
+      "bbsAccount": "米坛社区（BandBBS）账户"
+    },
+    "install": {
+      "title": "安装",
+      "sendInterval": "发包间隔",
+      "sendIntervalDesc": "安装时发送数据块的间隔。调整这个可能解决一些安装失败的问题。"
+    },
+    "source": {
+      "title": "软件源（需重启）",
+      "officialCdn": "官方仓库 CDN",
+      "officialCdnDesc": "选择官方仓库的 CDN 地址"
+    },
+    "queue": {
+      "title": "队列",
+      "autoInstall": "自动安装",
+      "autoInstallDesc": "下载完成后自动安装",
+      "dontClear": "不清除安装队列",
+      "dontClearDesc": "安装完成后不清除队列以便调试"
+    },
+    "about": {
+      "title": "关于",
+      "aboutAstrobox": "关于",
+      "aboutAstroboxDesc": "有关 AstroBox 的详细信息",
+      "openlog": "日志文件夹",
+      "openlogDesc": "打开日志文件夹以查看应用日志",
+      "website": "官方网站",
+      "websiteDesc": "访问 AstroBox 的官方网站",
+      "qq": "QQ 群",
+      "qqDesc": "加入 AstroBox 官方 QQ 群（920456907）",
+      "licences": "开源许可证",
+      "licencesDesc": "查看 AstroBox 的开源许可证",
+      "disclaimer": "免责声明",
+      "disclaimerDesc": "查看 AstroBox 的免责声明"
+    }
+  },
+  "licences": {
+    "title": "开源许可证",
+    "intro": "本项目使用的所有软件包许可证如下所列。",
+    "node": "Node.js 依赖",
+    "crates": "Crates.io 软件包",
+    "filter": "筛选",
+    "author": "作者：",
+    "license": "许可证：",
+    "description": "描述：",
+    "url": "网址："
+  },
+  "bandbbs": {
+    "title": "米坛社区（BandBBS）账户",
+    "uid": "UID：",
+    "purchased": "已购资源",
+    "logout": "退出登录",
+    "purchasedDescription": "来自米坛社区（BandBBS）的付费资源"
+  },
+  "iframe": {
+    "title": "打开网页"
+  },
+  "addDeviceFromQr": {
+    "title": "识别到以下设备"
+  },
+  "dragToPush": {
+    "title": "释放以安装文件",
+    "supportedFiles": "支持的文件：表盘、快捷应用、AstroBox 插件"
+  },
+  "onlineImage": {
+    "loadFailed": "图片加载失败"
+  },
+  "pluginStoreTest": {
+    "waiting": "等待执行",
+    "success": "操作成功",
+    "refreshAll": "全部刷新",
+    "pullPage": "拉取页面",
+    "pullItem": "拉取项目=测试插件",
+    "downloadAndPackage": "下载并打包项目=测试插件"
+  },
+  "productInfo": {
+    "about": "关于此资源",
+    "update": "更新",
+    "updateDescription": "优化表盘的稳定性和流畅度。",
+    "deviceRequirements": "设备要求",
+    "compatible": "此产品与你的设备兼容",
+    "incompatible": "此产品与你的设备不兼容",
+    "incompatibleSuffix": "",
+    "otherVersions": "也有其他设备版本可用。",
+    "inQueue": "在队列中",
+    "copyLink": "复制链接",
+    "resizeQr": "点击调整大小",
+    "viewOnBandBBS": "在米坛社区查看"
+  },
+  "appManagement": {
+    "title": "快捷应用管理",
+    "none": "暂无快捷应用"
+  },
+  "deviceInfo": {
+    "title": "设备信息",
+    "notRealtime": "此页面不会实时更新",
+    "groups": {
+      "device": "设备信息",
+      "system": "系统信息",
+      "status": "设备状态"
+    },
+    "fields": {
+      "name": "名称",
+      "address": "地址",
+      "authkey": "AuthKey",
+      "connectionType": "连接类型",
+      "codename": "产品代号",
+      "model": "型号",
+      "imei": "IMEI",
+      "firmware": "固件版本",
+      "serial": "序列号",
+      "battery": "电量",
+      "chargeStatus": "充电状态",
+      "lastCharge": "上次充电时间"
+    }
+  },
+  "watchfaceManagement": {
+    "title": "表盘管理",
+    "none": "暂无表盘"
+  },
+  "switchDevice": {
+    "title": "选择设备",
+    "getSavedFailed": "获取已保存设备失败！",
+    "scanAndAdd": "扫描并添加设备",
+    "scanFailed": "设备扫描失败",
+    "scanNotFound": "附近未发现任何设备",
+    "savedDevices": "已连接设备",
+    "noSavedDevices": "尚未连接任何设备"
+  },
+  "providerName": {
+    "official": "官方仓库",
+    "bandbbs": "米坛社区"
+  }
+}
