@@ -10,8 +10,7 @@ import {
     DialogTrigger,
     Input,
 } from "@fluentui/react-components";
-import { EditRegular } from "@fluentui/react-icons";
-import { invoke } from "@tauri-apps/api/core";
+import { ArrowShuffleRegular, EditRegular } from "@fluentui/react-icons";
 import { useState } from "react";
 
 interface ProviderDialogProps {
@@ -20,15 +19,14 @@ interface ProviderDialogProps {
 
 export default function ModifyWatchfaceIDDialog({ item }: ProviderDialogProps) {
     const { t } = useI18n();
-    const [watchfaceID, setWatchfaceID] = useState<string>("");
+    const [watchfaceID, setWatchfaceID] = useState<string>(item?.newWatchfaceID ?? "");
     const [disabled, setDisabled] = useState<boolean>(true);
 
     const modify = async () => {
         setDisabled(true);
-        invoke("modify_watchface_id", {
-            originalPath: item?.payload?.url,
-            newId: watchfaceID
-        });
+        if (item) {
+            item.newWatchfaceID = watchfaceID;
+        }
     };
     return (
         <Dialog modalType="alert">
@@ -49,19 +47,25 @@ export default function ModifyWatchfaceIDDialog({ item }: ProviderDialogProps) {
                     <DialogContent style={{ width: "100%", padding: "0" }}>
                         <Input
                             onChange={(ev, data) => {
+                                setWatchfaceID(data.value)
                                 if (/^\d{9}$|^\d{12}$/.test(data.value)) {
                                     setDisabled(false);
-                                    setWatchfaceID(data.value)
                                 } else {
                                     setDisabled(true);
                                 }
                             }}
+                            value={watchfaceID}
                             placeholder={t('modifyWatchfaceDialog.placeholder')}
                             size="large"
                             style={{ width: "100%", marginTop: "18px" }}
                             autoComplete="off"
                             maxLength={12}
+                            type="number"
                             inputMode="numeric"
+                            contentAfter={<Button icon={<ArrowShuffleRegular />} appearance="transparent" onClick={() => {
+                                setWatchfaceID((Math.random() * 10 ** 12).toFixed(0));
+                                setDisabled(false);
+                            }}></Button>}
                         />
                     </DialogContent>
                     <DialogTrigger>

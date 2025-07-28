@@ -63,7 +63,11 @@ export default function Device() {
         if (!deviceState || deviceState.disconnected !== true || !deviceState.authkey) return makeError(dispatchToast, t('device.reconnectFailed'));
         setLoading(true);
         connect(deviceState.addr, deviceState.name, deviceState.authkey).catch((e) => {
-            if (e instanceof Error) makeError(dispatchToast, t(e.message));
+            if (e instanceof Error) {
+                const [key, ...rest] = e.message.split(":");
+                const detail = rest.join(":");
+                makeError(dispatchToast, detail ? `${t(key)}:${detail}` : t(key));
+            }
         }).finally(() => {
             setLoading(false);
         })

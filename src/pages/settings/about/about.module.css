@@ -12,34 +12,16 @@
     align-items: center;
     gap: 14px;
     margin: 0 auto;
+    width: 100%;
+    max-width: 1000px;
 }
-
-/* @keyframes logoFade {
-    0% {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-    100% {
-        opacity: 0;
-        transform: scale(0.85);
-    }
-} */
 
 .logoContainer {
     position: relative;
-    height: 164px;
+    /* height: 164px; */
+    height: 136px;
     width: 268px;
     overflow: visible;
-    margin-top: 24px;
-    margin-bottom: 48px;
-    /* position: sticky;
-    top: 70px;
-    z-index: -1;
-    animation: logoFade ease forwards;
-    animation-range-start: 30px;
-    animation-range-end: 110px;
-    animation-timeline: scroll(); */
 }
 
 .aboutContent {
@@ -51,10 +33,8 @@
 
 .aboutContainer {
     margin: 0 auto;
-    display: grid;
-    grid-auto-flow: row;
-    grid-auto-columns: 320px;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 10px;
     width: 100%;
 }
@@ -97,17 +77,20 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: unset;
+    width: 100%;
     min-width: 10px;
     gap: 12px;
     border-radius: var(--borderRadiusXLarge);
     background: var(--cardbackground);
+    box-sizing: border-box;
 }
 
 .teamContainer {
+    flex-direction: row;
+    gap: 12px;
     display: flex;
-    flex-direction: column;
-    gap: 12px
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 .cardButton {
@@ -167,16 +150,125 @@
     align-items: flex-start;
     height: 100%;
     width: 100%;
+    overflow: auto;
     padding: 4px;
     box-sizing: border-box;
 }
 
+.content::-webkit-scrollbar {
+    display: none;
+}
+
+.versionInfoContainer {
+    flex-direction: column;
+    display: flex;
+    gap: 0;
+    align-items: flex-start;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.versionInfoTitle {
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.versionInfoTitle:nth-last-child(1) {
+    font-size: 13px;
+    font-weight: 500;
+    opacity: 0.75;
+}
+
+.buttonContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.spinnerContainer {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--cardbackground);
+    border-radius: 999px;
+    transition: all 0.25s ease-in-out;
+}
+
+.buttonContainer:hover .spinnerContainer {
+    background: var(--cardbackgroundHover);
+}
+
+.spinnerContainer.success {
+    background: var(--colorStatusSuccessForeground1);
+}
+
+.spinnerContainer.success svg {
+    color: var(--colorStatusSuccessBackground1);
+}
+
+.buttonContainer:hover .spinnerContainer.success {
+    background: var(--colorStatusSuccessBorderActive);
+}
+
+.spinnerContainer.found {
+    background: var(--colorBrandForegroundLink);
+}
+
+.buttonContainer:hover .spinnerContainer.found {
+    background: var(--colorBrandForegroundLinkHover);
+}
+
+.aboutHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 24px;
+    margin-bottom: 48px;
+}
+
+.aboutHeader>* {
+    flex-shrink: 0;
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
 @media screen and (max-width: 800px) {
+    .aboutHeader {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .aboutHeader>* {
+        flex-shrink: 0;
+        width: 100%;
+        margin: 0;
+    }
+
+    .buttonContainer {
+        margin: 0 8px;
+        width: 100%;
+    }
+
+    button:has(.buttonContainer) {
+        width: 100% !important;
+    }
+
     .aboutContainer {
         padding: 0 0 12px 0;
     }
 
     .aboutContainer {
         grid-template-columns: 1fr;
+    }
+
+    .teamSection {
+        max-height: unset;
     }
 }

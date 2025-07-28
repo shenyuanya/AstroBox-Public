@@ -11,6 +11,7 @@ use crate::community::provider::{
 pub struct JSPluginProvider {
     pub name: String,
     pub plugin_name: String,
+    pub fn_get_categories: String,
     pub fn_get_page: String,
     pub fn_get_item: String,
     pub fn_download: String,
@@ -70,6 +71,14 @@ impl Provider for JSPluginProvider {
 
     fn as_any(&self) -> &dyn Any {
         self
+    }
+
+    async fn get_categories(&self) -> anyhow::Result<Vec<String>> {
+        let ret = self
+            .call_js(&self.fn_get_categories, vec![])
+            .await?;
+
+        Ok(serde_json::from_str(&ret)?)
     }
 
     async fn get_page(&self, p: u32, l: u32, s: SearchConfig) -> Result<Vec<Item>> {

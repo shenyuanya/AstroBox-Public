@@ -87,10 +87,7 @@ pub fn open_page_with_url(
         .map_err(|e| js_error!("{}", e))?
         .to_std_string_lossy();
 
-    if let Some(app) = crate::APP_HANDLE.get() {
-        app.emit("plugin-open-page-with-url", url_str)
-            .map_err(|e| js_error!("{}", e))?;
-    }
+    crate::tools::open_url_with_default_browser(url_str).map_err(|e| js_error!("{}", e))?;
 
     Ok(JsValue::undefined())
 }

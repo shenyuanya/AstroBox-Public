@@ -2,7 +2,7 @@ use std::{io::Cursor};
 use std::sync::Arc;
 use prost::Message;
 use crate::{
-    miwear::packet::{Channel, Mi __OPENSOURCE__DELETED__, OpCode, PacketData, PktType},
+    miwear::packet::{Channel, MiWearPacket, OpCode, PacketData, PktType},
     pb::{self},
     tools::{hex_stream_to_bytes, to_hex_string},
 };
@@ -24,7 +24,7 @@ pub async fn handle_bt_packet(device: Arc<MiWearDevice>, data: Vec<u8>) {
     }
 
     /* ────────── MiWear Packet 解析 ────────── */
-    match Mi __OPENSOURCE__DELETED__::parse_all(&data) {
+    match MiWearPacket::parse_all(&data) {
         Ok(mipkts) => {
             for mipkt in mipkts {
                 log::info!(
@@ -76,13 +76,13 @@ pub async fn handle_bt_packet(device: Arc<MiWearDevice>, data: Vec<u8>) {
 
                         let pkt_data: PacketData = match payload.channel {
                             Channel::Pb => {
-                                match  __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__::decode(Cursor::new(&content)) {
+                                match pb::protocol::WearPacket::decode(Cursor::new(&content)) {
                                     Ok(packet) => {
                                         #[cfg(debug_assertions)] {
                                             log::info!(
                                                 "[MiWearBTRecv] TYPE=Protobuf ID={} TYPE={:?}",
-                                                packet.__OPENSOURCE__DELETED__,
-                                                packet.__OPENSOURCE__DELETED__
+                                                packet.__OPENSOURCE_DELETED__,
+                                                packet.__OPENSOURCE_DELETED__
                                             );
 
                                             log::info!(
@@ -116,12 +116,12 @@ pub async fn handle_bt_packet(device: Arc<MiWearDevice>, data: Vec<u8>) {
                         }
 
                         if let PacketData::PROTOBUF(ref wp) = pkt_data.clone() {
-                            let key = (wp.__OPENSOURCE__DELETED__ as u32, wp.id);
+                            let key = (wp.__OPENSOURCE_DELETED__ as u32, wp.id);
                             if let Some((_, sender)) = device.pending_proto.remove(&key) {
                                 let _ = sender.send(wp.clone());
                                 log::info!("[MiWearBTRecv] BTRecv: Matched ProtoKey({:?}) -> delivered", key);
                             }
-                            if let Some(subs) = device.proto_subscribers.get(&(wp.__OPENSOURCE__DELETED__ as u32)) {
+                            if let Some(subs) = device.proto_subscribers.get(&(wp.__OPENSOURCE_DELETED__ as u32)) {
                                 for cb in subs.value().iter() {
                                     let pkt = wp.clone();
                                     cb(pkt.clone());

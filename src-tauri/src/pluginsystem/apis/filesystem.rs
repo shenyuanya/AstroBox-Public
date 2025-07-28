@@ -1,5 +1,8 @@
 use base64::{engine::general_purpose, Engine};
-use boa_engine::{js_error, js_string, object::ObjectInitializer, property::Attribute, Context, JsResult, JsString, JsValue, NativeFunction};
+use boa_engine::{
+    js_error, js_string, object::ObjectInitializer, property::Attribute, Context, JsResult,
+    JsString, JsValue, NativeFunction,
+};
 use chardetng::EncodingDetector;
 use dashmap::{DashMap, DashSet};
 use encoding_rs::{BIG5, EUC_JP, EUC_KR, GBK, ISO_8859_2, SHIFT_JIS, UTF_8, WINDOWS_1252};
@@ -23,6 +26,25 @@ static ALLOWED_PATHS: Lazy<DashSet<String>> = Lazy::new(DashSet::new);
 pub static FILESYSTEM_PERMISSION: &str = "filesystem";
 
 static READ_FILES: Lazy<DashMap<String, String>> = Lazy::new(DashMap::new);
+
+// 平台相关的 encode/decode 包装函数
+#[cfg(target_os = "android")]
+fn encode_path(path: &str) -> String {
+    urlencoding::encode(path).to_string()
+}
+#[cfg(not(target_os = "android"))]
+fn encode_path(path: &str) -> String {
+    path.to_string()
+}
+
+#[cfg(target_os = "android")]
+fn decode_path(path: &str) -> String {
+    urlencoding::decode(path).unwrap().to_string()
+}
+#[cfg(not(target_os = "android"))]
+fn decode_path(path: &str) -> String {
+    path.to_string()
+}
 
 fn normalize_path(path: &str) -> String {
     if path.contains("://") {
@@ -62,11 +84,15 @@ pub fn pick_file_dialog(
 ) -> impl std::future::Future<Output = JsResult<JsValue>> {
     let permission_result = plugin_permission_check(ctx, FILESYSTEM_PERMISSION.to_string());
 
-    let options_obj:Option<PickFileOptions> = args.get(0)
+    let options_obj: Option<PickFileOptions> = args
+        .get(0)
         .and_then(|v| v.to_string(ctx).ok())
         .and_then(|s| serde_json::from_str(&s.to_std_string_lossy()).ok());
 
-    let PickFileOptions{decode_text, encoding} = options_obj.unwrap_or_default();
+    let PickFileOptions {
+        decode_text,
+        encoding,
+    } = options_obj.unwrap_or_default();
     async move {
         if let Some(err) = permission_result {
             return Err(err);
@@ -97,7 +123,9 @@ pub fn pick_file_dialog(
                 let metadata = f.metadata().map_err(|_| js_error!("open file failed"))?;
                 let size = if decode_text {
                     let mut buf = Vec::new();
-                    f.take(u64::MAX).read_to_end(&mut buf).map_err(|_| js_error!("read file failed"))?;
+                    f.take(u64::MAX)
+                        .read_to_end(&mut buf)
+                        .map_err(|_| js_error!("read file failed"))?;
 
                     let text = if let Some(enc_name) = encoding {
                         match enc_name.to_lowercase().as_str() {
@@ -170,7 +198,8 @@ pub fn pick_file_dialog(
                 };
 
                 let ret = PickFileReturn {
-                    path: path_str,
+                    // 只在安卓上做decode，其他平台原样
+                    path: decode_path(&path_str),
                     size: metadata.len(),
                     text_len: size,
                 };
@@ -196,7 +225,8 @@ pub fn read_file(
         .get(0)
         .and_then(|v| v.as_string())
         .ok_or_else(|| js_error!("path required"))
-        .map(|s| s.to_std_string_lossy());
+        // 只在安卓上encode，其他平台原样
+        .map(|s| encode_path(&s.to_std_string_lossy()));
 
     let opts: Option<ReadFileOptions> = args
         .get(1)
@@ -210,7 +240,11 @@ pub fn read_file(
 
         let path = path_arg?;
         ensure_allowed(&path).await?;
-        let ReadFileOptions { offset, len, decode_text } = opts.ok_or_else(|| js_error!("options required"))?;
+        let ReadFileOptions {
+            offset,
+            len,
+            decode_text,
+        } = opts.ok_or_else(|| js_error!("options required"))?;
 
         if decode_text {
             // 直接从缓存中获取文本内容
@@ -253,16 +287,15 @@ pub fn read_file(
     }
 }
 
-pub fn unload_file(
-    _this: &JsValue,
-    args: &[JsValue],
-    _ctx: &mut Context,
-) -> JsResult<JsValue> {
-    let path = args
-        .get(0)
-        .and_then(|v| v.as_string())
-        .ok_or_else(|| js_error!("path required"))?
-        .to_std_string_lossy();
+pub fn unload_file(_this: &JsValue, args: &[JsValue], _ctx: &mut Context) -> JsResult<JsValue> {
+    // 只在安卓上encode，其他平台原样
+    let path = encode_path(
+        &args
+            .get(0)
+            .and_then(|v| v.as_string())
+            .ok_or_else(|| js_error!("path required"))?
+            .to_std_string_lossy(),
+    );
     let _ = READ_FILES.remove(&path);
     if ALLOWED_PATHS.remove(&path).is_some() {
         Ok(JsValue::Boolean(true))

@@ -1,5 +1,9 @@
+import OpenToPageDialog from "@/components/OpenToPageDialog/OpenToPageDialog";
+import { useInvokeWithMass, useIsSendingMass } from "@/hooks/useInvoke";
+import { useI18n } from "@/i18n";
 import BasePage from "@/layout/basePage";
-import {AppInfo} from "@/types/bluetooth";
+import useToast, { makeError } from "@/layout/toast";
+import { AppInfo } from "@/types/bluetooth";
 import {
     Body1,
     Button,
@@ -11,13 +15,10 @@ import {
     MenuPopover,
     MenuTrigger
 } from "@fluentui/react-components";
-import {MoreHorizontalRegular} from "@fluentui/react-icons";
-import {invoke} from "@tauri-apps/api/core";
-import {AnimatePresence, motion} from "framer-motion";
-import {useInvokeWithMass, useIsSendingMass} from "@/hooks/useInvoke";
-import {useMemo} from "react";
-import OpenToPageDialog from "@/components/OpenToPageDialog/OpenToPageDialog";
-import { useI18n } from "@/i18n";
+import { MoreHorizontalRegular } from "@fluentui/react-icons";
+import { invoke } from "@tauri-apps/api/core";
+import { AnimatePresence, motion } from "framer-motion";
+import { useMemo } from "react";
 
 export default function App() {
     const {isSendingMass, mutate: m1} = useIsSendingMass();
@@ -25,8 +26,7 @@ export default function App() {
     const fuckWebkit = useMemo(() => localStorage.getItem("fkWebkit") === "true", []);
     const { t } = useI18n();
     const refresh = () => {
-        m1();
-        m2()
+        m1().finally(() => m2())
     }
     return <BasePage title={t('appManagement.title')}>
         <div style={{ gap: 5, display: "flex", flexDirection: "column", marginTop: 5 }}>
@@ -66,7 +66,8 @@ function AppInfoCard({app, refresh}: { app: AppInfo, refresh: () => void }) {
 
 function AppActions({app, refresh}: { app: AppInfo, refresh: () => void }) {
     const { t } = useI18n();
-    
+    const { dispatchToast } = useToast();
+
     return <Menu>
         <MenuTrigger>
             <Button appearance="subtle" icon={<MoreHorizontalRegular />}></Button>
@@ -77,8 +78,10 @@ function AppActions({app, refresh}: { app: AppInfo, refresh: () => void }) {
                     invoke("miwear_open_quickapp",{app,page:""})
                 }}>{t('common.open')}</MenuItem>
                 <MenuItem onClick={()=>{
-                    invoke("miwear_uninstall_quickapp",{app}).finally(()=>{
-                        refresh();
+                    invoke("miwear_uninstall_quickapp", { app }).catch(() => { makeError(dispatchToast, t('common.fail')) }).finally(() => {
+                        setTimeout(() => {
+                            refresh();
+                        }, 500);
                     })
                 }}>{t('common.uninstall')}</MenuItem>
                 <OpenToPageDialog app={app}/>

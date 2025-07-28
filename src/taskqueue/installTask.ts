@@ -88,6 +88,16 @@ export async function installResourceAction(ctx: TaskActionContext, type: Resour
             params.versionCode = 1;
             break;
         case ResourceType.WatchFace:
+            //@ts-ignore
+            if(ctx.get()?.newWatchfaceID) {
+                const idBytes = new Uint8Array(12);
+                //@ts-ignore
+                const inputBytes = new TextEncoder().encode(ctx.get()?.newWatchfaceID);
+                idBytes.set(inputBytes.subarray(0, 12))
+                params.newWatchfaceId = idBytes
+            }else {
+                params.newWatchfaceId = null;
+            }
             cmd = "miwear_install_watchface";
             break;
         case ResourceType.Firmware:

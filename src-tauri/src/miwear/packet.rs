@@ -8,7 +8,7 @@ pub const MAGIC: [u8; 2] = [0xA5, 0xA5];
 
 #[derive(Debug, Clone)]
 pub enum PacketData {
-    PROTOBUF( __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__),
+    PROTOBUF(pb::protocol::WearPacket),
     DATA(Vec<u8>),
     NETWORK(Vec<u8>),
     UNSUPPORT(Vec<u8>),
@@ -88,15 +88,15 @@ pub struct PacketPayload<'a> {
     pub data: &'a [u8],
 }
 
-/* ─── 核心：Mi __OPENSOURCE__DELETED__（body = Vec<u8>） ─────────────────── */
+/* ─── 核心：MiWearPacket（body = Vec<u8>） ─────────────────── */
 #[derive(Debug, Clone, Serialize)]
-pub struct Mi __OPENSOURCE__DELETED__ {
+pub struct MiWearPacket {
     pub pkt_type: PktType,
     pub seq: u8,
     pub body: Vec<u8>,
 }
 
-impl Mi __OPENSOURCE__DELETED__ {
+impl MiWearPacket {
     /* -- 解析 ------------------------------------------------ */
     pub fn parse(buf: &[u8]) -> Result<Self, &'static str> {
         if buf.len() < 8 {

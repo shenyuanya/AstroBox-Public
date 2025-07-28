@@ -53,7 +53,11 @@ export default function DeviceConnectCard({
         } catch (error) {
             setConnectStatus(3)
             logger.error(error)
-            if (error instanceof Error) makeError(dispatchToast, t(error.message))
+            if (error instanceof Error) {
+                const [key, ...rest] = error.message.split(":");
+                const detail = rest.join(":");
+                makeError(dispatchToast, detail ? `${t(key)}:${detail}` : t(key))
+            }
         }
     }, [authKey, device])
 

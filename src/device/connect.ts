@@ -23,7 +23,8 @@ function tryTryBreak<T extends (...args: any[]) => any>(
             return await func(...args);
         } catch (error) {
             logger.error(error);
-            throw new Error(errormsg);
+            const detail = error instanceof Error ? error.message : String(error);
+            throw new Error(`${errormsg}:${detail}`);
         }
     };
 }

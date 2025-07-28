@@ -3,7 +3,6 @@ package com.astralsight.astrobox.plugin.btclassic_spp
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.util.Base64
-import android.util.Log
 import android.webkit.WebView
 import app.tauri.annotation.Command
 import app.tauri.annotation.InvokeArg
@@ -18,17 +17,17 @@ import java.io.IOException
 class ConnectArg { lateinit var addr: String }
 
 @TauriPlugin
-class BtClassicSPPPlugin(private val activity: Activity): Plugin(activity) {
+class BtClassicSPPPlugin(private val activity: Activity) : Plugin(activity) {
     private lateinit var implementation: BTSpp
     private lateinit var webView: WebView
 
-    override fun load(webView: WebView){
+    override fun load(webView: WebView) {
         implementation = BTSpp(activity, webView)
         implementation.initPermissions()
-
         this.webView = webView
     }
 
+    /** ------------ 蓝牙扫描 ------------ **/
     @SuppressLint("MissingPermission")
     @Command
     fun startScan(invoke: Invoke) {
@@ -46,35 +45,30 @@ class BtClassicSPPPlugin(private val activity: Activity): Plugin(activity) {
     @Command
     fun getScannedDevices(invoke: Invoke) {
         val ret = JSArray()
-        val devices = implementation.getScannedDevices()
-        devices.forEach { device ->
-            val newObj = JSObject()
-            newObj.put("name", device.name)
-            newObj.put("address", device.address)
-
-            ret.put(newObj)
+        implementation.getScannedDevices().forEach { device ->
+            val obj = JSObject()
+            obj.put("name", device.name)
+            obj.put("address", device.address)
+            ret.put(obj)
         }
-
-        val pack = JSObject()
-        pack.put("ret", ret)
-        invoke.resolve(pack)
+        invoke.resolve(JSObject().put("ret", ret))
     }
 
+    /** ------------ 连接 ------------ **/
     @SuppressLint("MissingPermission")
     @Command
     fun connect(invoke: Invoke) {
         val args = invoke.parseArgs(ConnectArg::class.java)
-        webView.evaluateJavascript( "console.log('Kotlin: Connecting to device ${args.addr}')", null)
+        webView.evaluateJavascript("console.log('Kotlin: Connecting to device ${args.addr}')", null)
 
         CoroutineScope(Dispatchers.IO).launch {
-            try {
-                val isSuccessful = implementation.connect(activity, args.addr)
+            val (isSuccessful, err) = implementation.connect(activity, args.addr)
+            if (isSuccessful) {
                 val ret = JSObject()
-                ret.put("ret", isSuccessful)
+                ret.put("ret", true)
                 invoke.resolve(ret)
-            } catch (e: Exception) {
-                webView.evaluateJavascript( "console.log('Kotlin: connect failed')", null)
-                invoke.reject("CONNECT_ERROR", e.message, e)
+            } else {
+                invoke.reject("CONNECT_ERROR", err ?: "Unknown error")
             }
         }
     }
@@ -85,43 +79,33 @@ class BtClassicSPPPlugin(private val activity: Activity): Plugin(activity) {
         invoke.resolve()
     }
 
+    /** ------------ 连接成功回调 ------------ **/
     @Command
     fun onConnected(invoke: Invoke) {
         val out = invoke.parseArgs(Channel::class.java)
-        webView.evaluateJavascript("console.log('Kotlin: onConnected cb set')", null)
-
-        implementation.onConnected {
-            webView.evaluateJavascript("console.log('Kotlin: onConnected -> out.send')", null)
-            out.send(JSObject())
-        }
-
+        implementation.onConnected { out.send(JSObject()) }
         invoke.resolve()
     }
 
+    /** ------------ 连接信息 ------------ **/
     @SuppressLint("MissingPermission")
     @Command
     fun getConnectedDeviceInfo(invoke: Invoke) {
         val info = implementation.getConnectedDeviceInfo()
         val ret = JSObject()
-
-        webView.evaluateJavascript("console.log('Kotlin: getConnectedDeviceInfo -> name: ${info?.name} address: ${info?.address}')", null)
-
-        if (info != null) {
-            ret.put("name", info.name)
+        info?.let {
+            ret.put("name", it.name)
+            ret.put("address", it.address)
         }
-        if (info != null) {
-            ret.put("address", info.address)
-        }
-
         invoke.resolve(ret)
     }
 
+    /** ------------ 数据监听 ------------ **/
     @Command
     fun setDataListener(invoke: Invoke) {
         val out = invoke.parseArgs(Channel::class.java)
-
         val callbackData = JSObject()
-        implementation.setDataListener(object: BTSpp.DataListener {
+        implementation.setDataListener(object : BTSpp.DataListener {
             override fun onDataReceived(data: ByteArray) {
                 callbackData.put("ret", Base64.encodeToString(data, Base64.NO_WRAP))
                 out.send(callbackData)
@@ -133,24 +117,22 @@ class BtClassicSPPPlugin(private val activity: Activity): Plugin(activity) {
                 out.send(callbackData)
             }
         })
-
         invoke.resolve()
     }
 
+    /** ------------ 开启订阅读取 ------------ **/
     @Command
     fun startSubscription(invoke: Invoke) {
         implementation.startSubscription()
-
         invoke.resolve()
     }
 
+    /** ------------ 发送 ------------ **/
     @Command
     fun send(invoke: Invoke) {
         val args = invoke.parseArgs(RustTypes.SPPSendPayload::class.java)
         val data = Base64.decode(args.b64data, Base64.DEFAULT)
-
         implementation.send(data)
-
         invoke.resolve()
     }
 }

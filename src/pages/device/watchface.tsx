@@ -1,5 +1,8 @@
+import { useInvokeWithMass, useIsSendingMass } from "@/hooks/useInvoke";
+import { useI18n } from "@/i18n";
 import BasePage from "@/layout/basePage";
-import {WatchfaceInfo} from "@/types/bluetooth";
+import useToast, { makeError } from "@/layout/toast";
+import { WatchfaceInfo } from "@/types/bluetooth";
 import {
     Body1,
     Button,
@@ -11,12 +14,10 @@ import {
     MenuPopover,
     MenuTrigger
 } from "@fluentui/react-components";
-import {MoreHorizontalRegular} from "@fluentui/react-icons";
-import {invoke} from "@tauri-apps/api/core";
-import {AnimatePresence, motion} from "framer-motion";
-import {useInvokeWithMass, useIsSendingMass} from "@/hooks/useInvoke";
-import {useMemo} from "react";
-import { useI18n } from "@/i18n";
+import { MoreHorizontalRegular } from "@fluentui/react-icons";
+import { invoke } from "@tauri-apps/api/core";
+import { AnimatePresence, motion } from "framer-motion";
+import { useMemo } from "react";
 
 export default function Watchface() {
     const { t } = useI18n();
@@ -27,8 +28,7 @@ export default function Watchface() {
         mutate: m2
     } = useInvokeWithMass<WatchfaceInfo[]>(isSendingMass)("miwear_get_watchface_list")
     const refresh = () => {
-        m1();
-        m2()
+        m1().finally(() => m2())
     }
     return <BasePage title={t('watchfaceManagement.title')}>
         <div style={{ gap: 5, display: "flex", flexDirection: "column", marginTop: 5 }}>
@@ -64,6 +64,7 @@ function AppInfoCard({ watchface, refresh }: { watchface: WatchfaceInfo, refresh
 }
 function AppActions({ watchface, refresh }: { watchface: WatchfaceInfo, refresh: () => void }) {
     const { t } = useI18n();
+    const { dispatchToast } = useToast()
 
     return <Menu>
         <MenuTrigger>
@@ -77,7 +78,7 @@ function AppActions({ watchface, refresh }: { watchface: WatchfaceInfo, refresh:
                 <MenuItem
                     disabled={!watchface.can_remove}
                     onClick={() => {
-                        invoke("miwear_uninstall_watchface", { watchface }).finally(() => {
+                        invoke("miwear_uninstall_watchface", { watchface }).catch(() => { makeError(dispatchToast, t('common.fail')) }).finally(() => {
                             setTimeout(() => {
                                 refresh();
                             }, 500);

@@ -32,6 +32,7 @@ import useToast, { makeError, ToastSurface } from "@/layout/toast";
 import { initOpenResourceListener } from "@/listeners/resources";
 import logger from "@/log/logger";
 import Head from "next/head";
+import BoardcastDialog, { BoardcastInfo } from "@/components/BoardcastDialog/BoardcastDialog";
 
 const makeFluentTheme = (mode: 'light' | 'dark') => {
   return mode === 'light' ? webLightTheme : webDarkTheme;
@@ -43,53 +44,96 @@ function listenCloseEvent() {
 }
 
 export interface BuildInfo {
-    GIT_COMMIT_HASH: string,
-    BUILD_TIME: string,
-    BUILD_USER: string,
-    VERSION: string,
+  GIT_COMMIT_HASH: string,
+  BUILD_TIME: string,
+  BUILD_USER: string,
+  VERSION: string,
 }
 
 function App({ Component, pageProps }: AppProps) {
   const { t } = useI18n()
   const mode = useSystemTheme();
-  const [baseStyles, setBaseStyles] = useState<any>({"background": mode == "dark" ? "#1b1a19" : "#fff" });
+  const [baseStyles, setBaseStyles] = useState<any>({ "background": mode == "dark" ? "#1b1a19" : "#fff" });
   const [background, setBackground] = useState("");
   const router = useAnimatedRouter();
   const ismobile = useIsMobile();
   const [currentNav, setCurrentNav] = useState("/");
   const [hasMounted, setHasMounted] = useState(false);
-  const {dispatchToast} = useToast();
+  const [debugEnabled, setDebugEnabled] = useState(process.env.NODE_ENV === 'development');
+  const { dispatchToast } = useToast();
 
   const [updateInfo, setUpdateInfo] = useState<UpdateInfo | null>(null);
   const [showUpdateDialog, setShowUpdateDialog] = useState(false);
+  const [boardcastQueue, setBoardcastQueue] = useState<BoardcastInfo[]>([]);
+  const [currentBoardcast, setCurrentBoardcast] = useState<BoardcastInfo | null>(null);
+  const [showBoardcastDialog, setShowBoardcastDialog] = useState(false);
 
   useEffect(() => {
     setHasMounted(true);
   }, []);
 
+  useEffect(() => {
+    invoke<any>('app_get_config')
+      .then(cfg => {
+        if (typeof cfg.debug_window === 'boolean') {
+          setDebugEnabled(cfg.debug_window);
+        }
+      })
+      .catch(() => { });
+  }, []);
+
   // 启动时检查更新
   useEffect(() => {
     const checkForUpdates = async () => {
-        try {
-            const localInfo = await invoke<BuildInfo>("get_build_info");
-            const response = await fetch("https://astrobox.online/version.json", { cache: "no-store" });
-            const remoteInfo: UpdateInfo = await response.json();
+      try {
+        const localInfo = await invoke<BuildInfo>("get_build_info");
+        const response = await fetch("https://astrobox.online/version.json", { cache: "no-store" });
+        const remoteInfo: UpdateInfo = await response.json();
 
-            const ignoredVersion = localStorage.getItem('ignoredUpdateVersion');
+        const ignoredVersion = localStorage.getItem('ignoredUpdateVersion');
 
-            if (new Date(remoteInfo.time).getTime() > new Date(localInfo.BUILD_TIME).getTime()) {
-                if (remoteInfo.version !== ignoredVersion) {
-                    setUpdateInfo(remoteInfo);
-                    setShowUpdateDialog(true);
-                }
-            }
-        } catch (error) {
-            logger.error("Failed to check for updates:", error);
+        if (new Date(remoteInfo.time).getTime() > new Date(localInfo.BUILD_TIME).getTime()) {
+          if (remoteInfo.version !== ignoredVersion) {
+            setUpdateInfo(remoteInfo);
+            setShowUpdateDialog(true);
+          }
         }
+      } catch (error) {
+        logger.error("Failed to check for updates:", error);
+      }
     };
 
     checkForUpdates();
   }, []);
+
+  useEffect(() => {
+    const checkForBoardcasts = async () => {
+      try {
+        const response = await fetch("https://astrobox.online/boardcasts.json", { cache: "no-store" });
+        const all = await response.json();
+        const popups = (all as BoardcastInfo[]).filter(item => !!item.popup);
+        setBoardcastQueue(popups);
+      } catch (error) {
+        logger.error("Failed to check for boardcasts:", error);
+      }
+    }
+    checkForBoardcasts();
+  }, []);
+
+  useEffect(() => {
+    if (boardcastQueue.length > 0 && !showUpdateDialog) {
+      setCurrentBoardcast(boardcastQueue[0]);
+      setShowBoardcastDialog(true);
+    } else {
+      setShowBoardcastDialog(false);
+      setCurrentBoardcast(null);
+    }
+  }, [boardcastQueue, showUpdateDialog]);
+
+  const handleCloseBoardcast = () => {
+    setBoardcastQueue(prev => prev.slice(1));
+    setShowBoardcastDialog(false);
+  };
 
   // Register listeners
   useEffect(() => {
@@ -120,17 +164,17 @@ function App({ Component, pageProps }: AppProps) {
         return
       }
     }
-    setBaseStyles({"background": mode !== "dark" ? "#fff" : "#1b1a19" })
+    setBaseStyles({ "background": mode !== "dark" ? "#fff" : "#1b1a19" })
   }, [mode]);
 
   const isNavPage = isNav(router.pathname);
   const visible = !ismobile || isNavPage;
 
   useEffect(() => {
-    if(isNavPage) {
+    if (isNavPage) {
       setCurrentNav(router.pathname);
     }
-  },[router.pathname, isNavPage])
+  }, [router.pathname, isNavPage])
 
   const handleNavItemClick = (name: string) => {
     if (name === router.pathname) return;
@@ -148,7 +192,11 @@ function App({ Component, pageProps }: AppProps) {
         await CheckLocationPermissionWithAlert();
         await RequestLocationPermission();
       } catch (error) {
-        if (error instanceof Error) makeError(dispatchToast, t(error.message));
+        if (error instanceof Error) {
+          const [key, ...rest] = error.message.split(":");
+          const detail = rest.join(":");
+          makeError(dispatchToast, detail ? `${t(key)}:${detail}` : t(key));
+        }
       }
     }, 500);
     listenCloseEvent();
@@ -159,11 +207,11 @@ function App({ Component, pageProps }: AppProps) {
 
   if (!hasMounted) {
     return (
-        <div className="baseBody" style={baseStyles}>
-            <I18nProvider>
-              <FluentProvider theme={webDarkTheme} style={{background:"transparent",height:"100%",overflow:"hidden"}}>
-              </FluentProvider>
-            </I18nProvider>
+      <div className="baseBody" style={baseStyles}>
+        <I18nProvider>
+          <FluentProvider theme={webDarkTheme} style={{ background: "transparent", height: "100%", overflow: "hidden" }}>
+          </FluentProvider>
+        </I18nProvider>
       </div>
     );//防止第一次加载时闪烁
   }
@@ -173,21 +221,26 @@ function App({ Component, pageProps }: AppProps) {
     <div className="baseBody" style={baseStyles}>
       <Head>
         <meta name="referrer" content="no-referrer" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="viewport" content="viewport-fit=cover ,width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
       </Head>
       <I18nProvider>
-      <FluentProvider theme={makeFluentTheme(mode)} style={{background:"transparent",height:"100%",overflow:"hidden"}}>
-        <NavDirectionProvider>
+        <FluentProvider theme={makeFluentTheme(mode)} style={{ background: "transparent", height: "100%", overflow: "hidden" }}>
+          <NavDirectionProvider>
             <ToastSurface />
             <QueueTrigger />
-            <AddDeviceFromQr/>
+            <AddDeviceFromQr />
             <DragToPush />
             <DisclaimerDialog defaultOpen={disclaimerOpen} />
             <UpdateDialog
-                open={showUpdateDialog}
-                onClose={() => setShowUpdateDialog(false)}
-                updateInfo={updateInfo}
-                onIgnore={handleIgnoreUpdate}
+              open={showUpdateDialog}
+              onClose={() => setShowUpdateDialog(false)}
+              updateInfo={updateInfo}
+              onIgnore={handleIgnoreUpdate}
+            />
+            <BoardcastDialog
+              open={showBoardcastDialog && !showUpdateDialog}
+              onClose={handleCloseBoardcast}
+              boardcastInfo={currentBoardcast}
             />
             <div className="layout-root">
               {
@@ -197,15 +250,15 @@ function App({ Component, pageProps }: AppProps) {
               }
 
               <AnimatedLayout>
-              <main className={`app-content-wrapper main-content ${background}`}>
-                    <Component {...pageProps} currentNav={currentNav}/>
+                <main className={`app-content-wrapper main-content ${background}`}>
+                  <Component {...pageProps} currentNav={currentNav} />
                 </main>
               </AnimatedLayout>
 
-              { process.env.NODE_ENV === 'development' && <DebugWindow></DebugWindow> }
+              {debugEnabled && <DebugWindow></DebugWindow>}
             </div>
           </NavDirectionProvider>
-      </FluentProvider>
+        </FluentProvider>
       </I18nProvider>
     </div>
   );

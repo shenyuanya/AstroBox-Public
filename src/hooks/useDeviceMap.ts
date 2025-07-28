@@ -13,7 +13,7 @@ export default function useDeviceMap() {
 
     useEffect(() => {
         if (data) {
-            logger.info(`got device map: ${JSON.stringify(data)}`);
+            //logger.info(`got device map: ${JSON.stringify(data)}`);
             localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
         }
     }, [data]);

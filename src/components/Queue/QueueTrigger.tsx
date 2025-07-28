@@ -1,14 +1,15 @@
 import { registerOpenFileListener } from "@/device/install";
 import { useAnimatedRouter } from "@/hooks/useAnimatedRouter";
 import useIsMobile from "@/hooks/useIsMobile";
+import { useI18n } from "@/i18n";
 import { isNav } from "@/router/nav";
 import { useDownloadQueue, useInstallQueue } from "@/taskqueue/queue";
 import {
   CounterBadge,
   makeStyles,
+  ProgressBar,
   Text,
   tokens,
-  ProgressBar,
 } from "@fluentui/react-components";
 import {
   AppsListDetailRegular,
@@ -20,7 +21,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import React, { memo, useEffect, useRef, useState } from "react";
 import styles from "./queue.module.css";
 import QueueWindow from "./QueueWindow";
-import { useI18n } from "@/i18n";
 
 const useStyles = makeStyles({
   pcTriggerContainer: {
@@ -275,7 +275,9 @@ export default function QueueTrigger() {
     let unregister = registerOpenFileListener();
     return () => {
       unregister.then((unreg) => {
-        unreg();
+        unreg.forEach((unreg) => {
+          unreg();
+        })
       });
     };
   }, []);

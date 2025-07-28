@@ -1,15 +1,16 @@
-import { providerManager } from "@/community/manager";
+import {providerManager} from "@/community/manager";
 import AppleButtonWrapper from "@/components/appleButtonWapper/appleButtonWapper";
-import { useAnimatedRouter } from "@/hooks/useAnimatedRouter";
+import {useAnimatedRouter} from "@/hooks/useAnimatedRouter";
+import useDeviceMap from "@/hooks/useDeviceMap";
 import useIsMobile from "@/hooks/useIsMobile";
+import {useI18n} from "@/i18n";
 import BasePage from "@/layout/basePage";
-import { useI18n } from "@/i18n";
 import logger from "@/log/logger";
-import { Provider } from "@/plugin/types";
-import { createDownloadTask } from "@/taskqueue/downloadTask";
-import { addDownloadTask, useDownloadQueue, useInstallQueue } from "@/taskqueue/queue";
-import { MiWearState } from "@/types/bluetooth";
-import { ResourceManifestV1 } from "@/types/ResManifestV1";
+import {Provider} from "@/plugin/types";
+import {createDownloadTask} from "@/taskqueue/downloadTask";
+import {addDownloadTask, useDownloadQueue, useInstallQueue} from "@/taskqueue/queue";
+import {MiWearState} from "@/types/bluetooth";
+import {ResourceManifestV1} from "@/types/ResManifestV1";
 import {
     Button,
     Carousel,
@@ -38,16 +39,15 @@ import {
     LinkMultipleFilled,
     ShareIosFilled
 } from "@fluentui/react-icons";
-import { invoke } from "@tauri-apps/api/core";
-import { openUrl } from "@tauri-apps/plugin-opener";
+import {invoke} from "@tauri-apps/api/core";
+import {openUrl} from "@tauri-apps/plugin-opener";
 import ColorThief from "color-thief-browser";
 import parse from 'html-react-parser';
 import Image from "next/image";
-import { useEffect, useMemo, useRef, useState } from "react";
+import {useEffect, useMemo, useRef, useState} from "react";
 import QRCode from "react-qr-code";
 import AutoSizer from "react-virtualized-auto-sizer";
 import styles from "./productinfo.module.css";
-import useDeviceMap from "@/hooks/useDeviceMap";
 
 const useClasses = makeStyles({
     btn: {
@@ -297,15 +297,26 @@ function DownloadBtn({ manifest: { downloads, item: { icon, name, description, _
     const router = useAnimatedRouter()
     const { t } = useI18n();
     const deviceMap = useDeviceMap();
+    const isMobile = useIsMobile()
+    const { items: downloadItems } = useDownloadQueue();
+    const { items: installItems } = useInstallQueue();
     const list = []
     for (const key of Object.keys(downloads)) {
         const item = downloads[key];
         list.push({ key, item })
     }
+
+    let hasItem = useMemo(() => {
+        const items = [...downloadItems, ...installItems];
+        //@ts-ignore
+        return items.findIndex(item => item.id === (downloads[codename]?.file_name ?? name ?? "")) != -1;
+    }, [downloadItems, installItems, codename]);
+
+    if (list.length === 0) return null;
     const providerName = router.query.provider as string;
     description = _bandbbs_ext_resource_id ? "" : description;
     const download = async (code: string) => {
-        const iconComponent = () => icon ? <Image width={40} height={40} src={icon} alt={name ?? ""} /> : <AppsRegular />;
+        const iconComponent = () => icon ? <Image width={40} height={40} src={icon} alt={name ?? ""} style={{borderRadius:999}}/> : <AppsRegular />;
         const taskId = _bandbbs_ext_resource_id?.toString() ?? name ?? "";
         const taskName = name ?? "";
         const displayDescription = (code === codename ? "" : `(${code}) `) + (description ?? "");
@@ -320,14 +331,6 @@ function DownloadBtn({ manifest: { downloads, item: { icon, name, description, _
         addDownloadTask(task);
     }
     const showDefault = codename && downloads.hasOwnProperty(codename)
-    const isMobile = useIsMobile()
-    const { items: downloadItems } = useDownloadQueue();
-    const { items: installItems } = useInstallQueue();
-    let hasItem = useMemo(() => {
-        const items = [...downloadItems, ...installItems];
-        //@ts-ignore
-        return items.findIndex(item => item.id === (downloads[codename]?.file_name ?? name ?? "")) != -1;
-    }, [downloadItems, installItems, codename]);
     return (
         <Menu positioning="below-end">
             <MenuTrigger disableButtonEnhancement>
@@ -363,7 +366,7 @@ function DownloadBtn({ manifest: { downloads, item: { icon, name, description, _
 }
 function ShareButton({ manifest: { item }, provider }: { manifest: ResourceManifestV1, provider: Provider }) {
     const { t } = useI18n();
-    const link = encodeURI(`https://astrobox.online/open?source=res&res=${item.name}&provider=${provider.name}`)
+    const link = encodeURI(`https://astrobox.online/open?source=res&res=${item._bandbbs_ext_resource_id?item._bandbbs_ext_resource_id:item.name}&provider=${provider.name}`)
     const [qrSize, setQrSize] = useState(128)
     return (
         <Menu>

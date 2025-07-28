@@ -24,19 +24,19 @@ pub struct ServiceLoginAuthRespone {
     pub qs: String,
     #[serde(default)]
     pub ssecurity: String,
-    pub code: u32,
+    pub code: u64,
     #[serde(rename = "passToken")]
     #[serde(default)]
     pub pass_token: String,
     #[serde(default)]
     pub description: String,
     #[serde(rename = "securityStatus")]
-    pub security_status: u32,
+    pub security_status: u64,
     #[serde(default)]
     pub nonce: u64,
     #[serde(rename = "userId")]
     #[serde(default)]
-    pub user_id: u32,
+    pub user_id: u64,
     #[serde(rename = "cUserId")]
     #[serde(default)]
     pub c_user_id: String,
@@ -44,8 +44,8 @@ pub struct ServiceLoginAuthRespone {
     #[serde(default)]
     pub psecurity: String,
     pub location: String,
-    pub pwd: u32,
-    pub child: u32,
+    pub pwd: u64,
+    pub child: u64,
     #[serde(default)]
     pub desc: String,
     #[serde(rename = "notificationUrl")]
@@ -86,7 +86,7 @@ pub struct DeviceInfo {
     pub identifier: String,
     pub name: String,
     pub model: String,
-    pub status: u32,
+    pub status: u64,
     pub create_time: u64,
     pub update_time: u64,
     pub detail: DeviceDetail,
@@ -99,7 +99,7 @@ pub struct DeviceListResult {
 
 #[derive(Debug, Deserialize, Serialize)]
 pub struct DeviceListRespone {
-    pub code: u32,
+    pub code: u64,
     pub message: String,
     pub result: DeviceListResult,
 }

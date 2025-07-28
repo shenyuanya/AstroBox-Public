@@ -23,15 +23,18 @@ pub struct Item {
     pub icon: Option<String>,
     pub source_url: Option<String>,
     pub author: Option<Vec<Author>>,
+    #[serde(default)]
+    pub paid_type: String,
     pub _bandbbs_ext_supported_device: Option<String>,
     pub _bandbbs_ext_resource_id: Option<u32>,
+    pub _bandbbs_ext_is_community_paid: Option<bool>,
 }
 
 #[derive(Clone, Debug, Default, Serialize, Deserialize)]
 pub struct SearchConfig {
     pub filter: Option<String>,
     pub sort: Option<String>,
-    pub device: Option<String>,
+    pub category: Option<Vec<String>>,
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -79,6 +82,8 @@ pub trait Provider: Send + Sync {
         limit: u32,
         search: SearchConfig,
     ) -> anyhow::Result<Vec<Item>>;
+
+    async fn get_categories(&self) -> anyhow::Result<Vec<String>>;
 
     async fn get_item(&self, name: String) -> anyhow::Result<ResourceManifestV1>;
 

@@ -12,10 +12,11 @@ import * as React from 'react';
 import CommandPoolExplorer from './CommandPoolExplorer';
 import styles from './DebugWindow.module.css';
 import PluginStoreTest from './PluginStoreTest';
+import ConsoleOutput from './ConsoleOutput';
 
 export const DebugWindow: React.FC = () => {
   const [open, setOpen] = React.useState(false);
-  const [selected, setSelected] = React.useState<TabValue>('commandpool');
+  const [selected, setSelected] = React.useState<TabValue>('console');
 
   const handleTabSelect = (_e: SelectTabEvent, data: SelectTabData) =>
     setSelected(data.value);
@@ -55,6 +56,7 @@ export const DebugWindow: React.FC = () => {
             className={styles['debug-tablist']}
             size="small"
           >
+            <Tab value="console">Console</Tab>
             <Tab value="commandpool">CommandPool</Tab>
             <Tab value="btstack">BtStack</Tab>
             <Tab value="pst">PluginStore</Tab>
@@ -66,6 +68,9 @@ export const DebugWindow: React.FC = () => {
             )}
             {selected === 'pst' && (
               <PluginStoreTest></PluginStoreTest>
+            )}
+            {selected === 'console' && (
+              <ConsoleOutput></ConsoleOutput>
             )}
           </div>
         </div>

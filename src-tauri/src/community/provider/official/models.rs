@@ -18,7 +18,9 @@ pub struct IndexRes {
     pub tags: Vec<String>,
     #[serde(deserialize_with = "split_semicolon")]
     pub devices: Vec<String>,
-    pub path: String
+    pub path: String,
+    #[serde(default)]
+    pub paid_type: String,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]

@@ -1,0 +1,387 @@
+{
+  "translators": "Charlie_Q",
+  "nav": {
+    "home": "家庭",
+    "device": "装置",
+    "plugin": "插入式",
+    "settings": "设定"
+  },
+  "disclaimer": {
+    "title": "免责声明",
+    "content": "天文盒子 应用免责声明\n\n在使用本软件（以下简称“天文盒子”）前，请您仔细阅读并充分理解本免责声明条款。继续下载安装或使用 天文盒子 即表示您已阅读、理解并接受本声明所述全部内容，并同意自行承担使用本软件所带来的全部风险与责任。\n\n⸻\n\n一、软件属性声明\n\n天文盒子 是由独立开发者开发并发布的第三方工具应用，旨在为用户提供在小米品牌智能穿戴设备上安装第三方资源（包括看脸、快速应用程序、固件等）所需的便捷工具。\n\n本软件并非由小米公司及其任何关联方开发、授权、发布或支持，与小米公司不存在任何形式的隶属、合作、代理或其他法律关系。小米公司不对 天文盒子 的功能、性能、安全性或由使用该软件引发的任何后果承担责任。\n\n⸻\n\n二、用户行为与责任承担\n\n天文盒子 提供的各项功能可能涉及对设备系统的自定义修改，包括但不限于资源替换、配置调整、非官方内容的安装等。此类操作可能会对设备的正常运行、安全性、数据完整性产生不可预测的影响，包括但不限于：\n    •    系统不稳定、功能异常或设备无法启动；\n    •    用户数据丢失、损坏或泄露；\n    •    官方服务协议失效或保修权益丧失；\n    •    与设备预装系统或服务的不兼容；\n    •    触发设备厂商账号管理机制导致登录受限。\n\n上述操作行为完全基于用户的自主选择，用户应在充分理解相关风险的基础上作出决策，并独立承担由此产生的全部后果。天文盒子 开发者不对任何由用户使用本软件引起的直接或间接损害承担责任。\n\n⸻\n\n三、账户登录与数据传输提示\n\n天文盒子 部分功能涉及通过调用小米账号服务接口以访问资源或启用特定设备操作。在此过程中，用户提供的账号凭证信息（包括用户名、密码或授权票据等）将直接提交至小米官方服务器，以完成身份验证。\n\n本软件不会在未经用户同意的情况下存储、记录或篡改用户凭证信息。然而：\n    •    该传输行为的安全性完全依赖于小米服务器及其接口实现机制，非本软件所能控制或担保；\n    •    若因接口变化、服务策略调整或安全机制触发而导致用户账号受到限制、登录失败或产生数据问题，本软件及其开发者不承担相关责任；\n    •    用户应审慎判断是否使用此类功能，并对涉及账号凭证的使用风险承担全部责任。\n\n我们强烈建议用户仅在可信网络环境中操作，并在授权登录前评估其账号安全性要求。\n\n⸻\n\n四、第三方资源来源与内容合法性\n\n天文盒子 提供的部分资源内容来自公开网络或第三方社区平台，包括但不限于开源社区（如 GitHub）、论坛平台（如米坛社区）、内容分发网络（如 jsDelivr）等。\n\n这些资源由其原发布者提供，天文盒子 仅作为工具实现访问与安装，不对第三方资源的以下方面作出任何承诺或保证：\n    •    内容的合法性、完整性或准确性；\n    •    不含恶意代码或破坏性行为；\n    •    不侵犯任何第三方的知识产权或其他合法权益；\n    •    与用户设备或系统的兼容性与安全性。\n\n用户应在确保自身合法权益和符合相关法律法规的前提下，自行决定是否访问或使用第三方资源，并独立承担由此可能引发的法律、技术或经济责任。\n\n⸻\n\n五、安全责任与免责条款\n\n天文盒子 以“按现状”原则提供，不对其功能的持续可用性、系统兼容性、性能表现或特定用途适用性作出任何明示或暗示的保证。用户明确同意，对于因使用或无法使用本软件所产生的任何形式的损失（包括但不限于直接损失、间接损失、利润损失、数据丢失、设备损坏或法律责任），天文盒子 开发者及相关方不承担任何赔偿责任。\n\n此外，本软件不提供官方技术支持，亦无义务响应使用中产生的问题、故障或风险反馈。\n\n⸻\n\n六、条款变更与最终解释权\n\n天文盒子 保留根据法律法规变动、软件功能更新或运营策略调整的需要，随时对本免责声明内容进行修改的权利。相关变更将通过发布渠道及时公布，恕不单独另行通知。\n\n若用户在免责声明更新后继续使用本软件，则视为接受修改后的全部条款。天文盒子 开发者保留本免责声明的最终解释权。\n\n⸻\n\n请用户在安装和使用本软件前，务必评估自身技术能力、设备风险承受能力及法律合规责任。如无法接受本免责声明所述条款，请勿下载、安装或使用 天文盒子。",
+    "confirm": "我批准",
+    "cancel": "我不批准"
+  },
+  "home": {
+    "title": "家庭",
+    "search": "搜查",
+    "appList": "应用布条",
+    "loadingMore": "正在承载更多...坐和放宽。",
+    "none": "看起来暂时没有任何东西...",
+    "bottom": "已经...被插入底端...❤",
+    "retry": "复审",
+    "loading": "重新审理中..."
+  },
+  "about": {
+    "title": "大约",
+    "appVersion": "应用变体",
+    "foundNew": "找到新变体",
+    "checking": "正在确认最新消息",
+    "download": "下载最新消息",
+    "latest": "当前已是最新变体",
+    "checkUpdate": "检查最新进展",
+    "buildDate": "建设日期",
+    "team": "开发牲畜组",
+    "changelog": "变更原木",
+    "roles": {
+      "nativeFrontend": "当地的/开头的发展者",
+      "native": "当地的发展者",
+      "designerFrontend": "设计器/开头的发展者"
+    },
+    "releaseName": "变体姓名",
+    "releaseSlogan": "将晨曦作为起始，打开万物的光",
+    "copyright": "版权所有 © 2025 AstralSightStudios。保留所有权利"
+  },
+  "product": {
+    "detail": "才智详情",
+    "notFound": "才智不存在"
+  },
+  "common": {
+    "modify": "缓和",
+    "cancel": "废除",
+    "go": "去",
+    "loading": "承载中...",
+    "refreshAll": "提醒所有",
+    "uninstall": "卸载",
+    "disable": "使其伤残",
+    "enable": "使其可行",
+    "install": "安装",
+    "ok": "好。",
+    "open": "张开",
+    "download": "下载",
+    "share": "分摊",
+    "fail": "操作失败"
+  },
+  "updateDialog": {
+    "title": "发现新变体 {version}",
+    "body": "变更原木：",
+    "updateNow": "立即增加最新信息",
+    "later": "稍后提醒",
+    "ignore": "此变体不再提醒"
+  },
+  "resourceType": {
+    "quickapp": "快速应用程序",
+    "watchface": "看脸",
+    "firmware": "基地"
+  },
+  "resourcePaidType": {
+    "paid": "支付",
+    "force_paid": "付款单"
+  },
+  "resourceCategory": {
+    "hidden_paid": "隐藏奖励",
+    "hidden_force_paid": "隐藏付款单"
+  },
+  "installTask": {
+    "watchface": {
+      "description": "当地的看脸文档"
+    },
+    "thirdPartyApp": {
+      "description": "当地的第三方应用"
+    },
+    "firmware": {
+      "description": "当地的基地文档"
+    }
+  },
+  "banner": {
+    "loadFailed": {
+      "title": "BANNER承载失败"
+    },
+    "noBanners": {
+      "title": "没有BANNER...",
+      "description": "网络问题？"
+    },
+    "loading": "承载中..."
+  },
+  "modifyWatchfaceDialog": {
+    "title": "修改看脸身份证号",
+    "placeholder": "键入9/12位的数字"
+  },
+  "plugin": {
+    "noPluginsInstalled": "没有安装插入式",
+    "noFeatures": "该插入式没有任何特征",
+    "storeEnd": "已经...被插入底端...❤",
+    "loading": "承载中...",
+    "detailTitle": "插入式详情",
+    "searchPlaceholder": "搜查插入式",
+    "import": "引入插入式",
+    "tabs": {
+      "installed": "已安装",
+      "market": "插入式集市",
+      "features": "特征",
+      "details": "详情"
+    },
+    "details": {
+      "author": "作者",
+      "website": "网站",
+      "version": "变体版本",
+      "apiLevel": "API 层次",
+      "permissions": "许可"
+    },
+    "uninstallPrompt": {
+      "title": "卸载插入式",
+      "body": "您确定要卸载 {pluginName} 吗？",
+      "primary": "卸载",
+      "secondary": "关闭"
+    },
+    "restartPrompt": {
+      "title": "需要重启",
+      "body": "所有的插入式变更都需要重启应用才能生效。当您点击立即重启后，应用程序将关闭，请您手动重新张开应用。",
+      "primary": "立刻重启",
+      "secondary": "取消"
+    }
+  },
+  "device": {
+    "authkeyPrompt": "请键入 Authkey",
+    "connectFailed": "沟通失败",
+    "authkeyPlaceholder": "在此键入设备的 AuthKey",
+    "actions": {
+      "delete": "删除装置",
+      "disconnect": "断开链接",
+      "shareQR": "通过二维码分摊",
+      "qrResizeHint": "点击改变大小",
+      "qrTitle": "装置二维码："
+    },
+    "disconnected": "已断开",
+    "connected": "已沟通",
+    "charging": "(充电中)",
+    "lastChargePrefix": " 上次充电",
+    "lastChargeSuffix": "前",
+    "reconnect": "重新沟通",
+    "reconnectFailed": "上次沟通未成功,请到交换机装置页重新沟通",
+    "switch": "交换机装置",
+    "notConnected": "装置未沟通",
+    "connect": "沟通装置",
+    "networkProxyInfo": "天文盒子已代理你装置上的网络请求",
+    "features": {
+      "installApp": "安装快速应用程序",
+      "installAppDesc": "选取一个快速应用程序包体并安装到装置上",
+      "installWatchface": "安装看脸",
+      "installWatchfaceDesc": "选取一个看脸文件并安装到装置上",
+      "installFirmware": "安装基地",
+      "installFirmwareDesc": "选取一个系统基地并安装到装置上",
+      "manageApps": "快速应用程序完成",
+      "manageAppsDesc": "完成装置上的快速应用程序",
+      "manageWatchfaces": "看脸完成",
+      "manageWatchfacesDesc": "完成装置上的看脸",
+      "deviceInfo": "装置信息",
+      "deviceInfoDesc": "查看该装置的详细信息"
+    }
+  },
+  "openToPageDialog": {
+    "title": "跳跃到页面",
+    "placeholder": "请键入页面名"
+  },
+  "providerDialog": {
+    "title": "社团源情形"
+  },
+  "queue": {
+    "title": "长队",
+    "downloadQueue": "下载长队",
+    "installQueue": "安装长队",
+    "noTasks": "长队中没有工作",
+    "titleShort": "长队",
+    "viewTasks": "查看工作",
+    "taskQueue": "工作长队"
+  },
+  "loginDialog": {
+    "title": "登录小米叙述",
+    "description": "使用你的小米叙述登录以同步捆绑的装置",
+    "usernamePlaceholder": "请键入用户名/手机数量/小米叙述号码",
+    "passwordPlaceholder": "请键入通行码",
+    "saveCredentials": "保存用户名和通行码",
+    "loggingIn": "登录中",
+    "login": "登录",
+    "emptyError": "通行码或叙述不能为空!",
+    "2fa": {
+      "title": "需要二步验证",
+      "body": "检测到你的叙述需要二步验证，请点击“好。”前往浏览器进行操作，该过程将包含两次浏览器跳转。页面提示“ok”后，请返回天文盒子复审登录。"
+    }
+  },
+  "permission": {
+    "ble": {
+      "required": "您必须给予天文盒子蓝牙许可才能正确使用所有作用。请允许批准天文盒子使用\"附近的装置\"权限，并重启应用程式。"
+    }
+  },
+  "connect": {
+    "failed": "沟通失败",
+    "handshakeFailed": "握手失败",
+    "authFailed": "密钥错误或后端异常，请尝试重启应用程式，然后复审。"
+  },
+  "settings": {
+    "title": "设定",
+    "general": {
+      "title": "一般",
+      "reduceAnimation": "蒸发动画",
+      "reduceAnimationDesc": "建议webkit使用者打开以防止画面震动",
+      "language": "语言",
+      "languageDesc": "选择天文盒子展示的语言",
+      "debugWindow": "侦错连接",
+      "debugWindowDesc": "同意侦错连接"
+    },
+    "tools": {
+      "title": "极度愚蠢的器具",
+      "unlockCode": "运算解锁码",
+      "unlockCodeDesc": "在遗忘装置通行码时运算解锁码以重置装置",
+      "dialogTitle": "解锁你的小米穿戴式装置",
+      "dialogUsage": "利用方式",
+      "dialogUsageInfo": "在遗忘通行码的说明页击打↑↓↑↓↑↑↓↓进入",
+      "result": "运算后果",
+      "mac": "MAC 地址",
+      "sn": "SN 码",
+      "noticeTitle": "请关注🔥",
+      "noticeBody": "本工具仅供设备原始所有者在合法情况下用于恢复访问权限。请勿用于破解、绕过或非法访问非本人所有的小米设备。任何因滥用本工具而导致的法律或道德后果，天文盒子 及其开发者概不负责。",
+      "agree": "是的，我已阅读并同意免责声明。",
+      "calculate": "运算"
+    },
+    "account": {
+      "title": "叙述",
+      "loginBBS": "登录乐队论坛账户",
+      "loginBBSDesc": "登录乐队论坛账户以获取乐队资源",
+      "syncDevices": "同步装置",
+      "syncDevicesDesc": "从小米运动健康中同步捆绑的装置",
+      "bbsAccount": "乐队论坛账号"
+    },
+    "install": {
+      "title": "安装",
+      "sendInterval": "发包休憩时长",
+      "sendIntervalDesc": "安装时发送分块的间隔,变更此选项可能有机会处理一些安装失败的问题"
+    },
+    "source": {
+      "title": "软件源头（重启生效）",
+      "officialCdn": "官方源内容分发网络",
+      "officialCdnDesc": "选择官方源的内容分发网络地址"
+    },
+    "queue": {
+      "title": "长队",
+      "autoInstall": "自动安装",
+      "autoInstallDesc": "下载完成后自动安装",
+      "dontClear": "不消除安装长队",
+      "dontClearDesc": "安装完成后不消除长队以方便调试"
+    },
+    "about": {
+      "title": "关于",
+      "aboutAstrobox": "关于",
+      "aboutAstroboxDesc": "关于天文盒子的详细信息",
+      "openlog": "原木文件夹",
+      "openlogDesc": "打开原木文件夹以观看程序原木",
+      "website": "官网",
+      "websiteDesc": "访问天文盒子的官方网站",
+      "qq": "Q币售卖处",
+      "qqDesc": "加入天文盒子官方QQ群(920456907)",
+      "licences": "开源许可证",
+      "licencesDesc": "查看天文盒子的开源许可证",
+      "disclaimer": "免责声明",
+      "disclaimerDesc": "查看天文盒子的免责声明"
+    }
+  },
+  "licences": {
+    "title": "开源许可",
+    "intro": "本节目中使用的所有软件包的许可证如下所列。",
+    "node": "Node.js 依赖",
+    "crates": "Creates.io Packages",
+    "filter": "筛选",
+    "author": "作者:",
+    "license": "许可证:",
+    "description": "描述:",
+    "url": "网址:"
+  },
+  "bandbbs": {
+    "title": "乐队论坛描述",
+    "uid": "UID：",
+    "logout": "退出登录",
+    "purchased": "已购买原料",
+    "enter_resource_id": "请输入要下载的付费原料身份标识码",
+    "resource_id_placeholder": "原料身份标识码",
+    "query": "查询"
+  },
+  "iframe": {
+    "title": "打开网页"
+  },
+  "addDeviceFromQr": {
+    "title": "识别到以下装置"
+  },
+  "dragToPush": {
+    "title": "松手以安装文件",
+    "supportedFiles": "支持的文件：看脸、快速应用程序、天文盒子插入式"
+  },
+  "onlineImage": {
+    "loadFailed": "图片承载失败"
+  },
+  "pluginStoreTest": {
+    "waiting": "等待执行",
+    "success": "操作成功",
+    "refreshAll": "提醒所有",
+    "pullPage": "拉page",
+    "pullItem": "拉item=测试插入式",
+    "downloadAndPackage": "下载并打包item=测试插入式"
+  },
+  "productInfo": {
+    "about": "关于此原料",
+    "update": "更新",
+    "updateDescription": "降低看脸的稳定性，减弱看脸的流畅度。",
+    "deviceRequirements": "装置要求",
+    "compatible": "该原料适用于你的",
+    "incompatible": "你的",
+    "incompatibleSuffix": "已经被淘汰，无法使用此原料。",
+    "otherVersions": "同时也有其他装置版本提供。",
+    "inQueue": "已在长队中",
+    "copyLink": "复制链接",
+    "resizeQr": "敲击以变化尺码",
+    "viewOnBandBBS": "在乐队论坛观看"
+  },
+  "appManagement": {
+    "title": "快速应用程序管理",
+    "none": "无内容"
+  },
+  "deviceInfo": {
+    "title": "装置信息",
+    "notRealtime": "此页面不会实时变更",
+    "groups": {
+      "device": "装置信息",
+      "system": "系统信息",
+      "status": "装置情形"
+    },
+    "fields": {
+      "name": "姓名",
+      "address": "家庭地址",
+      "authkey": "打开神秘大门的密码",
+      "connectionType": "沟通的种类",
+      "codename": "装置外号",
+      "model": "型号",
+      "imei": "审币代码1",
+      "firmware": "系统版本",
+      "serial": "审币代码2",
+      "battery": "饱腹程度",
+      "chargeStatus": "进食情形",
+      "lastCharge": "上次进食时间"
+    }
+  },
+  "watchfaceManagement": {
+    "title": "看脸管理",
+    "none": "暂无看脸"
+  },
+  "switchDevice": {
+    "title": "交换机装置",
+    "getSavedFailed": "获取存储装置失败！",
+    "scanAndAdd": "扫描并添加装置",
+    "scanFailed": "装置扫描失败",
+    "scanNotFound": "暂未发现任何装置",
+    "savedDevices": "沟通过的装置",
+    "noSavedDevices": "还没沟通过任何装置"
+  },
+  "providerName": {
+    "official": "官方源",
+    "bandbbs": "乐队论坛源"
+  }
+}

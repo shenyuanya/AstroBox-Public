@@ -17,14 +17,22 @@
     "deep-link:default",
     "sentry:default",
     "opener:default",
-    "core:window:allow-set-progress-bar",
+    "core:webview:allow-create-webview",
+    "core:webview:allow-webview-close",
+    "fs:allow-app-read-recursive",
+    "fs:allow-app-write-recursive",
+    "fs:allow-download-read-recursive",
+    "fs:allow-download-write-recursive",
+    "fs:allow-remove",
+    "fs:allow-create",
     {
-      "identifier": "fs:allow-app-read-recursive",
-      "allow": [{ "path": "$APPDATA/**" }]
-    },
-    {
-      "identifier": "fs:allow-app-write-recursive",
-      "allow": [{ "path": "$APPDATA/**" }]
+      "identifier": "fs:scope",
+      "allow": [
+        { "path": "$APPDATA/**" },
+        { "path": "$APPLOG/**" },
+        { "path": "$APPCACHE/**" },
+        { "path": "$DOWNLOAD/**" }
+      ]
     }
   ]
 }
