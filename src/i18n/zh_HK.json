@@ -100,7 +100,7 @@
       "title": "冇Banner喎...",
       "description": "網絡问题？"
     },
-    "loading": "載入中..."
+    "loading": "Loading..."
   },
   "modifyWatchfaceDialog": {
     "title": "修改錶盤ID",
@@ -110,7 +110,7 @@
     "noPluginsInstalled": "未安装插件喵",
     "noFeatures": "呢個插件咩功能都冇",
     "storeEnd": "冇…冇得再深啦...❤",
-    "loading": "載入中...",
+    "loading": "Loading...",
     "detailTitle": "插件詳情",
     "searchPlaceholder": "搵插件",
     "import": "導入插件",
@@ -135,7 +135,7 @@
     },
     "restartPrompt": {
       "title": "需要重新啟動",
-      "body": "所有的插件变更都需要重启應用才能生效。喺你撳立即重启後，應用程式將會關閉，请閣下手动重新開啟。",
+      "body": "所有嘅插件更改都係需要重新啟動應用先至生效。喺你撳「即刻重新啟動」後，應用程式將會關閉，请閣下手動重新開啟。",
       "primary": "即刻重新啟動",
       "secondary": "取消"
     }
@@ -234,7 +234,7 @@
       "unlockCode": "計算解鎖碼",
       "unlockCodeDesc": "喺忘记裝置密碼时计算解锁碼以重置裝置",
       "dialogTitle": "解鎖你嘅小米穿戴裝置",
-      "dialogUsage": "使用方式",
+      "dialogUsage": "使用方法",
       "dialogUsageInfo": "喺忘记密碼（輸入錯誤嘅密碼多次後會入到）嘅說明頁撳上下上下上上下下进入",
       "result": "計算結果",
       "mac": "MAC 位址",
