@@ -159,7 +159,7 @@
     "reconnectFailed": "上次連線未成功，請到切換設備頁重新連線",
     "switch": "切換設備",
     "notConnected": "設備未連線",
-    "connect": "連AstroBox 已代理您設備上的網路請求",
+    "connect": "AstroBox 已代理您設備上的網路請求",
     "features": {
       "installApp": "安裝快應用",
       "installAppDesc": "選取一個快應用包體並安裝到設備上",
@@ -201,13 +201,13 @@
     "login": "登入",
     "emptyError": "密碼或帳號不得為空！",
     "2fa": {
-      "title": "需要二步驗證",
+      "title": "需要雙重驗證",
       "body": "檢測到您的帳號需要二步驗證，請點擊「確定」前往瀏覽器進行操作，該過程將包含兩次瀏覽器跳轉。頁面提示「ok」後，請返回 AstroBox 重新嘗試登入。"
     }
   },
   "permission": {
     "ble": {
-      "required": "您必須授予 AstroBox 藍牙權限才能正常使用所有功能。請允許 AstroBox 使用「附近的設備」權限，並重新啟動應用程式。"
+      "required": "您必須授予 AstroBox 藍牙權限才能正常使用所有功能。請允許 AstroBox 使用「鄰近裝置」權限，並重新啟動應用程式。"
     }
   },
   "connect": {
