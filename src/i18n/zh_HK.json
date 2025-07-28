@@ -15,7 +15,7 @@
     "title": "主頁",
     "search": "搵嘢",
     "appList": "應用程式",
-    "loadingMore": "正在載入更多...",
+    "loadingMore": "LoadingMore...",
     "none": "呢度咩都冇...",
     "bottom": "冇...冇得再深啦...❤",
     "retry": "重試",
@@ -59,7 +59,7 @@
     "open": "打開",
     "download": "下載",
     "share": "分享",
-    "fail": "操作失敗"
+    "fail": "失敗咗"
   },
   "updateDialog": {
     "title": "發現有新版 {version}",
@@ -151,24 +151,24 @@
       "qrResizeHint": "撳呢度調整大細",
       "qrTitle": "裝置QR碼："
     },
-    "disconnected": "斷開咗",
-    "connected": "連接緊",
+    "disconnected": "斷咗",
+    "connected": "已連線",
     "charging": "(充緊電)",
     "lastChargePrefix": " 上次充电喺",
     "lastChargeSuffix": "前",
-    "reconnect": "重新連接",
-    "reconnectFailed": "上次連接失敗,請去到切換裝置頁面重新連接",
+    "reconnect": "重新連線",
+    "reconnectFailed": "上次連接失敗,請去到切換裝置頁面重新連線",
     "switch": "切換裝置",
-    "notConnected": "裝置未連接",
-    "connect": "連接裝置",
+    "notConnected": "裝置未連線",
+    "connect": "連線裝置",
     "networkProxyInfo": "AstroBox 已為你嘅裝置代理網絡請求",
     "features": {
       "installApp": "安装快應用",
-      "installAppDesc": "揀個快應用包並装入你嘅裝置",
+      "installAppDesc": "揀選快應用包並Send入你嘅裝置",
       "installWatchface": "安裝錶盤",
-      "installWatchfaceDesc": "揀個錶盤檔案並裝入你嘅裝置",
+      "installWatchfaceDesc": "揀選錶盤檔案並Send入你嘅裝置",
       "installFirmware": "安裝韌體",
-      "installFirmwareDesc": "揀個系統韌體並裝入你嘅裝置",
+      "installFirmwareDesc": "揀選系統韌體並Send入你嘅裝置",
       "manageApps": "快應用管理",
       "manageAppsDesc": "管理裝置上嘅快應用",
       "manageWatchfaces": "錶盤管理",
@@ -186,12 +186,12 @@
   },
   "queue": {
     "title": "隊列",
-    "downloadQueue": "下載隊列",
-    "installQueue": "安装隊列",
-    "noTasks": "隊列冇任務",
-    "titleShort": "隊列",
+    "downloadQueue": "下載佇列",
+    "installQueue": "安装佇列",
+    "noTasks": "佇列冇任務",
+    "titleShort": "佇列",
     "viewTasks": "檢視任務",
-    "taskQueue": "任務隊列"
+    "taskQueue": "任務佇列"
   },
   "loginDialog": {
     "title": "登入小米帳戶",
@@ -224,7 +224,7 @@
       "reduceAnimation": "減少動畫",
       "reduceAnimationDesc": "建議WebKit用戶開啟以防止畫面嘅震動。",
       "language": "語言",
-      "languageDesc": "揀AstroBox顯示嘅語言",
+      "languageDesc": "揀選AstroBox顯示嘅語言",
       "translateTeam": "翻譯貢獻者",
       "debugWindow": "除錯視窗",
       "debugWindowDesc": "顯示除錯視窗"
@@ -253,7 +253,7 @@
       "bbsAccount": "米坛社區（BandBBS）帳戶"
     },
     "install": {
-      "title": "安装",
+      "title": "安裝",
       "sendInterval": "發包間隔",
       "sendIntervalDesc": "安裝時發送數據塊嘅間隔。調整呢度可以解決部分安裝失敗嘅問題。"
     },
@@ -263,18 +263,18 @@
       "officialCdnDesc": "揀官方倉庫嘅CDN位址"
     },
     "queue": {
-      "title": "隊列",
+      "title": "佇列",
       "autoInstall": "自動安裝",
       "autoInstallDesc": "下載完成後自動安裝",
-      "dontClear": "唔清除安裝隊列",
-      "dontClearDesc": "安裝完成後不清理隊列以方便除錯"
+      "dontClear": "唔清除安裝佇列",
+      "dontClearDesc": "安裝完成後不清理佇列以方便除錯"
     },
     "about": {
       "title": "關於",
       "aboutAstrobox": "關於",
       "aboutAstroboxDesc": "有關AstroBox嘅詳細資訊",
-      "openlog": "日誌檔案夾",
-      "openlogDesc": "打開日誌檔案夾以檢視應用程式日誌",
+      "openlog": "日誌資料夾",
+      "openlogDesc": "打開日誌資料夾以檢視應用程式日誌",
       "website": "官方網站",
       "websiteDesc": "瀏覽AstroBox嘅官方網站",
       "qq": "QQ群組",
@@ -317,7 +317,7 @@
     "loadFailed": "圖片載入失敗咗"
   },
   "pluginStoreTest": {
-    "waiting": "等待執行",
+    "waiting": "等緊執行",
     "success": "操作成功咗",
     "refreshAll": "全部刷新",
     "pullPage": "拉取page",
@@ -335,7 +335,7 @@
     "otherVersions": "亦有其他裝置嘅版本可用。",
     "inQueue": "喺隊列中",
     "copyLink": "複製連結",
-    "resizeQr": "撳調整大細",
+    "resizeQr": "撳呢度調整大細",
     "viewOnBandBBS": "係米坛社區檢視"
   },
   "appManagement": {
@@ -370,7 +370,7 @@
     "none": "暫時冇錶盤"
   },
   "switchDevice": {
-    "title": "揀裝置",
+    "title": "揀選裝置",
     "getSavedFailed": "獲取存储嘅裝置失敗咗！",
     "scanAndAdd": "掃描並新增裝置",
     "scanFailed": "裝置掃描失敗咗",
