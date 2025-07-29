@@ -209,7 +209,7 @@
   },
   "permission": {
     "ble": {
-      "required": "你必須授予 AstroBox 藍牙權限先可使用所有功能。請允許 AstroBox 使用\"附近裝置\"權限並重新啟動應用程式。"
+      "required": "你必須授予 AstroBox 藍牙權限先可使用所有功能。請允許 AstroBox「使用附近裝置」權限並重新啟動應用程式。"
     }
   },
   "connect": {
