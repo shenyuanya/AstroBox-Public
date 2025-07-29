@@ -75,7 +75,7 @@
     "firmware": "韌體"
   },
    "resourcePaidType": {
-    "paid": "需購買",
+    "paid": "自選消費",
     "force_paid": "強制性收費"
   },
   "resourceCategory": {
@@ -148,9 +148,9 @@
     "actions": {
       "delete": "删除裝置",
       "disconnect": "斷開連接",
-      "shareQR": "透過QR碼分享",
+      "shareQR": "透過QR Code分享",
       "qrResizeHint": "撳呢度調整大細",
-      "qrTitle": "裝置QR碼："
+      "qrTitle": "裝置QR Code："
     },
     "disconnected": "斷咗",
     "connected": "已連線",
