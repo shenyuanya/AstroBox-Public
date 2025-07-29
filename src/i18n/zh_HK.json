@@ -186,7 +186,7 @@
     "title": "社區來源狀態"
   },
   "queue": {
-    "title": "隊列",
+    "title": "佇列",
     "downloadQueue": "下載佇列",
     "installQueue": "安装佇列",
     "noTasks": "佇列冇任務",
@@ -210,7 +210,7 @@
   },
   "permission": {
     "ble": {
-      "required": "你必須授予 AstroBox 藍牙權限先可使用所有功能。請允許 AstroBox 使用\"附近裝置\"權限並重啟應用程式。"
+      "required": "你必須授予 AstroBox 藍牙權限先可使用所有功能。請允許 AstroBox「使用附近裝置」權限並重新啟動應用程式。"
     }
   },
   "connect": {
@@ -256,7 +256,7 @@
     "install": {
       "title": "安裝",
       "sendInterval": "發包間隔",
-      "sendIntervalDesc": "安裝時發送數據塊嘅間隔。調整呢度可以解決部分安裝失敗嘅問題。"
+      "sendIntervalDesc": "安裝嗰陣發送數據塊嘅間隔。撥呢度可以解決部分安裝失敗嘅問題。"
     },
     "source": {
       "title": "軟件庫（重新啟動後生效）",
@@ -319,7 +319,7 @@
   },
   "pluginStoreTest": {
     "waiting": "等緊執行",
-    "success": "操作成功咗",
+    "success": "成功",
     "refreshAll": "全部刷新",
     "pullPage": "拉取page",
     "pullItem": "拉取item=測試插件",
