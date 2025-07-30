@@ -308,9 +308,11 @@
   "bandbbs": {
     "title": "米壇社區（BandBBS）帳戶",
     "uid": "UID：",
-    "purchased": "購買咗嘅資源",
     "logout": "登出",
-    "purchasedDescription": "來自米壇社區（BandBBS）嘅付費資源"
+    "purchased": "購買咗嘅資源",
+    "enter_resource_id": "請輸入資源ID",
+    "resource_id_pladeholder": "資源ID",
+    "query": "查詢"
   },
   "iframe": {
     "title": "打開網頁"
