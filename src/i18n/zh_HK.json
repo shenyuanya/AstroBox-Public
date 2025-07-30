@@ -80,7 +80,9 @@
   },
   "resourceCategory": {
     "hidden_paid": "隱藏需購買嘅項目",
-    "hidden_force_paid": "隱藏強制性收費嘅項目"
+    "hidden_force_paid": "隱藏強制性收費嘅項目",
+    "quickapp": "快應用",
+    "watchface": "錶盤"
   },
   "installTask": {
     "watchface": {
@@ -228,7 +230,11 @@
       "languageDesc": "揀選AstroBox顯示嘅語言",
       "translateTeam": "翻譯貢獻者",
       "debugWindow": "除錯視窗",
-      "debugWindowDesc": "顯示除錯視窗"
+      "debugWindowDesc": "顯示除錯視窗",
+      "themeColorTitle": "主題色",
+      "themeColorDesc": "調節AstroBox嘅主題色",
+      "rgbMode": "RGB模式",
+      "rgbModeDesc": "啟用RGB流彩效果"
     },
     "tools": {
       "title": "奇妙嘅工具",
@@ -280,6 +286,8 @@
       "websiteDesc": "瀏覽AstroBox嘅官方網站",
       "qq": "QQ群組",
       "qqDesc": "加入AstroBox官方嘅QQ群組(920456907)",
+      "bandbbs": "米壇社區評論區",
+      "bandbbsDesc": "前往評論區",
       "licences": "開源許可證",
       "licencesDesc": "檢視AstroBox嘅開源許可證",
       "disclaimer": "免責聲明",
@@ -300,9 +308,11 @@
   "bandbbs": {
     "title": "米壇社區（BandBBS）帳戶",
     "uid": "UID：",
-    "purchased": "購買咗嘅資源",
     "logout": "登出",
-    "purchasedDescription": "來自米壇社區（BandBBS）嘅付費資源"
+    "purchased": "購買咗嘅資源",
+    "enter_resource_id": "請輸入資源ID",
+    "resource_id_pladeholder": "資源ID",
+    "query": "查詢"
   },
   "iframe": {
     "title": "打開網頁"

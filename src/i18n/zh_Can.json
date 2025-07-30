@@ -1,4 +1,5 @@
 {
+  "translators": "shenyuanya, FTBC60, 伊然",
   "nav": {
     "home": "主页",
     "device": "设备",
@@ -79,7 +80,9 @@
   },
   "resourceCategory": {
     "hidden_paid": "隐藏需购买嘅项目",
-    "hidden_force_paid": "隐藏强制性收费嘅项目"
+    "hidden_force_paid": "隐藏强制性收费嘅项目",
+    "quickapp": "快应用",
+    "watchface": "表盘"
   },
   "installTask": {
     "watchface": {
@@ -228,6 +231,10 @@
       "translateTeam": "翻译贡献者",
       "debugWindow": "除错窗口",
       "debugWindowDesc": "显示除错窗口"
+      "themeColorTitle": "主题色",
+      "themeColorDesc": "调节Astro Box嘅主题色",
+      "rgbMode": "RGB模式",
+      "rgbModeDesc": "启用RGB流彩效果"
     },
     "tools": {
       "title": "奇妙嘅工具",
@@ -279,6 +286,8 @@
       "websiteDesc": "浏览AstroBox嘅官方网站",
       "qq": "QQ群组",
       "qqDesc": "加入AstroBox官方嘅QQ群组(920456907)",
+      "banbbs": "米坛社区评论区",
+      "bandbbsDesc": "前往评论区",
       "licences": "开源许可证",
       "licencesDesc": "检视AstroBox嘅开源许可证",
       "disclaimer": "免责声明",
@@ -301,7 +310,9 @@
     "uid": "UID：",
     "purchased": "购买咗嘅资源",
     "logout": "登出",
-    "purchasedDescription": "来自米坛社区嘅付费资源"
+    "enter_recource_id": "请输入资源ID",
+    "resource_id_placeholder": "资源ID",
+    "query": "查询"
   },
   "iframe": {
     "title": "打开网页"
