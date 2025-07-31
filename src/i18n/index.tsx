@@ -16,7 +16,7 @@ const STORAGE_KEY = "language";
 const LANG_NAME: any = {
   "zh_CN": "中文 (简体)",
   "zh_HK": "中文 (香港)",
-  "zh_Can": "中文（粤语）",
+  "zh_Can": "中文（粤语)",
   "zh_HX": "文言 (華夏)",
   "zh_Meme": "中文 (神人)",
   "zh_MS": "中文 (巨硬)",
