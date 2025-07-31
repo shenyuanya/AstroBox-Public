@@ -3,9 +3,9 @@ use async_trait::async_trait;
 use bytes::Bytes;
 use rand::seq::SliceRandom;
 use rand::{rngs::StdRng, SeedableRng};
+use reqwest::Client;
 use std::collections::hash_map::DefaultHasher;
 use std::hash::{Hash, Hasher};
-use reqwest::Client;
 use std::time::Instant;
 use std::{any::Any, path::Path, sync::Arc};
 use tauri::{ipc::Channel, Manager};
@@ -196,8 +196,34 @@ impl Provider for OfficialProvider {
         }
     }
 
+    async fn get_categories(&self) -> anyhow::Result<Vec<String>> {
+        let device_map = self.get_device_map().await?;
+        let mut categories: Vec<String> = device_map
+            .values()
+            .map(|item| item.codename.clone())
+            .collect();
+        categories.sort();
+        categories.dedup();
+        categories.splice(0..0, vec!["hidden_paid".to_string(), "hidden_force_paid".to_string()]);
+        Ok(categories)
+    }
+
     async fn get_page(&self, page: u32, limit: u32, search: SearchConfig) -> Result<Vec<Item>> {
+        //log::info!("{}", serde_json::to_string(&search).unwrap());
         let idx = self.index.read().await;
+        let (mut device_list, mut hidden_paid_list) = (vec![], vec![]);
+                if let Some(ref cat_vec) = search.category {
+                    for val in cat_vec {
+                        match val.as_str() {
+                            "hidden_paid" | "hidden_force_paid" => {
+                                let str = val.replace("hidden_", "");
+                                hidden_paid_list.push(str);
+                            }
+                            _ if !val.is_empty() => device_list.push(val.as_str()),
+                            _ => {}
+                        }
+                    }
+                }
         let mut filtered: Vec<_> = idx
             .iter()
             .filter(|res| {
@@ -205,28 +231,36 @@ impl Provider for OfficialProvider {
                     Self::fuzzy_match(&res.name, kw)
                         || res.tags.iter().any(|t| Self::fuzzy_match(t, kw))
                 });
-                let device_ok = search.device.as_ref().map_or(true, |devs| {
-                    let dev_vec: Vec<_> = devs.split(';').collect();
-                    dev_vec.iter().any(|d| res.devices.iter().any(|r| r == *d))
-                });
-                keyword_ok && device_ok
+
+                let device_ok = if device_list.is_empty() {
+                    true
+                } else {
+                    device_list
+                        .iter()
+                        .any(|d| res.devices.iter().any(|r| r == *d))
+                };
+
+                let hidden_paid_ok = if !hidden_paid_list.is_empty() {
+                    hidden_paid_list.iter().all(|p| p != &res.paid_type)
+                } else {
+                    true
+                };
+
+                keyword_ok && device_ok && hidden_paid_ok
             })
             .collect();
 
-        let mut hasher = DefaultHasher::new();
-        {
-            let seed_guard = self.seed.read().await;
-            seed_guard.hash(&mut hasher);
+        let need_shuffle = search.filter.unwrap().is_empty() && (search.category.unwrap().len() < 1);
+        if need_shuffle {
+            let mut hasher = DefaultHasher::new();
+            {
+                let seed_guard = self.seed.read().await;
+                seed_guard.hash(&mut hasher);
+            }
+            let seed = hasher.finish();
+            let mut rng = StdRng::seed_from_u64(seed);
+            filtered.shuffle(&mut rng);
         }
-        if let Some(ref f) = search.filter {
-            f.hash(&mut hasher);
-        }
-        if let Some(ref d) = search.device {
-            d.hash(&mut hasher);
-        }
-        let seed = hasher.finish();
-        let mut rng = StdRng::seed_from_u64(seed);
-        filtered.shuffle(&mut rng);
 
         let start = (page * limit) as usize;
         let end = ((page + 1) * limit).min(filtered.len() as u32) as usize;
@@ -244,8 +278,10 @@ impl Provider for OfficialProvider {
                 icon: Some(self.cdn.convert_url(&res.icon)),
                 source_url: None,
                 author: None,
+                paid_type: res.paid_type.clone(),
                 _bandbbs_ext_supported_device: None,
                 _bandbbs_ext_resource_id: None,
+                _bandbbs_ext_is_community_paid: None,
             })
             .collect())
     }

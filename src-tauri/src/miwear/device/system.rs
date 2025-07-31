@@ -48,18 +48,18 @@ pub async fn system_get_device_status(
             OpCode::Encrypted,
             &build_system_get_device_status()
                 .encode_to_vec(),
-             __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__::Type::System as u32,
-             __OPENSOURCE__DELETED__system:: __OPENSOURCE__DELETED__::GetDeviceStatus as u32,
+            pb::protocol::wear_packet::Type::System as u32,
+            pb::protocol::system::SystemId::GetDeviceStatus as u32,
             None,
         )
         .await?;
 
-    if let Some(payload) = device_status_ret.__OPENSOURCE__DELETED__ {
+    if let Some(payload) = device_status_ret.__OPENSOURCE_DELETED__ {
         match payload {
-             __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__::Payload::System(system) => {
-                if let Some(system_payload) = system.__OPENSOURCE__DELETED__ {
+            pb::protocol::wear_packet::Payload::System(system) => {
+                if let Some(system_payload) = system.__OPENSOURCE_DELETED__ {
                     match system_payload {
-                         __OPENSOURCE__DELETED__system::Payload::DeviceStatus(status) => {
+                        pb::protocol::system::Payload::DeviceStatus(status) => {
 
                             let mut result_status = ChargeStatus::Unknown;
 
@@ -117,24 +117,24 @@ pub async fn system_get_device_info(
             OpCode::Encrypted,
             &build_system_get_device_info()
                 .encode_to_vec(),
-             __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__::Type::System as u32,
-             __OPENSOURCE__DELETED__system:: __OPENSOURCE__DELETED__::GetDeviceInfo as u32,
+            pb::protocol::wear_packet::Type::System as u32,
+            pb::protocol::system::SystemId::GetDeviceInfo as u32,
             None,
         )
         .await?;
 
-    if let Some(payload) = device_info_ret.__OPENSOURCE__DELETED__ {
+    if let Some(payload) = device_info_ret.__OPENSOURCE_DELETED__ {
         match payload {
-             __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__::Payload::System(system) => {
-                if let Some(system_payload) = system.__OPENSOURCE__DELETED__ {
+            pb::protocol::wear_packet::Payload::System(system) => {
+                if let Some(system_payload) = system.__OPENSOURCE_DELETED__ {
                     match system_payload {
-                         __OPENSOURCE__DELETED__system::Payload::DeviceInfo(info) => {
+                        pb::protocol::system::Payload::DeviceInfo(info) => {
 
                             let result = SystemInfo {
-                                serial_number: info.__OPENSOURCE__DELETED__.clone(),
-                                firmware_version: info.__OPENSOURCE__DELETED__.clone(),
-                                imei: info.__OPENSOURCE__DELETED__.clone(),
-                                model: info.__OPENSOURCE__DELETED__.clone(),
+                                serial_number: info.__OPENSOURCE_DELETED__.clone(),
+                                firmware_version: info.__OPENSOURCE_DELETED__.clone(),
+                                imei: info.__OPENSOURCE_DELETED__.clone(),
+                                model: info.__OPENSOURCE_DELETED__.clone(),
                             };
 
                             return Ok(result);
@@ -154,24 +154,24 @@ pub async fn system_get_device_info(
     bail!("Packet doesn't exsist!");
 }
 
-fn build_system_get_device_status() ->  __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__ {
+fn build_system_get_device_status() -> pb::protocol::WearPacket {
 
-    let pkt =  __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__ {
-        __OPENSOURCE__DELETED__:  __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__::Type::System as i32,
-        __OPENSOURCE__DELETED__:  __OPENSOURCE__DELETED__system:: __OPENSOURCE__DELETED__::GetDeviceStatus as u32,
-        __OPENSOURCE__DELETED__: None,
+    let pkt = pb::protocol::WearPacket {
+        __OPENSOURCE_DELETED__: pb::protocol::wear_packet::Type::System as i32,
+        __OPENSOURCE_DELETED__: pb::protocol::system::SystemId::GetDeviceStatus as u32,
+        __OPENSOURCE_DELETED__: None,
     };
 
     pkt
 
 }
 
-fn build_system_get_device_info() ->  __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__ {
+fn build_system_get_device_info() -> pb::protocol::WearPacket {
 
-    let pkt =  __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__ {
-        __OPENSOURCE__DELETED__:  __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__::Type::System as i32,
-        __OPENSOURCE__DELETED__:  __OPENSOURCE__DELETED__system:: __OPENSOURCE__DELETED__::GetDeviceInfo as u32,
-        __OPENSOURCE__DELETED__: None,
+    let pkt = pb::protocol::WearPacket {
+        __OPENSOURCE_DELETED__: pb::protocol::wear_packet::Type::System as i32,
+        __OPENSOURCE_DELETED__: pb::protocol::system::SystemId::GetDeviceInfo as u32,
+        __OPENSOURCE_DELETED__: None,
     };
 
     pkt

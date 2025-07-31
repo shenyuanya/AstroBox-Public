@@ -1,0 +1,388 @@
+{
+  "translators": "安龙,Yulimfish",
+  "nav": {
+    "home": "大门口",
+    "device": "小机器",
+    "plugin": "小拼图",
+    "settings": "大齿轮"
+  },
+  "disclaimer": {
+    "title": "免责声明",
+    "content": "阿斯戳波克斯 应用免责声明\n\n在使用本软件（以下简称“阿斯戳波克斯”）前，请您仔细阅读并充分理解本免责声明条款。继续下载安装或使用 阿斯戳波克斯 即表示您已阅读、理解并接受本声明所述全部内容，并同意自行承担使用本软件所带来的全部风险与责任。\n\n⸻\n\n一、软件属性声明\n\n阿斯戳波克斯 是由独立开发者开发并发布的第三方工具应用，旨在为用户提供在小米品牌智能穿戴机器上安装第三方资源（包括表面、好van♂的、小胃袋.zip等）所需的便捷工具。\n\n本软件并非由小米公司及其任何关联方开发、授权、发布或支持，与小米公司不存在任何形式的隶属、合作、代理或其他法律关系。小米公司不对 阿斯戳波克斯 的功能、性能、安全性或由使用该软件引发的任何后果承担责任。\n\n⸻\n\n二、用户行为与责任承担\n\n阿斯戳波克斯 提供的各项功能可能涉及对机器系统的自定义修改，包括但不限于资源替换、配置调整、非官方内容的安装等。此类操作可能会对机器的正常运行、安全性、数据完整性产生不可预测的影响，包括但不限于：\n    •    系统不稳定、功能异常或机器无法启动；\n    •    用户数据丢失、损坏或泄露；\n    •    官方服务协议失效或保修权益丧失；\n    •    与机器预装系统或服务的不兼容；\n    •    触发机器厂商账号管理机制导致登录受限。\n\n上述操作行为完全基于用户的自主选择，用户应在充分理解相关风险的基础上作出决策，并独立承担由此产生的全部后果。阿斯戳波克斯 开发者不对任何由用户使用本软件引起的直接或间接损害承担责任。\n\n⸻\n\n三、账户登录与数据传输提示\n\n阿斯戳波克斯 部分功能涉及通过调用小米账号服务接口以访问资源或启用特定机器操作。在此过程中，用户提供的账号凭证信息（包括用户名、密码或授权票据等）将直接提交至小米官方服务器，以完成身份验证。\n\n本软件不会在未经用户同意的情况下存储、记录或篡改用户凭证信息。然而：\n    •    该传输行为的安全性完全依赖于小米服务器及其接口实现机制，非本软件所能控制或担保；\n    •    若因接口变化、服务策略调整或安全机制触发而导致用户账号受到限制、登录失败或产生数据问题，本软件及其开发者不承担相关责任；\n    •    用户应审慎判断是否使用此类功能，并对涉及账号凭证的使用风险承担全部责任。\n\n我们强烈建议用户仅在可信网络环境中操作，并在授权登录前评估其账号安全性要求。\n\n⸻\n\n四、第三方资源来源与内容合法性\n\n阿斯戳波克斯 提供的部分资源内容来自公开网络或第三方社区平台，包括但不限于开源社区（如 GitHub）、论坛平台（如米坛社区）、内容分发网络（如 jsDelivr）等。\n\n这些资源由其原发布者提供，阿斯戳波克斯 仅作为工具实现访问与安装，不对第三方资源的以下方面作出任何承诺或保证：\n    •    内容的合法性、完整性或准确性；\n    •    不含恶意代码或破坏性行为；\n    •    不侵犯任何第三方的知识产权或其他合法权益；\n    •    与用户机器或系统的兼容性与安全性。\n\n用户应在确保自身合法权益和符合相关法律法规的前提下，自行决定是否访问或使用第三方资源，并独立承担由此可能引发的法律、技术或经济责任。\n\n⸻\n\n五、安全责任与免责条款\n\n阿斯戳波克斯 以“按现状”原则提供，不对其功能的持续可用性、系统兼容性、性能表现或特定用途适用性作出任何明示或暗示的保证。用户明确同意，对于因使用或无法使用本软件所产生的任何形式的损失（包括但不限于直接损失、间接损失、利润损失、数据丢失、机器损坏或法律责任），阿斯戳波克斯 开发者及相关方不承担任何赔偿责任。\n\n此外，本软件不提供官方技术支持，亦无义务响应使用中产生的问题、故障或风险反馈。\n\n⸻\n\n六、条款变更与最终解释权\n\n阿斯戳波克斯 保留根据法律法规变动、软件功能更新或运营策略调整的需要，随时对本免责声明内容进行修改的权利。相关变更将通过发布渠道及时公布，恕不单独另行通知。\n\n若用户在免责声明更新后继续使用本软件，则视为接受修改后的全部条款。阿斯戳波克斯 开发者保留本免责声明的最终解释权。\n\n⸻\n\n请用户在安装和使用本软件前，务必评估自身技术能力、机器风险承受能力及法律合规责任。如无法接受本免责声明所述条款，请勿下载、安装或使用 阿斯戳波克斯。",
+    "confirm": "对的对的",
+    "cancel": "不对不对"
+  },
+  "resourcePaidType": {
+    "paid": "圈钱",
+    "force_paid": "劲爆圈钱"
+  },
+  "home": {
+    "title": "大门口",
+    "search": "搜打撤",
+    "appList": "应用排排坐",
+    "loadingMore": "圈圈咕噜咕噜转...",
+    "none": "瞅着暂时啥也没有...",
+    "bottom": "已经...被扒拉到底了...❤",
+    "retry": "来点新的",
+    "loading": "圈圈再来咕噜咕噜转..."
+  },
+  "about": {
+    "title": "看看我的",
+    "appVersion": "神秘小数字",
+    "foundNew": "逮着了",
+    "checking": "俺瞅瞅",
+    "download": "正在学习新知识",
+    "latest": "得劲",
+    "checkUpdate": "更新自己",
+    "buildDate": "打造日期",
+    "team": "最大的帕鲁的团队",
+    "changelog": "更新小本本",
+    "roles": {
+      "nativeFrontend": "原生/前端敲码员",
+      "native": "原生敲码员",
+      "designerFrontend": "设计师/前端敲码员"
+    },
+    "releaseName": "版本代号",
+    "releaseSlogan": "从晨光开始，点亮所有玩意儿",
+    "copyright": "版权所有 © 2025 AstralSightStudios。保留所有权利"
+  },
+  "product": {
+    "detail": "资源细节",
+    "notFound": "wdf？"
+  },
+  "common": {
+    "modify": "改一下",
+    "cancel": "溜了溜了",
+    "go": "gogogo出发咯",
+    "loading": "圈圈咕噜咕噜转...",
+    "refreshAll": "来新的",
+    "uninstall": "永别了",
+    "disable": "再见",
+    "enable": "噢你来了",
+    "install": "拿来吧你",
+    "ok": "中！",
+    "open": "出现并给我整个活",
+    "download": "开车",
+    "share": "分你一个梨",
+    "fail": "凉了"
+  },
+  "updateDialog": {
+    "title": "噢我的上帝，{version} 来了",
+    "body": "更新小本本：",
+    "updateNow": "立马更新",
+    "later": "暂时退下",
+    "ignore": "永别"
+  },
+  "resourceType": {
+    "quickapp": "好van♂的",
+    "watchface": "表面",
+    "firmware": "小胃袋.zip"
+  },
+  "resourceCategory": {
+    "hidden_paid": "别圈我钱",
+    "hidden_force_paid": "别劲爆圈我钱"
+  },
+  "installTask": {
+    "watchface": {
+      "description": "本地表面文件"
+    },
+    "thirdPartyApp": {
+      "description": "来自本地的好van♂的"
+    },
+    "firmware": {
+      "description": "来自本地的小胃袋.zip"
+    }
+  },
+  "banner": {
+    "loadFailed": {
+      "title": "Banner没了！戳的戳的！"
+    },
+    "noBanners": {
+      "title": "戳的...",
+      "description": "你掉出了这个世界？"
+    },
+    "loading": "圈圈咕噜咕噜转..."
+  },
+  "modifyWatchfaceDialog": {
+    "title": "给表面换个序号",
+    "placeholder": "非常好的9或12位数字带给表面"
+  },
+  "plugin": {
+    "noPluginsInstalled": "房间挺大的",
+    "noFeatures": "拼图挺大的",
+    "storeEnd": "已经...被扒拉到底了...❤",
+    "loading": "圈圈咕噜咕噜转...",
+    "detailTitle": "拼图细节",
+    "searchPlaceholder": "拼图放大器",
+    "import": "导入拼图",
+    "tabs": {
+      "installed": "准备好了❤",
+      "market": "拼图市场",
+      "features": "干哈的",
+      "details": "细节"
+    },
+    "details": {
+      "author": "作者大大",
+      "website": "大地球",
+      "version": "神秘小数字",
+      "apiLevel": "诶匹挨小数字",
+      "permissions": "你要干哈"
+    },
+    "uninstallPrompt": {
+      "title": "永别了",
+      "body": "你确定要卸了 {pluginName} 不？",
+      "primary": "永别",
+      "secondary": "关上"
+    },
+    "restartPrompt": {
+      "title": "得重启下",
+      "body": "所有拼图变动都得重启应用才管用。点了立即重启，应用就关了，你手动再打开哈。",
+      "primary": "马上重启",
+      "secondary": "算了"
+    }
+  },
+  "device": {
+    "authkeyPrompt": "输下 Authkey",
+    "connectFailed": "心灵感应失败了！",
+    "authkeyPlaceholder": "在这儿输机器的 AuthKey",
+    "actions": {
+      "delete": "再也不见",
+      "disconnect": "停止心灵感应",
+      "shareQR": "用二维码分享",
+      "qrResizeHint": "点一下 随地大小变",
+      "qrTitle": "机器二维码："
+    },
+    "disconnected": "断了",
+    "connected": "正在心灵感应",
+    "charging": "(充电呢)",
+    "lastChargePrefix": " 上次被插上充电器还是",
+    "lastChargeSuffix": "前❤",
+    "reconnect": "重新心灵感应",
+    "reconnectFailed": "上次没心灵感应上，去切换机器页重新心灵感应哈",
+    "switch": "切个机器",
+    "notConnected": "机器没心灵感应上",
+    "connect": "与机器心灵感应",
+    "networkProxyInfo": "你机器上的网络请求现在归阿斯戳波克斯管",
+    "features": {
+      "installApp": "整点好van♂的",
+      "installAppDesc": "挑个好van♂的丢到机器上",
+      "installWatchface": "安装表面",
+      "installWatchfaceDesc": "挑个好看的表面文件放到机器上",
+      "installFirmware": "安装小胃袋.zip",
+      "installFirmwareDesc": "选个小胃袋.zip刷到机器上",
+      "manageApps": "好van♂的管理",
+      "manageAppsDesc": "管管机器上的好van♂的或让它给你整个活",
+      "manageWatchfaces": "表面管理",
+      "manageWatchfacesDesc": "管管机器上的表面",
+      "deviceInfo": "机器信息",
+      "deviceInfoDesc": "瞅瞅这机器的详细信息"
+    }
+  },
+  "openToPageDialog": {
+    "title": "跳个页面",
+    "placeholder": "输下页面名"
+  },
+  "providerDialog": {
+    "title": "看看你的"
+  },
+  "queue": {
+    "title": "排排队",
+    "downloadQueue": "搬运排排队",
+    "installQueue": "闪电排排队",
+    "noTasks": "你队挺大的",
+    "titleShort": "排排队",
+    "viewTasks": "瞅瞅任务",
+    "taskQueue": "任务排排队"
+  },
+  "loginDialog": {
+    "title": "登录粮仓",
+    "description": "用你的粮仓账号登一下，同步绑定的机器",
+    "usernamePlaceholder": "输用户名/手机号/粮仓账号ID",
+    "passwordPlaceholder": "输密码",
+    "saveCredentials": "存下用户名和密码",
+    "loggingIn": "登录中",
+    "login": "登录",
+    "emptyError": "密码或账户不能为空！",
+    "2fa": {
+      "title": "要二步验证",
+      "body": "瞅到你账号要二步验证，点“确定”去浏览器操作，会跳两次浏览器。页面显示“ok”了，回阿斯戳波克斯再试试登录。"
+    }
+  },
+  "permission": {
+    "ble": {
+      "required": "你得给阿斯戳波克斯蓝牙权限，不然功能用不了。允许阿斯戳波克斯用“附近的机器”权限，再重启应用哈。"
+    }
+  },
+  "connect": {
+    "failed": "（大狗叫）",
+    "handshakeFailed": "（哈气了）",
+    "authFailed": "密钥错了或后端出问题，试试重启应用再弄"
+  },
+  "settings": {
+    "title": "大齿轮",
+    "general": {
+      "title": "带派",
+      "reduceAnimation": "咕噜咕噜不转了",
+      "reduceAnimationDesc": "建议味拨籍特用户开了，不然画面抖成筛子",
+      "language": "比划比划",
+      "languageDesc": "选择阿斯戳波克斯和你比划的方式",
+      "translateTeam": "重命名工作者",
+      "debugWindow": "调教一下",
+      "debugWindowDesc": "开启即可狠狠调教阿斯戳波克斯🥵"
+    },
+    "tools": {
+      "title": "牛掰噶拉斯的",
+      "unlockCode": "算解锁码",
+      "unlockCodeDesc": "忘机器密码了，算个解锁码重置机器",
+      "dialogTitle": "解开你的小米穿戴机器",
+      "dialogUsage": "咋用",
+      "dialogUsageInfo": "忘密码的说明页点上下上下上上下下进去",
+      "result": "计算结果",
+      "mac": "MAC 地址",
+      "sn": "SN 码",
+      "noticeTitle": "注意啦",
+      "noticeBody": "这工具就给机器原主人合法恢复访问权限用的。别用来破解、绕过或非法访问不是自己的小米机器。滥用这工具导致的法律或道德问题，阿斯戳波克斯和开发者可不负责。",
+      "agree": "彳亍，我看完并同意免责声明了。",
+      "calculate": "算一算"
+    },
+    "account": {
+      "title": "证件照",
+      "loginBBS": "检查你的 米缸法会 太空人档案",
+      "loginBBSDesc": "检查 米缸法会 太空人档案以获取 米缸法会 的绝密资料",
+      "syncDevices": "同步机器",
+      "syncDevicesDesc": "从小米运动健康同步绑定的机器",
+      "bbsAccount": "米缸法会 太空人档案"
+    },
+    "install": {
+      "title": "安装",
+      "sendInterval": "发包间隔",
+      "sendIntervalDesc": "安装时发分块的间隔，调这个可能解决安装失败的问题"
+    },
+    "source": {
+      "title": "开车（重启才管用）",
+      "officialCdn": "官方源 快递站",
+      "officialCdnDesc": "设置来自 官方源 的快递要寄到哪个快递站"
+    },
+    "queue": {
+      "title": "排排队",
+      "autoInstall": "自动排排队",
+      "autoInstallDesc": "下完自动排排队",
+      "dontClear": "不清理队队",
+      "dontClearDesc": "装完不清理队队，方便调试"
+    },
+    "about": {
+      "title": "看看我的",
+      "aboutAstrobox": "看看我的",
+      "aboutAstroboxDesc": "阿斯戳波克斯 的详细信息",
+      "openlog": "神秘文件夹",
+      "openlogDesc": "打开神秘文件夹瞅程序日志",
+      "website": "大地球",
+      "websiteDesc": "去 阿斯戳波克斯 的官方大地球瞅瞅",
+      "qq": "咕咕嘎嘎",
+      "qqDesc": "参与 阿斯戳波克斯 官方南极基地里的奇怪实验 (920456907)",
+      "licences": "开源许可证",
+      "licencesDesc": "瞅瞅 阿斯戳波克斯 的开源许可证",
+      "disclaimer": "免责声明",
+      "disclaimerDesc": "瞅瞅 阿斯戳波克斯 的免责声明"
+    }
+  },
+  "licences": {
+    "title": "开源许可",
+    "intro": "这项目里用的所有软件包的许可证在下面立正了。",
+    "node": "Node.js 依赖",
+    "crates": "Creates.io 包",
+    "filter": "筛一筛",
+    "author": "作者：",
+    "license": "许可证：",
+    "description": "描述：",
+    "url": "网址："
+  },
+  "bandbbs": {
+    "title": "米缸法会 账户",
+    "uid": "UID：",
+    "purchased": "已购买的绝密资料",
+    "logout": "不要登录了!",
+    "enter_resource_id": "请输入要下载的付费资料代号",
+    "resource_id_placeholder": "绝密资料代号",
+    "query": "搜搜看"
+  },
+  "iframe": {
+    "title": "打开网页"
+  },
+  "addDeviceFromQr": {
+    "title": "瞅到这些机器"
+  },
+  "dragToPush": {
+    "title": "快松手啊",
+    "supportedFiles": "支持的文件：表面、好van♂的、阿斯戳波克斯拼图"
+  },
+  "onlineImage": {
+    "loadFailed": "图片加载挂了"
+  },
+  "pluginStoreTest": {
+    "waiting": "等执行",
+    "success": "操作成了",
+    "refreshAll": "全部刷新",
+    "pullPage": "拉page",
+    "pullItem": "拉item=测试拼图",
+    "downloadAndPackage": "下载并打包item=测试拼图"
+  },
+  "productInfo": {
+    "about": "看看这资源",
+    "update": "更新",
+    "updateDescription": "优化表面稳定性，让表面更流畅。",
+    "deviceRequirements": "机器要求",
+    "compatible": "这家伙特适合你的",
+    "incompatible": "这家伙跟你的",
+    "incompatibleSuffix": "玩不到一起",
+    "otherVersions": "也可以跟别的小朋友一起玩",
+    "inQueue": "已经在排队了",
+    "copyLink": "复制传送门密钥",
+    "resizeQr": "点点随地大小变",
+    "viewOnBandBBS": "在 米缸法会 瞅一瞅"
+  },
+  "appManagement": {
+    "title": "好van♂的管理",
+    "none": "没好van♂的"
+  },
+  "deviceInfo": {
+    "title": "低速运转的机器信息",
+    "notRealtime": "黄龙江这一派可不会随机应变",
+    "groups": {
+      "device": "低速运转的机器信息",
+      "system": "低速运转的系统信息",
+      "status": "低速运转的机器状态"
+    },
+    "fields": {
+      "name": "名字",
+      "address": "黄龙江一派住址",
+      "authkey": "AuthKey",
+      "connectionType": "怎么心灵感应上的",
+      "codename": "字",
+      "model": "号",
+      "imei": "IMEI",
+      "firmware": "心脏型号",
+      "serial": "学号",
+      "battery": "电量",
+      "chargeStatus": "充电状态",
+      "lastCharge": "上回充电"
+    }
+  },
+  "watchfaceManagement": {
+    "title": "管理面具",
+    "none": "没面具"
+  },
+  "switchDevice": {
+    "title": "选机器",
+    "getSavedFailed": "拿存储机器失败！",
+    "scanAndAdd": "扫扫加机器",
+    "scanFailed": "机器扫描挂了",
+    "scanNotFound": "暂时没瞅到机器噢",
+    "savedDevices": "心灵感应过的机器",
+    "noSavedDevices": "还没心灵感应过机器呀"
+  },
+  "providerName": {
+    "official": "自己家东西",
+    "bandbbs": "米缸法会"
+  }
+}

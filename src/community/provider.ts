@@ -26,6 +26,10 @@ export default class BackendProvider extends Provider {
         return await invoke("commprov_get_state", { name: this.name });
     }
 
+    async getCategories(): Promise<string[]> {
+        return await invoke("commprov_get_categories", { name: this.name });
+    }
+
     async getPage(page: number, limit: number, search: SearchConfig): Promise<Item[]> {
         return await invoke("commprov_get_page", {
             name: this.name,

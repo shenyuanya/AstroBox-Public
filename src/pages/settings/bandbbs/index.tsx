@@ -1,13 +1,19 @@
 import { accountManager } from "@/account/manager";
 import { Account } from "@/account/provider";
-import AccountCard from "@/components/AccountCard/AccountCard";
+import { providerManager } from "@/community/manager";
+import CardButton from "@/components/CardButton/CardButton";
 import { useAnimatedRouter } from "@/hooks/useAnimatedRouter";
+import { useI18n } from "@/i18n";
 import BasePage from "@/layout/basePage";
 import SettingsGroup from "@/layout/settingsGroup";
-import { useI18n } from "@/i18n";
-import { Avatar, Body1Strong, CardHeader, Link, Title3 } from "@fluentui/react-components";
+import { createDownloadTask } from "@/taskqueue/downloadTask";
+import { addDownloadTask } from "@/taskqueue/queue";
+import { ResourceManifestV1 } from "@/types/ResManifestV1";
+import { Avatar, Body1Strong, Button, CardHeader, Input, Label, Link, Title3 } from "@fluentui/react-components";
+import { AppsRegular, SearchRegular } from "@fluentui/react-icons";
 import { invoke } from "@tauri-apps/api/core";
-import { useEffect, useState } from "react";
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 import styles from "./accountInfo.module.css";
 
 export default function Bandbbs() {
@@ -28,7 +34,7 @@ export default function Bandbbs() {
                 }}
             />
         </div>
-        {/* <PurchasedRes /> */}
+        <PurchasedRes />
         <Link href="" onClick={()=>{
             invoke("account_logout",{
                 name:"bandbbs",
@@ -42,14 +48,54 @@ export default function Bandbbs() {
         </Link>
     </BasePage>
 }
-
 function PurchasedRes() {
     const { t } = useI18n();
+    const { providers } = providerManager.useProviders();
+    const bandbbsProvider = providers.find(provider => provider.name === "bandbbs");
+    const [item, setItem] = useState<ResourceManifestV1>();
+    const input = useRef<HTMLInputElement>(null);
+
+    const downloads = []
+    if (item) {
+        for (const key in item.downloads) {
+            downloads.push(key)
+        }
+    }
+    const download = async (code: string) => {
+        const { icon, name, _bandbbs_ext_resource_id, description } = item?.item ?? {};
+        const iconComponent = () => icon ? <Image width={40} height={40} src={icon} alt={name ?? ""} style={{ borderRadius: 999 }} /> : <AppsRegular />;
+        const taskId = _bandbbs_ext_resource_id?.toString() ?? name ?? "";
+        const taskName = name ?? "";
+        const displayDescription = code;
+        const task = createDownloadTask(
+            taskId,
+            taskName,
+            "bandbbs",
+            code,
+            displayDescription,
+            iconComponent
+        );
+        addDownloadTask(task);
+    }
     return <SettingsGroup title={t('bandbbs.purchased')}>
-        <AccountCard
-            avatar="AurysianYan"
-            content="Resource01"
-            secondaryContent={t('bandbbs.purchasedDescription')}
-        />
+        <div className="card" style={{ flexDirection: "column", display: "flex", gap: 5 }}>
+
+            <Label>{t('bandbbs.enter_resource_id')}</Label>
+            <div style={{ display: 'flex', flexDirection: 'row', gap: 5 }}>
+                <Input placeholder={t('bandbbs.resource_id_placeholder')} ref={input} style={{ flex: 6 }} type='number' min={1} inputMode='numeric' />
+                <Button appearance='primary' style={{ flex: 1 }}
+                    icon={<SearchRegular />}
+                    onClick={() => {
+                        bandbbsProvider?.getItem(input.current?.value ?? '').then(res => {
+                            setItem(res)
+                        })
+                    }}>{t('bandbbs.query')}</Button>
+            </div>
+
+
+            {downloads.map((key, index) => (
+                <CardButton content={key} key={index} className={styles.resCard} onClick={() => download(key)}></CardButton>
+            ))}
+        </div>
     </SettingsGroup>
 }

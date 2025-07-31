@@ -133,6 +133,24 @@
     gap: 6px;
 }
 
+.paidBadge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 3px 12px;
+    border-radius: 4px;
+    background: rgba(32, 32, 32, 0.36);
+    color: #fff;
+    font-size: 13px;
+    z-index: 2;
+    font-weight: 500;
+    pointer-events: none;
+    user-select: none;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.14);
+}
+
 @media (max-width: 768px) {
     .content {
         flex-direction: column;

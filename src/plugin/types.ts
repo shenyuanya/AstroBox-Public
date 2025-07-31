@@ -10,6 +10,7 @@ export abstract class Provider {
     abstract readonly name: string;
     abstract refresh(): Promise<void>;
     abstract getState(): Promise<ProviderState>;
+    abstract getCategories(): Promise<string[]>;
     abstract getPage(page: number, limit: number, search:SearchConfig): Promise<Item[]>;
     abstract getItem(name: string): Promise<ResourceManifestV1>;
     abstract download(name: string, device: string, progressCb: Channel<ProgressData>): Promise<string>;
@@ -19,7 +20,8 @@ export abstract class Provider {
 export interface SearchConfig {
     filter?: string;
     sort?: string;
-    device?: string;
+    category?: string[];
+    hidden_paid?: boolean;
 }
 
 export interface ProgressData {

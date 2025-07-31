@@ -36,10 +36,12 @@ pub fn run() {
     println!("Building tauri plugins...");
     let mut builder = Builder::default();
 
+    /*
     #[cfg(not(debug_assertions))]{
         let sentry_client = tracker::sentry::init_sentry();
         builder = builder.plugin(tauri_plugin_sentry::init(&sentry_client));
     }
+    */
 
     #[cfg(desktop)]
     {
@@ -205,6 +207,7 @@ pub fn run() {
             frontapi::plugsys_call_registered_func,
             // Community Provider API
             frontapi::commprov_get_providers,
+            frontapi::commprov_get_categories,
             frontapi::commprov_get_page,
             frontapi::commprov_get_item,
             frontapi::commprov_download,
@@ -238,7 +241,8 @@ pub fn run() {
             frontapi::get_mi_device_list,
             frontapi::add_new_device,
             frontapi::image_url_to_base64_data_url,
-            frontapi::modify_watchface_id
+            frontapi::app_get_current_log,
+            frontapi::app_open_log_dir
         ]);
 
         #[cfg(target_os = "macos")]{

@@ -5,15 +5,17 @@ import CardButton from "@/components/CardButton/CardButton";
 import { DisclaimerDialog } from "@/components/disclaimer/disclamierDialog";
 import LoginDialog from "@/components/LoginDialog/LoginDialog";
 import DropdownCard from "@/components/settings/dropdownCard";
+import SettingsCard from "@/components/settings/settingsCard";
 import SliderCard from "@/components/settings/sliderCard";
 import SwitchCard from "@/components/settings/switchCard";
 import { useAnimatedRouter } from "@/hooks/useAnimatedRouter";
-import { useI18n } from "@/i18n";
+import { Lang, useI18n } from "@/i18n";
 import BasePage from "@/layout/basePage";
 import SettingsGroup from "@/layout/settingsGroup";
 import {
     Avatar,
     Body1,
+    Body1Strong,
     Button,
     Checkbox,
     CheckboxOnChangeData,
@@ -34,10 +36,12 @@ import {
     CodeBlockRegular,
     CommentMentionRegular,
     Dismiss24Regular,
-    EarthRegular,
+    DocumentOnePageLinkRegular,
     InfoRegular,
-    LocalLanguageRegular,
+    EarthRegular,
     LockClosedKeyRegular,
+    OpenFolderRegular,
+    PeopleTeamRegular,
     PersonCircleRegular,
     PersonSwapRegular,
     ReadingListRegular,
@@ -49,6 +53,7 @@ import {
 } from "@fluentui/react-icons";
 import { invoke } from "@tauri-apps/api/core";
 import { openUrl } from "@tauri-apps/plugin-opener";
+import { platform } from "@tauri-apps/plugin-os";
 import { AnimatePresence } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import unlockStyles from "./unlockTool.module.css";
@@ -68,7 +73,7 @@ export default function SettingsPage() {
     return (<BasePage title={t('settings.title')}>
         <AnimatePresence>
             <AccountSettings />
-            <InternelSettings/>
+            <InternelSettings />
             {ready && <><SourceSettings />
                 <ListSettings />
                 <InstallSettings /></>}
@@ -80,16 +85,29 @@ export default function SettingsPage() {
 }
 
 function InternelSettings() {
-    const { t, setLang, langs, lang } = useI18n();
+    const { t, setLang, langs, lang, langNames } = useI18n();
     const defaultValue = localStorage.getItem("fkWebkit") === "true";
+    const [debugWindow, setDebugWindow] = useState<boolean | undefined>(config?.debug_window);
+    useEffect(() => { setDebugWindow(config?.debug_window); }, [config?.debug_window]);
     return <SettingsGroup title={t('settings.general.title')}>
-        <DropdownCard title={t('settings.general.language')}
+        <DropdownCard
+            title={t('settings.general.language')}
             desc={t('settings.general.languageDesc')}
-            Icon={LocalLanguageRegular}
-            items={langs} onSelect={(item) => setLang(langs[item])} defaultValue={langs.indexOf(lang)} />
+            Icon={EarthRegular}
+            items={Object.values(langNames)}
+            onSelect={index => setLang(Object.keys(langNames)[index] as Lang)}
+            defaultValue={Object.keys(langNames).indexOf(lang)}
+        />
+        <SettingsCard
+            Icon={PeopleTeamRegular}
+            title={t('settings.general.translateTeam')}>
+            <Body1Strong style={{ textWrap: "nowrap" }}>{t('translators')}</Body1Strong>
+        </SettingsCard>
         <SwitchCard title={t('settings.general.reduceAnimation')} desc={t('settings.general.reduceAnimationDesc')} defaultValue={defaultValue}
-                    Icon={SelectObjectSkewDismissRegular}
-                    onChange={(e) => localStorage.setItem("fkWebkit", e.toString())}/>
+            Icon={SelectObjectSkewDismissRegular}
+            onChange={(e) => localStorage.setItem("fkWebkit", e.toString())} />
+        <SwitchCard title={t('settings.general.debugWindow')} desc={t('settings.general.debugWindowDesc')} checked={debugWindow}
+            Icon={CodeBlockRegular} onChange={(e) => { setDebugWindow(e); invoke('app_write_config', { patch: { debug_window: e } }); }} />
     </SettingsGroup>
 }
 
@@ -274,6 +292,16 @@ function ListSettings() {
 function Abouts() {
     const { t } = useI18n();
     const router = useAnimatedRouter();
+
+    const openLogDir = () => {
+        if (!(platform() === "android" || platform() === "ios")) {
+            invoke("app_open_log_dir")
+        }
+        else {
+            alert("一键开启日志文件夹功能仅支持PC端。安卓手机请打开系统原生的“文件”应用，点击左上角展开列表，找到AstroBox，进入logs文件夹即可访问日志。")
+        }
+    };
+
     return <SettingsGroup title={t('settings.about.title')}>
         <CardButton
             icon={InfoRegular}
@@ -287,7 +315,14 @@ function Abouts() {
             secondaryContent={t('settings.about.disclaimerDesc')}
         />}></DisclaimerDialog>
         <CardButton
-            icon={EarthRegular}
+            icon={OpenFolderRegular}
+            content={t('settings.about.openlog')}
+            secondaryContent={t('settings.about.openlogDesc')}
+            onClick={openLogDir}
+            opener
+        />
+        <CardButton
+            icon={DocumentOnePageLinkRegular}
             content={t('settings.about.website')}
             secondaryContent={t('settings.about.websiteDesc')}
             onClick={() => openUrl("https://astrobox.online")}

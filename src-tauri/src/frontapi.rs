@@ -22,8 +22,9 @@ use base64::{engine::general_purpose, Engine};
 use boa_engine::{js_string, JsValue};
 use mime_guess::MimeGuess;
 use serde_json::{json, Value};
-use std::{collections::HashMap, fs, io::Write, path::Path, sync::Arc};
-use tauri::{ipc::Channel, Emitter};
+use std::{collections::HashMap, sync::Arc};
+use tauri::{ipc::Channel, Emitter, Manager};
+use tauri_plugin_opener::OpenerExt;
 use uuid::Uuid;
 
 // 前端API：扫描设备
@@ -209,15 +210,30 @@ pub async fn miwear_install_third_app(
 pub async fn miwear_install_watchface(
     file_path: String,
     on_progress: Channel<SendMassCallbackData>,
+    new_watchface_id: Option<Vec<u8>>,
 ) -> Result<(), String> {
     crate::miwear::with_connected_device_async(|device| async move {
-        let id = crate::miwear::device::resutils::get_watchface_id(&file_path)
-            .await
-            .unwrap_or("000000000000".to_string());
-        crate::miwear::device::watchface::install_watchface(device, &file_path, &id, move |data| {
-            let _ = on_progress.send(data);
-        })
+        let (id, id_bytes) = match new_watchface_id {
+            Some(ref bytes) => (String::from_utf8_lossy(bytes).into_owned(), Some(bytes)),
+            None => (
+                crate::miwear::device::resutils::get_watchface_id(&file_path)
+                    .await
+                    .unwrap_or("000000000000".to_string()),
+                None,
+            ),
+        };
+
+        crate::miwear::device::watchface::install_watchface(
+            device,
+            &file_path,
+            id_bytes,
+            &id,
+            move |data| {
+                let _ = on_progress.send(data);
+            },
+        )
         .await?;
+
         anyhow::Ok(())
     })
     .await
@@ -453,6 +469,20 @@ pub async fn plugsys_call_registered_func(
 #[tauri::command]
 pub async fn commprov_get_providers() -> Vec<String> {
     crate::community::list_providers().await
+}
+
+#[tauri::command]
+pub async fn commprov_get_categories(name: String) -> Result<Vec<String>, String> {
+    match crate::community::get_provider(&name).await {
+        Some(prov) => {
+            let categories = prov
+                .get_categories()
+                .await
+                .map_err(|e| e.to_string())?;
+            Ok(categories)
+        }
+        None => Err("Provider not found".to_string()),
+    }
 }
 
 #[tauri::command]
@@ -856,46 +886,25 @@ pub async fn image_url_to_base64_data_url(url: &str) -> Result<String, String> {
     Ok(data_url)
 }
 
-// 十六进制修改表盘ID
 #[tauri::command]
-pub async fn modify_watchface_id(original_path: String, new_id: String) -> Result<(), String> {
-    let path = Path::new(&original_path);
+pub fn app_get_current_log() -> Result<String, String> {
+    crate::logger::read_current_log().ok_or_else(|| "log unavailable".into())
+}
 
-    let mut content = fs::read(path).map_err(|e| format!("Read file failed: {}", e))?;
-
-    if content.len() < 0x28 + 12 {
-        return Err("File too small to modify".into());
-    }
-
-    let mut new_id_bytes = new_id.as_bytes().to_vec();
-
-    if new_id_bytes.len() < 12 {
-        let padding = 12 - new_id_bytes.len();
-        new_id_bytes.extend(std::iter::repeat(0x00).take(padding));
-    }
-
-    for i in 0..12 {
-        content[0x28 + i] = new_id_bytes[i];
-    }
-
-    let temp_path = {
-        let mut temp = path.to_path_buf();
-        temp.set_extension("tmp");
-        temp
-    };
-
-    let mut temp_file = fs::File::create(&temp_path)
-        .map_err(|e| format!("Failed to create temporary file: {}", e))?;
-
-    temp_file
-        .write_all(&content)
-        .map_err(|e| format!("Write failed: {}", e))?;
-
-    temp_file
-        .sync_all()
-        .map_err(|e| format!("Sync failed: {}", e))?;
-
-    fs::rename(&temp_path, path).map_err(|e| format!("File replacement failed: {}", e))?;
-
-    Ok(())
+#[tauri::command]
+pub fn app_open_log_dir() {
+    let binding = crate::APP_HANDLE
+        .get()
+        .unwrap()
+        .path()
+        .app_log_dir()
+        .unwrap()
+        .clone();
+    let log_dir = binding.to_string_lossy();
+    crate::APP_HANDLE
+        .get()
+        .unwrap()
+        .opener()
+        .open_path(log_dir, None::<&str>)
+        .unwrap();
 }

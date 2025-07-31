@@ -7,6 +7,8 @@ import { Channel, invoke } from "@tauri-apps/api/core";
 import { installResourceAction } from "./installTask";
 import { installList } from "./queue";
 import { TaskActionContext, TaskItem } from "./tasklist";
+import { getFilenameFromPath } from "@/filesystem/pathhelper";
+import { BaseDirectory, remove } from "@tauri-apps/plugin-fs";
 
 // 社区文件任务
 export function createDownloadTask(id: string, name: string, provider: string, device: string, description: string, icon: React.ComponentType<any>): TaskItem {
@@ -44,6 +46,7 @@ export function createDownloadTask(id: string, name: string, provider: string, d
                 },
                 action: async (ctx: TaskActionContext) => {
                     await installResourceAction(ctx, restype, respath);
+                    await remove(`tmp/${getFilenameFromPath(respath)}`, { baseDir: BaseDirectory.AppCache });
                 },
             })
             const config = await invoke<any>("app_get_config");

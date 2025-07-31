@@ -1,4 +1,5 @@
 {
+  "translators": "官方",
   "nav": {
     "home": "主页",
     "device": "设备",
@@ -58,7 +59,8 @@
     "ok": "确定",
     "open": "打开",
     "download": "下载",
-    "share": "分享"
+    "share": "分享",
+    "fail": "操作失败"
   },
   "updateDialog": {
     "title": "发现新版本 {version}",
@@ -71,6 +73,14 @@
     "quickapp": "快应用",
     "watchface": "表盘",
     "firmware": "固件"
+  },
+  "resourcePaidType": {
+    "paid": "付费",
+    "force_paid": "强制付费"
+  },
+  "resourceCategory": {
+    "hidden_paid": "隐藏付费",
+    "hidden_force_paid": "隐藏强制付费"
   },
   "installTask": {
     "watchface": {
@@ -215,7 +225,10 @@
       "reduceAnimation": "减少动画",
       "reduceAnimationDesc": "建议webkit用户打开以防止画面抖动",
       "language": "语言",
-      "languageDesc": "选择AstroBox显示的语言"
+      "languageDesc": "选择AstroBox显示的语言",
+      "translateTeam": "翻译贡献者",
+      "debugWindow": "调试窗口",
+      "debugWindowDesc": "是否显示调试窗口"
     },
     "tools": {
       "title": "神必工具",
@@ -261,6 +274,8 @@
       "title": "关于",
       "aboutAstrobox": "关于",
       "aboutAstroboxDesc": "关于AstroBox的详细信息",
+      "openlog": "日志文件夹",
+      "openlogDesc": "打开日志文件夹以查看程序日志",
       "website": "官网",
       "websiteDesc": "访问AstroBox的官方网站",
       "qq": "QQ群",
@@ -285,9 +300,11 @@
   "bandbbs": {
     "title": "米坛账号",
     "uid": "UID：",
-    "purchased": "已购买的资源",
     "logout": "退出登录",
-    "purchasedDescription": "来自米坛社区的付费资源"
+    "purchased": "已购买资源",
+    "enter_resource_id": "请输入要下载的付费资源ID",
+    "resource_id_placeholder": "资源ID",
+    "query": "查询"
   },
   "iframe": {
     "title": "打开网页"

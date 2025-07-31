@@ -1,0 +1,13 @@
+.consoleContainer {
+  flex: 1 1 0;
+  overflow-y: auto;
+  padding: 8px;
+  background: var(--colorNeutralBackground2, #f3f2f1);
+  color: var(--colorNeutralForeground1, #000);
+}
+
+.monospace {
+  font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 12px;
+  line-height: 1.4;
+}

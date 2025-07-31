@@ -1,12 +1,12 @@
 .cardButton {
     box-shadow: none !important;
-    background-color: var(--cardbackground) !important;
+    background-color: var(--cardbackground);
     transition: background-color 0.1s ease-in-out, transform 0.1s ease-in-out;
     border-radius: var(--borderRadiusXLarge) !important;
 }
 
 .cardButton:hover {
-    background-color: var(--cardbackgroundHover) !important;
+    background-color: var(--cardbackgroundHover);
     transform: scale3d(1.01, 1.01, 1.01)
 }
 

@@ -20,8 +20,8 @@ import {
     tokens
 } from "@fluentui/react-components";
 import { AppsAddInFilled, WarningFilled } from "@fluentui/react-icons";
-import { CollapseRelaxed } from "@fluentui/react-motion-components-preview";
 import { invoke } from "@tauri-apps/api/core";
+import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import PluginInstalled from "../../components/plugin/pluginInstalled";
 import PluginStore from "../../components/plugin/pluginStore";
@@ -85,9 +85,15 @@ export default function Plugin() {
                 }} search={search}/>}
                 {tab === "installed" && <PluginInstalled onSelect={(plugin) => { showInfo(plugin, true) }} search={search} />}
             </BasePage>
-            <CollapseRelaxed visible={!!infoShow} orientation="horizontal" >
-                <div style={{ flex: 1, background: "var(--cardbackground)", marginTop: "0px", marginLeft: "10px", marginRight: "-16px", marginBottom: "-16px", padding: "0 10px", borderRadius: "var(--border-radius)" }}><PluginInfo plugin={infoShow!} local={local} onExit={() => { showInfo(null) }} /> </div>
-            </CollapseRelaxed>
+            <AnimatePresence mode="popLayout">
+                {infoShow && <motion.div
+                    layout
+                    initial={{ x: 100, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={{ x: 100, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                    style={{ flex: 1, maxWidth: "50vw", background: "var(--cardbackground)", marginTop: "0px", marginLeft: "10px", marginRight: "-16px", marginBottom: "-16px", padding: "0 10px", borderRadius: "var(--border-radius)" }}><PluginInfo plugin={infoShow!} local={local} onExit={() => { showInfo(null) }} /> </motion.div>}
+            </AnimatePresence>
         </div>
     )
 }

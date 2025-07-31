@@ -1,4 +1,5 @@
 {
+  "translators": "Official",
   "nav": {
     "home": "Home",
     "device": "Device",
@@ -10,6 +11,10 @@
     "content": "AstroBox Application Disclaimer\n\nBefore using this software (hereinafter referred to as “AstroBox”), please carefully read and fully understand the terms of this disclaimer. Continuing to download, install, or use AstroBox indicates that you have read, understood, and accepted all contents of this statement and agree to bear all risks and responsibilities arising from the use of this software.\n\nI. Software Property Statement\n\nAstroBox is a third-party tool application independently developed and released by its developer. It aims to provide users with a convenient tool to install third-party resources (including watch faces, quick apps, firmware, etc.) on Xiaomi-brand smart wearable devices.\n\nThis software is not developed, authorized, released, or supported by Xiaomi Corporation or any of its affiliates. There is no affiliation, cooperation, agency, or any other legal relationship with Xiaomi. Xiaomi is not responsible for the functionality, performance, or security of AstroBox or any consequences resulting from its use.\n\nII. User Behavior and Responsibility\n\nAstroBox's functions may involve customization of the device system, including but not limited to resource replacement, configuration changes, and installation of unofficial content. These operations may unpredictably affect the normal functioning, security, and data integrity of the device, including but not limited to: • System instability, malfunction, or failure to boot; • Loss, damage, or leakage of user data; • Invalidated official service agreements or voided warranty rights; • Incompatibility with the pre-installed system or services; • Triggered manufacturer account management mechanisms leading to login restrictions.\n\nThese actions are entirely based on the user's independent decisions. Users should make choices with full understanding of the related risks and independently bear all resulting consequences. The AstroBox developer assumes no responsibility for any direct or indirect damages caused by users’ use of this software.\n\nIII. Account Login and Data Transmission Notice\n\nCertain AstroBox functions involve calling Xiaomi account service interfaces to access resources or enable specific device operations. During this process, user-provided account credentials (including username, password, or authorization tokens) will be directly submitted to Xiaomi’s official servers for identity verification.\n\nThis software does not store, record, or tamper with user credentials without the user's consent. However: • The security of such transmissions fully relies on Xiaomi’s servers and their implementation mechanisms, and is beyond the control or guarantee of this software; • If changes in interfaces, service policies, or triggered security mechanisms cause account restrictions, login failures, or data issues, this software and its developer bear no responsibility; • Users should carefully decide whether to use such functions and assume all risks related to credential usage.\n\nWe strongly recommend users operate only in trusted network environments and evaluate their account security requirements before authorizing login.\n\nIV. Third-Party Resource Sources and Content Legality\n\nSome resources provided by AstroBox originate from public networks or third-party community platforms, including but not limited to open-source communities (e.g., GitHub), forum platforms (e.g., Mi Community), and content distribution networks (e.g., jsDelivr).\n\nThese resources are offered by their original publishers. AstroBox functions only as a tool to access and install them and does not make any promises or guarantees regarding: • The legality, completeness, or accuracy of the content; • The absence of malicious code or harmful behavior; • Non-infringement of third-party intellectual property or legal rights; • Compatibility and safety with user devices or systems.\n\nUsers must ensure compliance with relevant laws and regulations and protect their own legal rights before deciding to access or use third-party resources. All legal, technical, or financial consequences arising from such use are to be independently borne by the user.\n\nV. Security Responsibility and Liability Disclaimer\n\nAstroBox is provided \"as is\" and does not offer any express or implied guarantees on its continued availability, system compatibility, performance, or suitability for specific purposes. Users clearly agree that AstroBox’s developer and associated parties shall not be held liable for any form of loss resulting from use or inability to use this software (including but not limited to direct loss, indirect loss, loss of profits, data loss, device damage, or legal liability).\n\nAdditionally, this software does not offer official technical support and is not obligated to respond to issues, failures, or risk feedback during usage.\n\nVI. Terms Modification and Final Interpretation Rights\n\nAstroBox reserves the right to modify the content of this disclaimer at any time based on changes in laws, software updates, or operational strategy adjustments. Any updates will be published through distribution channels without separate notice.\n\nContinued use of this software following updates to the disclaimer shall be deemed as acceptance of all modified terms. The AstroBox developer reserves the final interpretation rights of this disclaimer.",
     "confirm": "I agree",
     "cancel": "I don't agree"
+  },
+  "resourcePaidType": {
+    "paid": "Paid",
+    "force_paid": "Force Paid"
   },
   "home": {
     "title": "Home",
@@ -58,7 +63,8 @@
     "download": "Download",
     "share": "Share",
     "ok": "OK",
-    "open": "Open"
+    "open": "Open",
+    "fail": "Operation Failed"
   },
   "updateDialog": {
     "title": "New Version Available: {version}",
@@ -71,6 +77,10 @@
     "quickapp": "Quick App",
     "watchface": "Watch Face",
     "firmware": "Firmware"
+  },
+  "resourceCategory": {
+    "hidden_paid": "Hide Paid",
+    "hidden_force_paid": "Hide Force Paid"
   },
   "installTask": {
     "watchface": {
@@ -215,7 +225,10 @@
       "reduceAnimation": "Reduce Motion",
       "reduceAnimationDesc": "Recommended for WebKit users to prevent screen shaking.",
       "language": "Language",
-      "languageDesc": "Select the language for AstroBox to display."
+      "languageDesc": "Select the language for AstroBox to display.",
+      "translateTeam": "Translation Contributors",
+      "debugWindow": "Debug Window",
+      "debugWindowDesc": "Whether to display the debug window"
     },
     "tools": {
       "title": "Mysterious Tools",
@@ -261,6 +274,8 @@
       "title": "About",
       "aboutAstrobox": "About",
       "aboutAstroboxDesc": "Detailed information about AstroBox",
+      "openlog": "Log folder",
+      "openlogDesc": "Open the log folder to view the program log",
       "website": "Official Website",
       "qq": "QQ Group",
       "qqDesc": "Join the official AstroBox QQ group(920456907)",
@@ -284,10 +299,12 @@
   },
   "bandbbs": {
     "title": "BandBBS Account",
-    "uid": "UID:",
+    "uid": "UID: ",
+    "logout": "Log Out",
     "purchased": "Purchased Resources",
-    "logout": "Logout",
-    "purchasedDescription": "Paid resources from BandBBS"
+    "enter_resource_id": "Enter the paid resource ID to download",
+    "resource_id_placeholder": "Resource ID",
+    "query": "Query"
   },
   "iframe": {
     "title": "Open Webpage"

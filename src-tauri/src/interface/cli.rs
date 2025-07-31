@@ -1,5 +1,4 @@
 use crate::{interface, miwear::device::resutils::get_file_type};
-use anyhow::Ok;
 use serde::Serialize;
 use url::Url;
 use std::path::Path;
@@ -73,36 +72,13 @@ pub async fn handle(app: AppHandle, args: &[String]) -> bool {
                 }
             }
             log::info!("Installing package {} with type {}", package, package_type);
-            let _ = crate::miwear::with_connected_device_async(async |device| {
-                // 为了让 match 分支的类型兼容，统一返回 anyhow::Result 类型
-                match package_type {
-                    "watchface" => Ok(crate::miwear::device::watchface::install_watchface(
-                        device,
-                        package,
-                        &"000000000000".to_string(),
-                        |_| {},
-                    )
-                        .await?),
-                    "quickapp" => Ok(crate::miwear::device::thirdpartyapp::install_app(
-                        device,
-                        package,
-                        &"".to_string(),
-                        0,
-                        |_| {},
-                    )
-                        .await?),
-                    "firmware" => Ok(crate::miwear::device::firmware::install_firmware(
-                        device,
-                        package,
-                        |_| {},
-                    )
-                        .await?),
-                    _ => Ok({
-                        log::error!("Unknown package type");
-                    }),
-                }
-            });
-            false
+            if let Err(e) = app.emit("open_file", FileOpen { path: package.to_string(), file_type: package_type.to_string() }) {
+                log::error!("文件打开事件发送失败: {}", e);
+            }
+            if let Err(e) = app.emit("start_install",{}) {
+                log::error!("安装事件发送失败: {}", e);
+            }
+            true
         }
         _ => {
             if args[0].starts_with("astrobox://") {

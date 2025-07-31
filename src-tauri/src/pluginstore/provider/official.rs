@@ -2,11 +2,10 @@ use anyhow::{anyhow, Result};
 use async_trait::async_trait;
 use bytes::Bytes;
 use reqwest::Client;
+use std::io::Write;
 use std::{any::Any, sync::Arc};
 use tauri::{ipc::Channel, Manager};
-use tokio::{sync::RwLock};
-use zip::{ZipWriter, write::FileOptions};
-use std::io::Write;
+use tokio::sync::RwLock;
 
 use crate::{
     community::provider::{ProgressData, ProviderState},
@@ -71,7 +70,8 @@ impl OfficialPluginStore {
         if repo.starts_with("https://raw.githubusercontent.com/") {
             repo.trim_end_matches('/').to_string() + "/"
         } else if repo.starts_with("https://github.com/") {
-            let raw = repo.trim_end_matches('/')
+            let raw = repo
+                .trim_end_matches('/')
                 .replace("https://github.com/", "https://raw.githubusercontent.com/");
             raw + "/refs/heads/main/"
         } else {
@@ -81,7 +81,12 @@ impl OfficialPluginStore {
 
     fn build_file_url(&self, repo: &str, folder: &str, file: &str) -> String {
         let raw = self.to_raw(repo);
-        self.cdn.convert_url(&format!("{}{}{}", raw, folder.trim_end_matches('/').to_string()+"/", file))
+        self.cdn.convert_url(&format!(
+            "{}{}{}",
+            raw,
+            folder.trim_end_matches('/').to_string() + "/",
+            file
+        ))
     }
 
     async fn refresh_index(&self) -> Result<()> {
@@ -94,8 +99,11 @@ impl OfficialPluginStore {
             let idx_url = self.cdn.convert_url(&format!("{}index.txt", repo_raw));
             let idx_txt = self.client.get(&idx_url).send().await?.text().await?;
             for folder in idx_txt.lines().map(|l| l.trim()).filter(|l| !l.is_empty()) {
-                let manifest_url = self.cdn.convert_url(&format!("{}{}/manifest.json", repo_raw, folder));
-                let manifest: StorePluginManifest = self.client.get(&manifest_url).send().await?.json().await?;
+                let manifest_url = self
+                    .cdn
+                    .convert_url(&format!("{}{}/manifest.json", repo_raw, folder));
+                let manifest: StorePluginManifest =
+                    self.client.get(&manifest_url).send().await?.json().await?;
                 list.push((repo.to_string(), folder.to_string(), manifest));
             }
         }
@@ -130,11 +138,21 @@ impl Provider for OfficialPluginStore {
         }
     }
 
-    async fn get_page(&self, page: u32, limit: u32, filter: Option<String>) -> Result<Vec<StorePluginManifest>> {
+    async fn get_page(
+        &self,
+        page: u32,
+        limit: u32,
+        filter: Option<String>,
+    ) -> Result<Vec<StorePluginManifest>> {
         let idx = self.index.read().await;
-        let mut filtered: Vec<_> = idx.iter().filter(|(_, _, m)| {
-            filter.as_ref().map_or(true, |f| Self::fuzzy_match(&m.name, f))
-        }).collect();
+        let mut filtered: Vec<_> = idx
+            .iter()
+            .filter(|(_, _, m)| {
+                filter
+                    .as_ref()
+                    .map_or(true, |f| Self::fuzzy_match(&m.name, f))
+            })
+            .collect();
         filtered.sort_by(|a, b| a.2.name.cmp(&b.2.name));
         let start = (page * limit) as usize;
         let end = ((page + 1) * limit).min(filtered.len() as u32) as usize;
@@ -180,45 +198,91 @@ impl Provider for OfficialPluginStore {
             .find(|(_, _, m)| m.name == name)
             .ok_or_else(|| anyhow!("plugin not found"))?;
         let mut files: Vec<(String, Bytes)> = Vec::new();
-        let manifest_url = self.cdn.convert_url(&format!("{}{}/manifest.json", self.to_raw(repo), folder));
-        files.push(("manifest.json".to_string(), self.client.get(&manifest_url).send().await?.bytes().await?));
-        let entry_bytes = self.client.get(&self.build_file_url(repo, folder, &manifest.entry)).send().await?.bytes().await?;
+        let manifest_url =
+            self.cdn
+                .convert_url(&format!("{}{}/manifest.json", self.to_raw(repo), folder));
+        files.push((
+            "manifest.json".to_string(),
+            self.client.get(&manifest_url).send().await?.bytes().await?,
+        ));
+        let entry_bytes = self
+            .client
+            .get(&self.build_file_url(repo, folder, &manifest.entry))
+            .send()
+            .await?
+            .bytes()
+            .await?;
         files.push((manifest.entry.clone(), entry_bytes));
-        let icon_bytes = self.client.get(&self.build_file_url(repo, folder, &manifest.icon)).send().await?.bytes().await?;
+        let icon_bytes = self
+            .client
+            .get(&self.build_file_url(repo, folder, &manifest.icon))
+            .send()
+            .await?
+            .bytes()
+            .await?;
         files.push((manifest.icon.clone(), icon_bytes));
         for f in &manifest.additional_files {
-            let bytes = self.client.get(&self.build_file_url(repo, folder, f)).send().await?.bytes().await?;
+            let bytes = self
+                .client
+                .get(&self.build_file_url(repo, folder, f))
+                .send()
+                .await?
+                .bytes()
+                .await?;
             files.push((f.clone(), bytes));
         }
         drop(idx);
-        progress_cb.send(ProgressData{progress:0.5,status:"downloading".into(),status_text:"Packaging".into()})?;
+
+        progress_cb.send(ProgressData {
+            progress: 0.5,
+            status: "downloading".into(),
+            status_text: "Packaging".into(),
+        })?;
+
+        let cache_dir = crate::APP_HANDLE
+            .get()
+            .unwrap()
+            .path()
+            .app_cache_dir()
+            .unwrap()
+            .to_string_lossy()
+            .to_string();
+        let tmp_dir = format!("{}/tmp", cache_dir);
+
+        // 确保 tmp 目录存在
+        tokio::fs::create_dir_all(&tmp_dir).await?;
+
         let tmp_path = format!(
-            "{}/tmp/{}-{}.abp",
-            crate::APP_HANDLE.get().unwrap().path().app_cache_dir().unwrap().to_string_lossy(),
+            "{}/{}-{}.abp",
+            tmp_dir,
             crate::tools::random_string(10),
             name
         );
+
         let path = tokio::task::spawn_blocking(move || -> Result<String> {
             let f = std::fs::File::create(&tmp_path)?;
-            let mut zip = ZipWriter::new(f);
-            let opt = FileOptions::<()>::default();
+            let mut zip = zip::ZipWriter::new(f);
+            let opt = zip::write::FileOptions::<()>::default();
             for (path, data) in files {
                 zip.start_file(path, opt)?;
                 zip.write_all(&data)?;
             }
             zip.finish()?;
             Ok(tmp_path)
-        }).await??;
+        })
+        .await??;
+
         Ok(path)
     }
 
     async fn get_total_items(&self, filter: Option<String>) -> Result<u64> {
         let idx = self.index.read().await;
         Ok(match filter {
-            Some(f) => idx.iter().filter(|(_, _, m)| Self::fuzzy_match(&m.name, &f)).count() as u64,
+            Some(f) => idx
+                .iter()
+                .filter(|(_, _, m)| Self::fuzzy_match(&m.name, &f))
+                .count() as u64,
             None => idx.len() as u64,
         })
     }
 }
-
-

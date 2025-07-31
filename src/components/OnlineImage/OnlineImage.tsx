@@ -70,6 +70,7 @@ const OnlineImage: React.FC<OnlineImageProps> = ({
           setError(true);
           setLoading(false);
         }}
+        priority
         {...props}
       />
     </div>

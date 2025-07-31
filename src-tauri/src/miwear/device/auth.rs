@@ -28,11 +28,11 @@ pub async fn do_auth(device: Arc<MiWearDevice>) -> Result<()> {
     log::info!("[MiWearDevice.Auth] do_auth get app_verify ret.");
 
     match ret {
-        crate::miwear::packet::PacketData::PROTOBUF( __OPENSOURCE__DELETED__) => {
-            if  __OPENSOURCE__DELETED__.__OPENSOURCE__DELETED__ ==  __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__::Type::Account as i32 {
-                match  __OPENSOURCE__DELETED__.__OPENSOURCE__DELETED__.unwrap() {
-                     __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__::Payload::Account(account) => match account.__OPENSOURCE__DELETED__.unwrap() {
-                         __OPENSOURCE__DELETED__account::Payload::AuthDeviceVerify(auth_device_verify) => {
+        crate::miwear::packet::PacketData::PROTOBUF(wear_packet) => {
+            if wear_packet.__OPENSOURCE_DELETED__ == pb::protocol::wear_packet::Type::Account as i32 {
+                match wear_packet.__OPENSOURCE_DELETED__.unwrap() {
+                    pb::protocol::wear_packet::Payload::Account(account) => match account.__OPENSOURCE_DELETED__.unwrap() {
+                        pb::protocol::account::Payload::AuthDeviceVerify(auth_device_verify) => {
                             let app_confirm =
                                 build_auth_step_2(&device, &nonce, &auth_device_verify).await?;
                             let ret = device
@@ -45,16 +45,16 @@ pub async fn do_auth(device: Arc<MiWearDevice>) -> Result<()> {
                                 .await?;
 
                             match ret {
-                                crate::miwear::packet::PacketData::PROTOBUF( __OPENSOURCE__DELETED__) => {
-                                    match  __OPENSOURCE__DELETED__.__OPENSOURCE__DELETED__.unwrap() {
-                                         __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__::Payload::Account(account) => {
-                                            match account.__OPENSOURCE__DELETED__.unwrap() {
-                                                 __OPENSOURCE__DELETED__account::Payload::AuthDeviceConfirm(
+                                crate::miwear::packet::PacketData::PROTOBUF(wear_packet) => {
+                                    match wear_packet.__OPENSOURCE_DELETED__.unwrap() {
+                                        pb::protocol::wear_packet::Payload::Account(account) => {
+                                            match account.__OPENSOURCE_DELETED__.unwrap() {
+                                                pb::protocol::account::Payload::AuthDeviceConfirm(
                                                     auth_device_confirm,
                                                 ) => {
                                                     log::info!(
                                                         "[MiWearDevice.Auth] Auth Finished: {}",
-                                                        auth_device_confirm.__OPENSOURCE__DELETED__
+                                                        auth_device_confirm.__OPENSOURCE_DELETED__
                                                     );
                                                 }
                                                 _ => {}
@@ -88,21 +88,21 @@ pub async fn do_auth(device: Arc<MiWearDevice>) -> Result<()> {
     Ok(())
 }
 
-fn build_auth_step_1(nonce: &[u8]) ->  __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__ {
-    let account_payload =  __OPENSOURCE__DELETED__auth::AppVerify {
-        __OPENSOURCE__DELETED__: nonce.to_vec(),
-        __OPENSOURCE__DELETED__: None,
-        __OPENSOURCE__DELETED__: None,
+fn build_auth_step_1(nonce: &[u8]) -> pb::protocol::WearPacket {
+    let account_payload = pb::protocol::auth::AppVerify {
+        __OPENSOURCE_DELETED__: nonce.to_vec(),
+        __OPENSOURCE_DELETED__: None,
+        __OPENSOURCE_DELETED__: None,
     };
 
-    let pkt_payload =  __OPENSOURCE__DELETED__Account {
-        __OPENSOURCE__DELETED__: Some( __OPENSOURCE__DELETED__account::Payload::AuthAppVerify(account_payload)),
+    let pkt_payload = pb::protocol::Account {
+        __OPENSOURCE_DELETED__: Some(pb::protocol::account::Payload::AuthAppVerify(account_payload)),
     };
 
-    let pkt =  __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__ {
-        __OPENSOURCE__DELETED__:  __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__::Type::Account as i32,
-        __OPENSOURCE__DELETED__:  __OPENSOURCE__DELETED__account::AccountId::AuthVerify as u32,
-        __OPENSOURCE__DELETED__: Some( __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__::Payload::Account(pkt_payload)),
+    let pkt = pb::protocol::WearPacket {
+        __OPENSOURCE_DELETED__: pb::protocol::wear_packet::Type::Account as i32,
+        __OPENSOURCE_DELETED__: pb::protocol::account::AccountId::AuthVerify as u32,
+        __OPENSOURCE_DELETED__: Some(pb::protocol::wear_packet::Payload::Account(pkt_payload)),
     };
 
     pkt
@@ -111,12 +111,12 @@ fn build_auth_step_1(nonce: &[u8]) ->  __OPENSOURCE__DELETED__ __OPENSOURCE__DEL
 async fn build_auth_step_2(
     device: &Arc<MiWearDevice>,
     p_random: &[u8],
-    device_verify: & __OPENSOURCE__DELETED__auth::DeviceVerify,
-) -> Result< __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__> {
+    device_verify: &pb::protocol::auth::DeviceVerify,
+) -> Result<pb::protocol::WearPacket> {
     let mut state = device.state.write().await;
 
-    let w_random = device_verify.__OPENSOURCE__DELETED__.clone();
-    let w_sign = device_verify.__OPENSOURCE__DELETED__.clone();
+    let w_random = device_verify.__OPENSOURCE_DELETED__.clone();
+    let w_sign = device_verify.__OPENSOURCE_DELETED__.clone();
 
     if w_random.len() != 16 || w_sign.len() != 32 {
         return Err(anyhow!("nonce/hmac length mismatch"));
@@ -147,13 +147,13 @@ async fn build_auth_step_2(
     mac2.update(&w_random);
     let encrypted_signs = mac2.finalize().into_bytes().to_vec(); // 32 B
 
-    let proto_companion_device =  __OPENSOURCE__DELETED__CompanionDevice {
-        __OPENSOURCE__DELETED__:  __OPENSOURCE__DELETED__companion_device::DeviceType::Android as i32, // 写死安卓以解锁全部功能
-        __OPENSOURCE__DELETED__: None,
-        __OPENSOURCE__DELETED__: "AstroBox".to_string(),
-        __OPENSOURCE__DELETED__: Some(0xffffffff), // 解锁全部capability 0xffffffff
-        __OPENSOURCE__DELETED__: None,
-        __OPENSOURCE__DELETED__: None,
+    let proto_companion_device = pb::protocol::CompanionDevice {
+        __OPENSOURCE_DELETED__: pb::protocol::companion_device::DeviceType::Android as i32, // 写死安卓以解锁全部功能
+        __OPENSOURCE_DELETED__: None,
+        __OPENSOURCE_DELETED__: "AstroBox".to_string(),
+        __OPENSOURCE_DELETED__: Some(0xffffffff), // 解锁全部capability 0xffffffff
+        __OPENSOURCE_DELETED__: None,
+        __OPENSOURCE_DELETED__: None,
     };
 
     let companion_device = proto_companion_device.encode_to_vec();
@@ -171,19 +171,19 @@ async fn build_auth_step_2(
         &companion_device,
     );
 
-    let account_payload =  __OPENSOURCE__DELETED__auth::AppConfirm {
-        __OPENSOURCE__DELETED__: encrypted_signs,
-        __OPENSOURCE__DELETED__: encrypted_device_info,
+    let account_payload = pb::protocol::auth::AppConfirm {
+        __OPENSOURCE_DELETED__: encrypted_signs,
+        __OPENSOURCE_DELETED__: encrypted_device_info,
     };
 
-    let pkt_payload =  __OPENSOURCE__DELETED__Account {
-        __OPENSOURCE__DELETED__: Some( __OPENSOURCE__DELETED__account::Payload::AuthAppConfirm(account_payload)),
+    let pkt_payload = pb::protocol::Account {
+        __OPENSOURCE_DELETED__: Some(pb::protocol::account::Payload::AuthAppConfirm(account_payload)),
     };
 
-    let pkt =  __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__ {
-        __OPENSOURCE__DELETED__:  __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__::Type::Account as i32,
-        __OPENSOURCE__DELETED__:  __OPENSOURCE__DELETED__account::AccountId::AuthConfirm as u32,
-        __OPENSOURCE__DELETED__: Some( __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__::Payload::Account(pkt_payload)),
+    let pkt = pb::protocol::WearPacket {
+        __OPENSOURCE_DELETED__: pb::protocol::wear_packet::Type::Account as i32,
+        __OPENSOURCE_DELETED__: pb::protocol::account::AccountId::AuthConfirm as u32,
+        __OPENSOURCE_DELETED__: Some(pb::protocol::wear_packet::Payload::Account(pkt_payload)),
     };
 
     state.sec_keys = Some(super::SecurityKeys {

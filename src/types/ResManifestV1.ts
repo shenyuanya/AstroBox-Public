@@ -6,8 +6,10 @@ export interface Item {
     icon?: string;
     source_url?: string;
     author?: Array<Author>;
+    paid_type?: string;
     _bandbbs_ext_supported_device?: string;
     _bandbbs_ext_resource_id?: number;
+    _bandbbs_ext_is_community_paid?: boolean;
 }
 
 export interface Author {

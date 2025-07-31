@@ -34,6 +34,7 @@ pub mod resutils;
 pub mod system;
 pub mod thirdpartyapp;
 pub mod watchface;
+pub mod error;
 
 #[derive(Debug, Default, Clone, Serialize, Deserialize)]
 #[serde(default)]
@@ -62,9 +63,9 @@ pub struct MiWearDevice {
     /// 待 ACK 表：btrecv -> oneshot sender
     pub pending_ack: DashMap<(), oneshot::Sender<()>>,
     /// 待回应表：protokey → oneshot sender
-    pub pending_proto: DashMap<ProtoKey, oneshot::Sender< __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__>>,
+    pub pending_proto: DashMap<ProtoKey, oneshot::Sender<pb::protocol::WearPacket>>,
     /// 订阅回调表：type → Vec<callback>
-    pub proto_subscribers: DashMap<u32, Vec<Arc<dyn Fn( __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__) + Send + Sync>>>,
+    pub proto_subscribers: DashMap<u32, Vec<Arc<dyn Fn(pb::protocol::WearPacket) + Send + Sync>>>,
     /// 序列号计数器
     pub seq: AtomicU8,
     /// 蓝牙抽象（BLE / SPP）
@@ -240,7 +241,7 @@ impl MiWearDevice {
 
         let dev_clone_proto = Arc::clone(&core);
         core.subscribe_proto(
-             __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__::Type::ThirdpartyApp as u32,
+            pb::protocol::wear_packet::Type::ThirdpartyApp as u32,
             Arc::new(move |packet| {
                 on_thirdparty_app(dev_clone_proto.clone(), packet);
             }),
@@ -411,7 +412,7 @@ impl MiWearDevice {
         expect_type: u32,
         expect_id: u32,
         timeout: Option<Duration>,
-    ) -> anyhow::Result< __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__> {
+    ) -> anyhow::Result<pb::protocol::WearPacket> {
         let (_seq, frame) = self.build_frame(channel, op, payload).await?;
         let (tx, rx) = oneshot::channel();
         self.pending_proto.insert((expect_type, expect_id), tx);
@@ -423,7 +424,7 @@ impl MiWearDevice {
     pub fn subscribe_proto(
         &self,
         expect_type: u32,
-        callback: Arc<dyn Fn( __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__) + Send + Sync>,
+        callback: Arc<dyn Fn(pb::protocol::WearPacket) + Send + Sync>,
     ) {
         self.proto_subscribers
             .entry(expect_type)
@@ -436,7 +437,7 @@ impl MiWearDevice {
         expect_type: u32,
         expect_id: u32,
         timeout: Option<Duration>,
-    ) -> anyhow::Result< __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__> {
+    ) -> anyhow::Result<pb::protocol::WearPacket> {
         let (tx, rx) = oneshot::channel();
         let proto_key: ProtoKey = (expect_type, expect_id);
 
@@ -480,7 +481,7 @@ impl MiWearDevice {
             Err(_) => {
                 self.pending_proto.remove(&proto_key);
                 Err(anyhow!(
-                    "Timeout waiting for ProtoKey ({}, {})",
+                    "Timeout waiting for ProtoKey ({}, {}) (大狗大狗叫叫叫，你的资源疑似没装上。试着重启一下手环？)",
                     expect_type,
                     expect_id
                 ))
@@ -511,7 +512,7 @@ impl MiWearDevice {
             })
             .unwrap();
         let frame =
-            packet::Mi __OPENSOURCE__DELETED__::new_data(seq, channel, op, &std::borrow::Cow::Borrowed(&pdata))
+            packet::MiWearPacket::new_data(seq, channel, op, &std::borrow::Cow::Borrowed(&pdata))
                 .encode();
         Ok((seq, frame))
     }

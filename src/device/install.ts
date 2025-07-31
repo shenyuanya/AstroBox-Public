@@ -1,7 +1,7 @@
 import { pickFile } from "@/filesystem/picker";
 import logger from "@/log/logger";
 import { createFirmwareInstallTask, createThirdPartyAppInstallTask, createWatchFaceInstallTask } from "@/taskqueue/installTask";
-import { addInstallTask } from "@/taskqueue/queue";
+import { addInstallTask, installList } from "@/taskqueue/queue";
 import { invoke } from "@tauri-apps/api/core";
 import { listen } from '@tauri-apps/api/event';
 import { basename } from "@tauri-apps/api/path";
@@ -89,7 +89,7 @@ type fileOpened = {
     file_type:string;
 }
 export async function registerOpenFileListener() {
-    return await listen<fileOpened>("open_file",(event)=>{
+    return [await listen<fileOpened>("open_file", (event) => {
         try {
             const type = getType(event.payload.file_type)
             if (type === ResourceType.ABP) return installABP(event.payload.path)
@@ -111,7 +111,9 @@ export async function registerOpenFileListener() {
         }catch (e){
             logger.error(e)
         }
-    })
+    }), await listen("start_install", () => {
+        if (installList.status === "pending") installList.run()
+    })]
 }
 function getType(type:string){
     switch (type){

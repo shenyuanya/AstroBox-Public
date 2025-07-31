@@ -67,7 +67,7 @@
         flex-direction: column;
         align-items: stretch;
         justify-content: flex-start;
-        padding-top: 10px;
+        padding-top: calc(10px + var(--safe-area-inset-top));
         background: transparent;
         backdrop-filter: none;
     }

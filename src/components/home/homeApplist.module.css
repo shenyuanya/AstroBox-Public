@@ -10,6 +10,7 @@
   margin-left: 8px;
   font-size: 22px;
   font-weight: var(--fontWeightRegular);
+  flex: 1;
 }
 
 /* .list {

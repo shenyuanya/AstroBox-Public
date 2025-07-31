@@ -33,16 +33,16 @@ where
                 "AstroBox Update".to_string(),
             )
             .encode_to_vec(),
-             __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__::Type::System as u32,
-             __OPENSOURCE__DELETED__system:: __OPENSOURCE__DELETED__::PrepareOta as u32,
+            pb::protocol::wear_packet::Type::System as u32,
+            pb::protocol::system::SystemId::PrepareOta as u32,
             None,
         )
         .await?;
 
-    match firmware_install_ret.__OPENSOURCE__DELETED__.unwrap() {
-         __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__::Payload::System(system) => match system.__OPENSOURCE__DELETED__.unwrap() {
-             __OPENSOURCE__DELETED__system::Payload::PrepareOtaResponse(response) => {
-                if response.__OPENSOURCE__DELETED__ ==  __OPENSOURCE__DELETED__PrepareStatus::Ready as i32 {
+    match firmware_install_ret.__OPENSOURCE_DELETED__.unwrap() {
+        pb::protocol::wear_packet::Payload::System(system) => match system.__OPENSOURCE_DELETED__.unwrap() {
+            pb::protocol::system::Payload::PrepareOtaResponse(response) => {
+                if response.__OPENSOURCE_DELETED__ == pb::protocol::PrepareStatus::Ready as i32 {
                     super::mass::send_mass(&device, file_data, MassDataType::FIRMWARE, progress_cb)
                         .await?;
                 } else {
@@ -54,7 +54,8 @@ where
                     }
                     #[cfg(not(debug_assertions))] {
                         bail!(
-                            "Prepare not READY!"
+                            "Prepare not READY! Error Info={}",
+                            super::error::get_prepare_error_info(response.__OPENSOURCE_DELETED__ as i32)
                         );
                     }
                 }
@@ -75,25 +76,25 @@ fn build_firmware_install_request(
     firmware_version: String,
     file_md5: &Vec<u8>,
     change_log: String,
-) ->  __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__ {
-    let install_req =  __OPENSOURCE__DELETED__prepare_ota::Request {
-        __OPENSOURCE__DELETED__: true,
-        __OPENSOURCE__DELETED__:  __OPENSOURCE__DELETED__prepare_ota::Type::All as i32,
-        __OPENSOURCE__DELETED__: firmware_version,
-        __OPENSOURCE__DELETED__: crate::tools::to_hex_string(&file_md5),
-        __OPENSOURCE__DELETED__: change_log,
-        __OPENSOURCE__DELETED__: "".to_owned(),
-        __OPENSOURCE__DELETED__: None,
+) -> pb::protocol::WearPacket {
+    let install_req = pb::protocol::prepare_ota::Request {
+        __OPENSOURCE_DELETED__: true,
+        __OPENSOURCE_DELETED__: pb::protocol::prepare_ota::Type::All as i32,
+        __OPENSOURCE_DELETED__: firmware_version,
+        __OPENSOURCE_DELETED__: crate::tools::to_hex_string(&file_md5),
+        __OPENSOURCE_DELETED__: change_log,
+        __OPENSOURCE_DELETED__: "".to_owned(),
+        __OPENSOURCE_DELETED__: None,
     };
 
-    let pkt_payload =  __OPENSOURCE__DELETED__System {
-        __OPENSOURCE__DELETED__: Some( __OPENSOURCE__DELETED__system::Payload::PrepareOtaRequest(install_req)),
+    let pkt_payload = pb::protocol::System {
+        __OPENSOURCE_DELETED__: Some(pb::protocol::system::Payload::PrepareOtaRequest(install_req)),
     };
 
-    let pkt =  __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__ {
-        __OPENSOURCE__DELETED__:  __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__::Type::System as i32,
-        __OPENSOURCE__DELETED__:  __OPENSOURCE__DELETED__system:: __OPENSOURCE__DELETED__::PrepareOta as u32,
-        __OPENSOURCE__DELETED__: Some( __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__::Payload::System(pkt_payload)),
+    let pkt = pb::protocol::WearPacket {
+        __OPENSOURCE_DELETED__: pb::protocol::wear_packet::Type::System as i32,
+        __OPENSOURCE_DELETED__: pb::protocol::system::SystemId::PrepareOta as u32,
+        __OPENSOURCE_DELETED__: Some(pb::protocol::wear_packet::Payload::System(pkt_payload)),
     };
 
     pkt

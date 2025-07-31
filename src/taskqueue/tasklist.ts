@@ -6,6 +6,7 @@ export interface TaskItem {
     id: string;
     name: string;
     description: string;
+    newWatchfaceID?: string;
     type?: ResourceType
     icon: React.ComponentType<any>;
     payload?: TaskItemPayload;

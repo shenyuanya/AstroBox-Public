@@ -74,8 +74,8 @@ where
             OpCode::Encrypted,
             &build_mass_prepare_request(data_type, &file_md5_for_prepare, file_data.len())
                 .encode_to_vec(),
-             __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__::Type::Mass as u32,
-             __OPENSOURCE__DELETED__mass::MassId::Prepare as u32,
+            pb::protocol::wear_packet::Type::Mass as u32,
+            pb::protocol::mass::MassId::Prepare as u32,
             None,
         )
         .await
@@ -84,18 +84,18 @@ where
     match prepare_ret
         .payload
         .and_then(|pl| match pl {
-             __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__::Payload::Mass(m) => Some(m),
+            pb::protocol::wear_packet::Payload::Mass(m) => Some(m),
             _ => None,
         })
     {
         Some(mass) => {
             let prepare_resp = match mass.payload {
-                Some( __OPENSOURCE__DELETED__mass::Payload::PrepareResponse(resp)) => resp,
+                Some(pb::protocol::mass::Payload::PrepareResponse(resp)) => resp,
                 _ => bail!("Prepare response field was not present in the received protobuf."),
             };
 
-            if prepare_resp.prepare_status !=  __OPENSOURCE__DELETED__PrepareStatus::Ready as i32 {
-                bail!("Mass data prepare was not READY.");
+            if prepare_resp.prepare_status != pb::protocol::PrepareStatus::Ready as i32 {
+                bail!("Mass data prepare was not READY. 请检查你的设备是否有充足的存储空间，然后再试。");
             }
 
             log::info!(
@@ -111,17 +111,17 @@ where
                 mass_inner_payload_with_crc32.len()
             );
 
-            let mi __OPENSOURCE__DELETED___body_max_len = prepare_resp.expected_slice_length() as usize;
-            if mi __OPENSOURCE__DELETED___body_max_len == 0 {
+            let miwear_packet_body_max_len = prepare_resp.expected_slice_length() as usize;
+            if miwear_packet_body_max_len == 0 {
                 bail!("Device reported expected_slice_length of 0, cannot proceed.");
             }
 
-            // Mi __OPENSOURCE__DELETED__ Body = Channel(1) | Op(1) | blocks_num(2) | resume_block(2) | MassFragment
-            let mass_fragment_max_len = mi __OPENSOURCE__DELETED___body_max_len.saturating_sub(1 + 1 + 2 + 2);
+            // MiWearPacket Body = Channel(1) | Op(1) | blocks_num(2) | resume_block(2) | MassFragment
+            let mass_fragment_max_len = miwear_packet_body_max_len.saturating_sub(1 + 1 + 2 + 2);
             if mass_fragment_max_len == 0 {
                 bail!(
                     "Calculated mass_fragment_max_len is 0. Device limit ({}) is too small.",
-                    mi __OPENSOURCE__DELETED___body_max_len
+                    miwear_packet_body_max_len
                 );
             }
 
@@ -228,21 +228,21 @@ fn build_mass_prepare_request(
     data_type: MassDataType,
     file_md5: &Vec<u8>,
     file_length: usize,
-) ->  __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__ {
-    let mass_payload =  __OPENSOURCE__DELETED__PrepareRequest {
+) -> pb::protocol::WearPacket {
+    let mass_payload = pb::protocol::PrepareRequest {
         data_type: data_type as u32,
         data_id: file_md5.to_vec(),
         data_length: file_length as u32,
         support_compress_mode: None,
     };
 
-    let mass_pkt =  __OPENSOURCE__DELETED__Mass {
-        payload: Some( __OPENSOURCE__DELETED__mass::Payload::PrepareRequest(mass_payload)),
+    let mass_pkt = pb::protocol::Mass {
+        payload: Some(pb::protocol::mass::Payload::PrepareRequest(mass_payload)),
     };
 
-     __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__ {
-        r#type:  __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__::Type::Mass as i32,
-        id:  __OPENSOURCE__DELETED__mass::MassId::Prepare as u32,
-        payload: Some( __OPENSOURCE__DELETED__ __OPENSOURCE__DELETED__::Payload::Mass(mass_pkt)),
+    pb::protocol::WearPacket {
+        r#type: pb::protocol::wear_packet::Type::Mass as i32,
+        id: pb::protocol::mass::MassId::Prepare as u32,
+        payload: Some(pb::protocol::wear_packet::Payload::Mass(mass_pkt)),
     }
 }

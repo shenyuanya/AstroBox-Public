@@ -1,5 +1,6 @@
 import ModifyWatchfaceIDDialog from "@/components/ModifyWatchfaceIDDialog/ModifyWatchfaceIDDialog";
 import { ResourceType } from "@/device/install";
+import { useI18n } from "@/i18n";
 import { TaskItem } from "@/taskqueue/tasklist";
 import {
   Button,
@@ -44,11 +45,15 @@ export default function QueueCard({
   onCancel,
   isMobile,
 }: QueueCardProps) {
+  const { t } = useI18n()
   const classes = useStyles();
   const showProgress = item.payload?.status != "pending";
   const IconComponent = item.icon
   const title = item.name || item.id;
-  const description = item.description || item.id;
+  let description = item.description || item.id;
+  if (description.startsWith("installTask.")) {
+    description = t(description);
+  }
 
   const progressMap = {
     "pending": "none" as const,

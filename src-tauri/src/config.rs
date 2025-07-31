@@ -20,6 +20,7 @@ pub struct AppConfig {
     pub plugin_configs: HashMap<String, HashMap<String, String>>,
     pub auto_install: bool,
     pub disable_auto_clean: bool,
+    pub debug_window: bool,
 }
 
 impl Default for AppConfig {
@@ -27,6 +28,7 @@ impl Default for AppConfig {
         Self {
             auto_install: true,
             disable_auto_clean: false,
+            debug_window: cfg!(debug_assertions),
             #[cfg(target_os = "ios")]
             connect_type: ConnectType::BLE,
             #[cfg(not(target_os = "ios"))]
