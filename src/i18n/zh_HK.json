@@ -229,6 +229,7 @@
       "language": "語言",
       "languageDesc": "揀選AstroBox顯示嘅語言",
       "translateTeam": "翻譯貢獻者",
+      "translateTeamDesc": "瞭解呢個翻譯包係邊個寫嘅",
       "debugWindow": "除錯視窗",
       "debugWindowDesc": "顯示除錯視窗",
       "themeColorTitle": "主題色",
