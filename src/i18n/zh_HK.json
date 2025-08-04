@@ -233,8 +233,8 @@
       "debugWindowDesc": "顯示除錯視窗",
       "themeColorTitle": "主題色",
       "themeColorDesc": "調節AstroBox嘅主題色",
-      "fixedHeader": "固定",
-      "rgbModeDesc": "啟用RGB流彩效果"
+      "fixedHeader": "固定標題欄",
+      "fixedHeaderDesc": "啟用後，標題欄將會固定喺畫面最上方。（建議Windows11用戶唔好啟用）"
     },
     "tools": {
       "title": "奇妙嘅工具",
