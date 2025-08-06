@@ -347,7 +347,8 @@
     "refreshAll": "全部刷新",
     "pullPage": "拉取page",
     "pullItem": "拉取item=測試插件",
-    "downloadAndPackage": "下載並打包item=測試插件"
+    "downloadAndPackage": "下載並打包item=測試插件",
+    "pullReport": "拉取手環日誌"
   },
   "productInfo": {
     "about": "關於呢個資源",
