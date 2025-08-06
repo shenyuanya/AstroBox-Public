@@ -216,7 +216,8 @@
     }
   },
   "connect": {
-    "failed": "連接失敗咗",
+    "failed": "連結失敗咗",
+    "iosIgnoreTips": "連結失敗，請試吓喺系統藍牙設定搵閣下要連結嘅裝置，撳右邊嘅(i)型掣入到詳情，撳“忘記”，之後再次嘗試。",
     "handshakeFailed": "握手失敗咗",
     "authFailed": "AuthKey錯誤或後端問題。請嘗試重啟應用程式後再試。"
   },
@@ -235,7 +236,13 @@
       "themeColorTitle": "主題色",
       "themeColorDesc": "調節AstroBox嘅主題色",
       "fixedHeader": "固定標題欄",
-      "fixedHeaderDesc": "啟用後，標題欄將會固定喺畫面最上方。（建議Windows11用戶唔好啟用）"
+      "fixedHeaderDesc": "啟用後，標題欄將會固定喺畫面最上方。（建議Windows11用戶唔好啟用）",
+      "micaEffect": "透明效果",
+      "micaEffectDesc": "設定 Windows11 系統下嘅透明後果",
+      "micaEffectFull": "完全透明效果",
+      "micaEffectPartial": "側欄&標題欄透明",
+      "micaEffectTitleOnly": "僅標題欄透明",
+      "micaEffectInfo": "啟用後，AstroBox 嘅畫面將會有雲母透明效果，但係請閣下留意：呢個改動有可能會影響某啲畫面嘅能讀性同埋高斯模糊特效嘅美觀性。\n 閣下可以設定透明效果嘅啟用範圍；若果想禁用系統入邊所有嘅透明效果，請到 Windows 設定入邊操作。"
     },
     "tools": {
       "title": "奇妙嘅工具",
@@ -262,6 +269,12 @@
     },
     "install": {
       "title": "安裝",
+      "iosFakeAndroidMode": "扮Android模式",
+      "iosFakeAndroidModeDesc": "扮成Android系統並短暫連結裝置嚟解鎖某啲功能（囿於系統嘅限制，啟用後只能維持一瞬間連結，若果要安裝或者管理資源請禁用呢個功能）",
+      "iosFakeAndroidModeEnableAlertTitle": "啟用扮Android模式",
+      "iosFakeAndroidModeEnableAlertContent": "閣下喺度啟用扮Android模式！\n啟用呢個模式並重新連結裝置後，就能夠解鎖穿戴裝置僅喺Android連結時啟用嘅某啲功能。但囿於小米嘅系統限制，啟用呢個模式後，AstroBox同裝置嘅連結僅能維持一瞬間，喺裝置綁定成功後，連結會立即切斷。咁就話喺呢個模式，閣下將冇得用除綁定裝置外嘅任何功能，包括安裝資源、解除安裝资源。若果要使用呢啲功能，請禁用呢個模式，之後重新連結裝置。\n確定要斷開当前裝置並啟用呢個模式？",
+      "removeBondBeforeConnect": "連結之前解除綁定",
+      "removeBondBeforeConnectDesc": "喺連結裝置之前解除綁定以重新進行配對，有助於改善斷開連結嘅現象",
       "sendInterval": "發包間隔",
       "sendIntervalDesc": "安裝嗰陣發送數據塊嘅間隔。撥呢度可以解決部分安裝失敗嘅問題。"
     },
