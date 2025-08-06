@@ -237,6 +237,8 @@
       "themeColorDesc": "调节Astro Box嘅主题色",
       "fixedHeader": "固定标题栏",
       "fixedHeaderDesc": "启用后，标题栏将会固定喺画面嘅最上方。（建议Windows11用户唔好启用）",
+      "micaEffect": "透明效果",
+      "micaEffectDesc": "设置 Windows11 系统下嘅透明效果",
       "micaEffectFull": "完全透明效果",
       "micaEffectPartial": "侧边栏&标题栏透明",
       "micaEffectTitleOnly": "仅标题栏透明",
