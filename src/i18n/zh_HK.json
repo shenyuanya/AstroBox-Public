@@ -205,6 +205,8 @@
     "loggingIn": "登入緊",
     "login": "登入",
     "emptyError": "密碼亦是帳戶唔可以為空!",
+    "iosCopyAlertTitle": "獲取結果",
+    "iosCopyAlertContentTip": "閣下似乎用緊iOS裝置。囿於接口限制，iOS裝置暫時唔支援自動添加已綁定嘅裝置。請喺下邊搵你打算連結嘅裝置，並Copy嗰條Authkey，之後喺“切換裝置”畫面進行連結",
     "2fa": {
       "title": "需要雙重認證",
       "body": "你嘅帳戶需要雙重認證。請點擊“確定“喺瀏覽器繼續。過程會涉及兩次重定向。當頁面顯示ok後，請返回AstroBox並重新嘗試登入。"
