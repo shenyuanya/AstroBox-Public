@@ -205,6 +205,8 @@
     "loggingIn": "登录紧",
     "login": "登录",
     "emptyError": "密码亦是账号唔可以为空!",
+    "iosCopyAlertTitle": "获取结果",
+    "iosCopyAlertContentTip": "你似乎用紧iOS设备。由于接口限制，iOS设备暂时唔支持自动添加已绑定嘅设备。请喺下边搵你打算连接嘅设备，并复制Authkey，之后喺“切换设备”页进行连接",
     "2fa": {
       "title": "需要双重认证",
       "body": "你嘅账号需要双重认证。请点击“确定“喺浏览器继续。过程会涉及两次重定向。当页面显示ok后，请返回AstroBox并重新尝试登录。"
