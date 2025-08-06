@@ -165,6 +165,7 @@
     "notConnected": "设备未连线",
     "connect": "连线设备",
     "networkProxyInfo": "AstroBox 已为你嘅设备代理网络请求",
+    "fakeAndroidModeInfoLabel": "扮Android模式已启用，喺呢个模式无法同设备正常建立连接，资源安装、资源管理等功能都唔用得。若果要使用呢啲功能，请禁用呢个模式，之后重新连接设备。",
     "features": {
       "installApp": "安装快应用",
       "installAppDesc": "拣选快应用包并传送到你嘅设备",
