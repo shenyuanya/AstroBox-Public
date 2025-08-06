@@ -97,7 +97,7 @@
   },
   "banner": {
     "loadFailed": {
-      "title": "Banner載入失敗咗了！"
+      "title": "Banner載入失敗咗！"
     },
     "noBanners": {
       "title": "冇Banner喎...",
@@ -165,6 +165,7 @@
     "notConnected": "裝置未連線",
     "connect": "連線裝置",
     "networkProxyInfo": "AstroBox 已為你嘅裝置代理網絡請求",
+      "fakeAndroidModeInfoLabel": "扮Android模式已啟用，喺呢個模式無法同裝置正常建立連結，資源安裝、資源管理等功能都唔用得。若果要使用呢啲功能，請禁用呢個模式，之後重新連結裝置。",
     "features": {
       "installApp": "安装快應用",
       "installAppDesc": "揀選快應用包並Send入你嘅裝置",
