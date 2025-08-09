@@ -245,7 +245,7 @@
       "translateTeam": "翻译贡献者",
       "translateTeamDesc": "了解呢个翻译包系边个写嘅",
       "debugWindow": "除错窗口",
-      "debugWindowDesc": "显示除错窗口"
+      "debugWindowDesc": "显示除错窗口",
       "themeColorTitle": "主题色",
       "themeColorDesc": "调节Astro Box嘅主题色",
       "fixedHeader": "固定标题栏",
