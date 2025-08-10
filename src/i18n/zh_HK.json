@@ -89,7 +89,7 @@
     "force_paid": "強制性收費"
   },
   "resourceCategory": {
-    "hidden_paid": "隱藏需購買嘅項目",
+    "hidden_paid": "隱藏自選消費嘅項目",
     "hidden_force_paid": "隱藏強制性收費嘅項目",
     "quickapp": "快應用",
     "watchface": "錶盤"
