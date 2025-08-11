@@ -73,7 +73,7 @@
     "modify": "修改",
     "cancel": "取消",
     "go": "前往",
-    "loading": "載入緊...",
+    "loading": "Loading...",
     "refreshAll": "全部刷新",
     "uninstall": "解除安裝",
     "disable": "停用",
@@ -83,11 +83,13 @@
     "open": "打開",
     "download": "下載",
     "share": "分享",
-    "fail": "失敗咗"
+    "fail": "失敗咗",
+    "start": "開始",
+    "close": "關閉"
   },
   "updateDialog": {
     "title": "發現有新版 {version}",
-    "body": "更新日志：",
+    "body": "更新日誌：",
     "updateNow": "即刻更新",
     "later": "遲啲再提我",
     "ignore": "呢個版本唔好再提我"
@@ -278,6 +280,9 @@
       "openlogDesc": "打開日誌資料夾以檢視應用程式日誌",
       "infoDump": "裝置資訊",
       "infoDumpDesc": "顯示裝置運行環境資訊，協助他人快速定位問題",
+      "deviceLog": "拉取裝置日誌",
+      "deviceLogDesc": "撳呢度將會拉取裝置日誌到日誌檔案夾入邊",
+      "deviceLogDialogTip": "撳「開始」後，拉取操作將會開始，喺過程中請勿將應用程式切換背景運作或者將裝置熄屏，避免操作中斷",
       "unlockCode": "計算解鎖碼",
       "unlockCodeDesc": "喺忘记裝置密碼时计算解锁碼以重置裝置",
       "dialogTitle": "解鎖你嘅小米穿戴裝置",
@@ -454,6 +459,8 @@
     "welcomeTitleRight": "Vela穿戴裝置工具箱",
     "skip":"SKip",
     "next":"下一步",
-    "continue": "繼續"
+    "continue": "繼續",
+    "welcomeDoneTitle": "歡迎使用",
+    "welcomeDoneDesc": "AstroBox現以為閣下準備完畢，現在就開始使用啦"
   }
 }
