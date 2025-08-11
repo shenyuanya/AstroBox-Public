@@ -83,7 +83,9 @@
     "open": "打开",
     "download": "下载",
     "share": "分享",
-    "fail": "失败咗"
+    "fail": "失败咗",
+    "start": "开始",
+    "close": "关闭"
   },
   "updateDialog": {
     "title": "发现有新版本 {version}",
@@ -278,6 +280,9 @@
       "openlogDesc": "打开日志文件夹以检视应用程序日志",
       "infoDump": "设备信息",
       "infoDumpDesc": "显示设备运行环境信息以帮助他人快速定位问题",
+      "deviceLog": "拉取设备日志",
+      "deviceLogDesc": "撳呢度之后将会拉取设备日志到文件夹入边，可能需要较长时间",
+      "deviceLogDialogTip": "撳“开始”按钮后，将会开始拉取设备日志，喺呢个过程中请勿将应用切到后台或者将手机熄屏，避免操作中断",
       "unlockCode": "计算解锁码",
       "unlockCodeDesc": "喺忘记设备密码时计算解锁码以重置设备",
       "dialogTitle": "解锁你嘅小米穿戴设备",
@@ -454,6 +459,8 @@
     "welcomeTitleRight": "Vela穿戴设备工具箱",
     "skip":"跳过",
     "next":"下一步",
-    "continue":"继续"
+    "continue":"继续",
+    "welcomeDoneTitle": "欢迎使用",
+    "welcomeDoneDesc": "AstroBox现已为你准备完毕，现在就开始使用啦"
   }
 }
