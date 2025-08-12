@@ -182,7 +182,7 @@
     "disconnected": "斷咗",
     "connected": "已連線",
     "charging": "(充緊電)",
-    "lastChargePrefix": " 上次充电喺",
+    "lastChargePrefix": " 上次充電喺",
     "lastChargeSuffix": "前",
     "reconnect": "重新連線",
     "reconnectFailed": "上次連接失敗,請去到切換裝置頁面重新連線",
