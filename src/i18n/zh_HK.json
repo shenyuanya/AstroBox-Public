@@ -232,7 +232,7 @@
     "login": "登入",
     "emptyError": "密碼亦是帳戶唔可以為空!",
     "iosCopyAlertTitle": "取得結果",
-    "iosCopyAlertContentTip": "閣下似乎用緊iOS裝置。囿於接口限制，iOS裝置暫時唔支援自動添加已綁定嘅裝置。請喺下邊搵你打算連結嘅裝置，並Copy嗰條Authkey，之後喺“切換裝置”畫面進行連結",
+    "iosCopyAlertContentTip": "閣下似乎用緊iOS裝置。囿於接口限制，iOS裝置暫時不支援自動添加已綁定嘅裝置。請喺下邊搵你打算連結嘅裝置，並Copy嗰條Authkey，之後喺“切換裝置”畫面進行連結",
     "2fa": {
       "title": "需要雙重認證",
       "body": "閣下嘅帳戶需要雙重認證。請點擊“確定“喺瀏覽器繼續。過程會涉及兩次重定向。當頁面顯示ok後，請返回AstroBox並重新嘗試登入。"
@@ -324,8 +324,8 @@
       "title": "佇列",
       "autoInstall": "自動安裝",
       "autoInstallDesc": "下載完成後自動安裝",
-      "dontClear": "唔清除安裝佇列",
-      "dontClearDesc": "安裝完成後不清理佇列以方便除錯"
+      "dontClear": "唔清理安裝佇列",
+      "dontClearDesc": "安裝完成後唔清理佇列以方便除錯"
     },
     "about": {
       "title": "關於",
@@ -394,7 +394,7 @@
     "deviceRequirements": "裝置要求",
     "compatible": "呢個產品兼容你嘅",
     "incompatible": "呢個產品與你嘅",
-    "incompatibleSuffix": "唔兼容",
+    "incompatibleSuffix": "不兼容",
     "otherVersions": "亦有其他裝置嘅版本可用。",
     "inQueue": "喺隊列中",
     "copyLink": "複製連結",
